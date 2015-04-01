@@ -1,0 +1,86 @@
+.ActionBar {
+  @include clearfix;
+  @include reset-list;
+}
+
+.ActionBar-item {
+  float: left;
+  height: 60px;
+  text-align: center;
+  .ActionBar--1 & {
+    float: none;
+  }
+  .ActionBar--2 & {
+    width: 50%;
+  }
+  .ActionBar--3 & {
+    width: 33.3333333%;
+  }
+}
+
+.ActionBar-action {
+  @include reset-button;
+  @include sansserif-bold;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid $grey-light;
+  border-left: none;
+  text-decoration: none;
+  font-size: 14px;
+  color: $green;
+  background: #fff;
+  .no-touch &:hover {
+    color: #000;
+  }
+  &:before {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .ActionBar-item:first-child & {
+    border-left: 1px solid $grey-light;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  .ActionBar-item:last-child & {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  &.u-icon-heart:before {
+    top: 8px;
+    font-size: 22px;
+  }
+  &.u-icon-trailer:before {
+    top: 6px;
+    font-size: 28px;
+  }
+  &.u-icon-clock:before {
+    top: 10px;
+    font-size: 19px;
+  }
+  &.u-icon-info:before {
+    top: 9px;
+    font-size: 20px;
+  }
+}
+
+.ActionBar-action--favorite--is-favorite {
+  &:before {
+    color: $red;
+  }
+  .no-touch &:hover {
+    &:before {
+      color: #000;
+    }
+  }
+}
+
+.ActionBar-actionText {
+  position: absolute;
+  left: 0;
+  bottom: 7px;
+  width: 100%;
+}

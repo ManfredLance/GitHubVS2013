@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Bensin 95",
+    "color": "#fff",
+    "backgroundColor": "#00753b",
+    "borderColor": "#00753b"
+  },
+  {
+    "name": "Bensin 96",
+    "color": "#fff",
+    "backgroundColor": "#00753b",
+    "borderColor": "#00753b"
+  },
+  {
+    "name": "Bensin 98",
+    "color": "#fff",
+    "backgroundColor": "#00753b",
+    "borderColor": "#00753b"
+  },
+  {
+    "name": "Etanol E85",
+    "color": "#fff",
+    "backgroundColor": "#0070c0",
+    "borderColor": "#0070c0"
+  },
+  {
+    "name": "Biodiesel 100",
+    "color": "#000",
+    "backgroundColor": "#ffea00",
+    "borderColor": "#ffea00"
+  },
+  {
+    "name": "ACP Diesel",
+    "color": "#fff",
+    "backgroundColor": "#000",
+    "borderColor": "#000"
+  },
+  {
+    "name": "ACP Evolution Diesel",
+    "color": "#fff",
+    "backgroundColor": "#000",
+    "borderColor": "#000"
+  },
+  {
+    "name": "Fordonsgas",
+    "color": "#fff",
+    "backgroundColor": "#00b0f0",
+    "borderColor": "#00b0f0"
+  },
+  {
+    "name": "Adblue",
+    "color": "#0070c0",
+    "backgroundColor": "#fff",
+    "borderColor": "#d3d3d3"
+  },
+  {
+    "name": "El-laddning",
+    "color": "#fff",
+    "backgroundColor": "#f4983b",
+    "borderColor": "#f4983b"
+  },
+  {
+    "name": "El-snabbladdning",
+    "color": "#fff",
+    "backgroundColor": "#f4983b",
+    "borderColor": "#f4983b"
+  }
+]

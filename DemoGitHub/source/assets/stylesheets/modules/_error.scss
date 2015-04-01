@@ -1,0 +1,40 @@
+.Error {
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.Error-text {
+  margin: 0 0 20px;
+}
+
+.Error-logotype {
+  display: block;
+  width: 120px;
+  margin: 0 auto 20px;
+}
+
+.Error-logotypeImage {
+  width: 100%;
+  height: auto;
+}
+
+.Error-headline {
+  text-align: center;
+}
+
+
+// Vertical and horizontal center of the error message.
+$breakpoint-center-error: (min-width 650px) (min-height 650px);
+
+@include breakpoint($breakpoint-center-error) {
+  .Error {
+    position: absolute;
+    max-width: 575px;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+  }
+}

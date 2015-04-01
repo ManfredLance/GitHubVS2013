@@ -1,0 +1,15 @@
+<ul class="ActionBar ActionBar--<%= items %> u-group">
+  <li class="ActionBar-item">
+    <button class="ActionBar-action u-icon-heart js-Station--favorite" data-favorite-add-text="Spara favorit" data-favorite-remove-text="Ta bort favorit"><span class="ActionBar-actionText js-Station--favoriteText">Spara favorit</span></button>
+  </li>
+  <% if items > 1 %>
+    <li class="ActionBar-item">
+      <a href="#hyra-slap" class="ActionBar-action u-icon-trailer js-trackLink" data-tracking-category="Rental" data-tracking-label="Stockholm, Bredäng"><span class="ActionBar-actionText">Hyra släp</span></a>
+    </li>
+  <% end %>
+  <% if items > 2 %>
+    <li class="ActionBar-item">
+      <a href="#oppettider" class="ActionBar-action u-icon-clock"><span class="ActionBar-actionText">Öppettider</span></a>
+    </li>
+  <% end %>
+</ul>

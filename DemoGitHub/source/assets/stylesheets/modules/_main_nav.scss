@@ -1,0 +1,687 @@
+@mixin _bottom-bar($color) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  left: 0;
+  bottom: 0;
+  background: $color;
+}
+
+$_inactive-tab-bg-color: #f7efe1;
+$_small2: 630px;
+$_small3: 670px;
+$_small4: 720px;
+$_small5: 790px;
+$_medium2: 940px;
+$_medium3: 970px;
+$_medium4: 1020px;
+$_medium5: 1100px;
+$_medium6: 1160px;
+$_to-small2: $_small2 - 1;
+$_to-small3: $_small3 - 1;
+$_to-small4: $_small4 - 1;
+$_to-small5: $_small5 - 1;
+$_to-medium2: $_medium2 - 1;
+$_to-medium3: $_medium3 - 1;
+$_to-medium4: $_medium4 - 1;
+$_to-medium5: $_medium5 - 1;
+
+.MainNav {
+  position: relative;
+  @include breakpoint(0 $to-small) {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: $MainNav-narrow-width;
+    height: 100%;
+    border-right: 1px solid $beige-grey;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 26px;
+    background: $beige;
+    // Make navigation scrollable even if content isnt overflowing
+    &:after {
+      @include user-select(none);
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 1px;
+      left: 0;
+      bottom: -1px;
+      background: transparent;
+    }
+  }
+  @include breakpoint($small, $no-query: true) {
+    font-size: 22px;
+  }
+  @include breakpoint($small $to-medium) {
+    padding: 70px 0 0;
+  }
+  @include breakpoint($small $_to-small2) {
+    padding: 70px 0 0;
+  }
+  @include breakpoint($_small2 $_to-small3) {
+    padding: 68px 0 0;
+  }
+  @include breakpoint($_small3 $_to-small4) {
+    padding: 67px 0 0;
+  }
+  @include breakpoint($_small4 $_to-small5) {
+    padding: 65px 0 0;
+  }
+  @include breakpoint($_small5 $medium) {
+    padding: 65px 0 0;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    float: left;
+    width: 85.45%;
+    padding: 80px 0 0;
+  }
+}
+
+.MainNav-is-open {
+  @include breakpoint(0 $to-small) {
+    display: block;
+  }
+}
+
+.MainNav-tabs {
+  @extend %clearfix;
+  @include reset-list;
+  font-size: 15px;
+  @include breakpoint($small, $no-query: true) {
+    position: absolute;
+    right: 0;
+    border-bottom: 1px solid $beige-grey;
+  }
+  @include breakpoint($small $to-medium) {
+    left: 85px;
+    top: 16px;
+    font-size: 15px;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    left: 0;
+    top: 21px;
+    font-size: 19px;
+  }
+}
+
+.MainNav-tab {
+  position: relative;
+  float: left;
+  @include breakpoint(0 $to-small) {
+    width: 33.3333333%;
+  }
+  @include breakpoint($small, $no-query: true) {
+    padding: 0 0 13px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  @include breakpoint($small $to-medium) {
+    margin: 0 15px 0 0;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    margin: 0 31px 0 0;
+  }
+}
+
+.MainNav-tab--is-current {
+  @include sansserif-bold;
+  @include breakpoint($small, $no-query: true) {
+    &:before,
+    &:after {
+      @include triangle(14px, $beige-grey, up);
+      content: "";
+      position: absolute;
+      left: 50%;
+      margin: 0 0 0 -6px;
+    }
+    &:before {
+      bottom: 0;
+    }
+    &:after {
+      bottom: -1px;
+      border-bottom-color: $beige;
+    }
+  }
+}
+
+.MainNav-tabLink {
+  @include breakpoint(0 $to-small) {
+    position: relative;
+    display: block;
+    padding: 10px 0 8px;
+    border-right: 1px solid $beige-grey;
+    border-bottom: 1px solid $beige-grey;
+    background: $_inactive-tab-bg-color;
+    text-align: center;
+    .MainNav-tab:last-child & {
+      border-right: none;
+    }
+    .MainNav-tab--is-current & {
+      background: $beige;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 1px;
+        background: $beige;
+      }
+    }
+  }
+  .MainNav-tab--is-current & {
+    color: #000;
+  }
+  &:hover {
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+.MainNav-menu {
+  @include gotham-condensed-bold;
+  position: relative;
+  text-transform: uppercase;
+  @include breakpoint($small $_to-medium2) {
+    text-align: justify;
+  }
+  @include breakpoint($small $_to-small2) {
+    height: 45px;
+    font-size: 18px;
+  }
+  @include breakpoint($_small2 $_to-small3) {
+    height: 49px;
+    font-size: 22px;
+  }
+  @include breakpoint($_small3 $_to-small4) {
+    height: 51px;
+    font-size: 24px;
+  }
+  @include breakpoint($_small4 $_to-small5) {
+    height: 53px;
+    font-size: 26px;
+  }
+  @include breakpoint($_small5 $medium) {
+    height: 55px;
+    font-size: 28px;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    height: 56px;
+    font-size: 30px;
+    .MainNav--stretch & {
+      text-align: justify;
+    }
+  }
+  @include breakpoint($medium $_to-medium3) {
+    font-size: 26px;
+    .MainNav--stretch & {
+      text-align: justify;
+      font-size: 26px;
+    }
+  }
+  @include breakpoint($_medium3 $_to-medium5) {
+    font-size: 28px;
+  }
+}
+
+.MainNav-list {
+  @include reset-list;
+  @include breakpoint($small $_to-medium2) {
+    display: inline;
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  @include breakpoint($medium, $no-query: true) {
+    height: 60px;
+    .MainNav--stretch & {
+      display: inline;
+      &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.MainNav-list--sub {
+  @include sansserif-normal;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  @include breakpoint($small, $no-query: true) {
+    &,
+    .MainNav--stretch & {
+      display: none;
+    }
+  }
+}
+
+.MainNav-listItem {
+  position: relative;
+  @include breakpoint($small, $no-query: true) {
+    float: left;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  @include breakpoint($small $_to-medium2) {
+    display: inline-block;
+    height: 100%;
+    float: none;
+    margin: 0;
+  }
+  @include breakpoint($_medium2, $no-query: true) {
+    height: 60px;
+    margin: 0 40px 0 0;
+    .MainNav--stretch & {
+      display: inline-block;
+      height: 100%;
+      float: none;
+      margin: 0;
+    }
+  }
+  @include breakpoint($_medium2 $_to-medium4) {
+    margin: 0 30px 0 0;
+  }
+  @include breakpoint($_medium4 $_to-medium5, $no-query: true) {
+    margin: 0 35px 0 0;
+    margin: 0 30px 0 0\9; // IE8
+  }
+  @include breakpoint($_medium5) {
+    margin: 0 40px 0 0;
+  }
+  @include breakpoint($_medium6) {
+    margin: 0 50px 0 0;
+  }
+}
+
+.MainNav-link {
+  &:hover {
+    text-decoration: none;
+  }
+  @include breakpoint(0 $to-small) {
+    position: relative;
+    display: block;
+    padding: 11px 14px 12px;
+    border-bottom: 1px solid $beige-grey;
+    line-height: 1.1;
+  }
+  .MainNav-listItem--is-ancestor > &,
+  .MainNav-listItem--is-current > & {
+    color: #000;
+    &:hover {
+      color: #000;
+      &:after {
+        background: $green;
+      }
+    }
+    @include breakpoint(0 $to-small) {
+      &:after {
+        content: "";
+        position: absolute;
+        width: 5px;
+        left: 0;
+        top: -1px;
+        bottom: -1px;
+        background: $green;
+      }
+    }
+    &:after {
+      @include breakpoint($small, $no-query: true) {
+        @include _bottom-bar($green);
+      }
+    }
+  }
+  @include breakpoint($small, $no-query: true) {
+    display: block;
+    height: 100%;
+    &:hover {
+      &:after {
+        @include _bottom-bar(#e5dfd0);
+      }
+    }
+  }
+  .MainNav-listItem--is-ancestor > & {
+    @include breakpoint(0 $to-small) {
+      &,
+      &:hover {
+        color: $green;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.MainNav-linkOpener {
+  @include reset-button;
+  @include icon(plus);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 100%;
+  border-left: 1px solid $beige-grey;
+  color: $green;
+  font-size: 24px;
+  &:before {
+    line-height: 1.75;
+  }
+  span {
+    display: none;
+  }
+  @include breakpoint($small, $no-query: true) {
+    display: none;
+  }
+  .MainNav-link--opener-is-open > & {
+    @extend .u-icon-minus;
+  }
+}
+
+.MainNav-link--opener {
+  @include icon(plus);
+  &:before {
+    position: absolute;
+    top: 11px;
+    right: 9px;
+    font-size: 24px;
+  }
+  @include breakpoint($small, $no-query: true) {
+    &:before {
+      display: none;
+    }
+  }
+  &.MainNav-link--opener-is-open {
+    @extend .u-icon-minus;
+  }
+}
+
+.MainNav-link--sub {
+  @include breakpoint(0 $to-small) {
+    border-color: #ebe7e0;
+    background: #fffaed;
+    color: #000;
+    &:hover {
+      color: #000;
+    }
+    .MainNav-listItem:last-child & {
+      border-color: $beige-grey;
+    }
+  }
+}
+
+.MainNav-list--sub-is-closed {
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+}
+
+.MainNav-list--sub-is-open {
+  @include breakpoint(0 $to-small) {
+    display: block;
+  }
+}
+
+.MainNav-list--secondary {
+  &.MainNav-list--sub-is-open {
+    @include breakpoint($small, $no-query: true) {
+      display: block;
+      position: absolute;
+      width: 280px;
+      right: 0;
+      top: 55px;
+      height: auto;
+      border: 1px solid $grey-light;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+      &:after {
+        content: none;
+      }
+      .MainNav-listItem {
+        display: block;
+        height: auto;
+        float: none;
+        margin: 0;
+        &:first-child {
+          .MainNav-link {
+            &:before,
+            &:after {
+              @include triangle(16px, $grey-light, up);
+              content: "";
+              position: absolute;
+              left: auto;
+              right: 14px;
+            }
+            &:before {
+              top: -8px;
+            }
+            &:after {
+              top: -7px;
+              border-bottom-color: #fff;
+              background: transparent;
+            }
+            &:hover {
+              &:after {
+                border-bottom-color: $grey-lightest;
+              }
+            }
+          }
+        }
+        &:last-child {
+          .MainNav-link {
+            border: none;
+          }
+        }
+      }
+      .MainNav-link {
+        padding: 10px 13px;
+        border-bottom: 1px solid $grey-light;
+        line-height: 1.3;
+        &:hover {
+          background: $grey-lightest;
+          &:after {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.MainNav-linkName {
+  @include sansserif-bold;
+  display: block;
+}
+
+.MainNav-linkDescription {
+  display: block;
+  font-size: 14px;
+  color: $grey-dark;
+}
+
+.MainNav-link--subSub {
+  background: #fff;
+  padding-left: 24px;
+  .MainNav-listItem:last-child & {
+    border-color: #ebe7e0;
+  }
+}
+
+.MainNav-link--subSubSub {
+  background: #fff;
+  padding-left: 36px;
+  font-size: 14px;
+  .MainNav-listItem:last-child & {
+    border-color: #ebe7e0;
+  }
+}
+
+.MainNav-secondary {
+  @include breakpoint(0 $to-small) {
+    font-size: 18px;
+  }
+  @include breakpoint($small, $no-query: true) {
+    display: block;
+    position: absolute;
+    right: 0;
+    text-transform: none;
+  }
+  @include breakpoint($small, $to-medium) {
+    top: -7px;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    top: -1px;
+  }
+}
+
+.MainNav-secondaryNavList {
+  @include reset-list;
+  @include breakpoint($small, $no-query: true) {
+    @include clearfix;
+  }
+  @include breakpoint($small, $to-medium) {
+    font-size: 12px;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    font-size: 13px;
+  }
+}
+
+.MainNav-secondaryNavListItem {
+  @include breakpoint(0 $to-small) {
+    position: relative;
+  }
+  @include breakpoint($small, $no-query: true) {
+    position: relative;
+    float: left;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  @include breakpoint($small $to-medium) {
+    margin: 0 15px 0 0;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    margin: 0 36px 0 0;
+  }
+}
+
+.MainNav-secondaryNavListItem--search {
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+}
+
+.MainNav-secondaryNavLink {
+  position: relative;
+  display: block;
+  @include breakpoint(0 $to-small) {
+    padding: 12px 14px 14px 50px;
+    border-bottom: 1px solid $beige-grey;
+    line-height: 1.1;
+    color: $green;
+    &:hover {
+      color: $green;
+    }
+  }
+  @include breakpoint($small $to-medium) {
+    min-width: 22px;
+    padding: 26px 0 0;
+  }
+  @include breakpoint($small, $no-query: true) {
+    color: $green;
+    text-align: center;
+    &:hover {
+      color: #000;
+    }
+  }
+  @include breakpoint($medium, $no-query: true) {
+    min-width: 24px;
+    padding: 29px 0 0;
+  }
+  &:after {
+    @include icon-font;
+    position: absolute;
+    @include breakpoint(0 $to-small) {
+      top: 14px;
+      left: 14px;
+      font-size: 24px;
+    }
+    @include breakpoint($small $to-medium) {
+      margin: 0 0 4px;
+      font-size: 22px;
+    }
+    @include breakpoint($small, $no-query: true) {
+      width: 100%;
+      text-align: center;
+      left: 0;
+      top: 0;
+    }
+    @include breakpoint($medium, $no-query: true) {
+      font-size: 24px;
+    }
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  .MainNav-secondaryNavListItem--is-current & {
+    @include sansserif-bold;
+    color: #000;
+  }
+}
+
+.MainNav-secondaryNavLink--contact {
+  &:after {
+    @extend .u-icon-chat:before;
+    @include breakpoint(0 $to-small) {
+      top: 12px;
+    }
+  }
+}
+
+.MainNav-secondaryNavLink--language {
+  &:after {
+    @extend .u-icon-globe:before;
+    @include breakpoint(0 $to-small) {
+      top: 11px;
+    }
+  }
+}
+
+.MainNav-secondaryNavLink--search {
+  &:after {
+    @extend .u-icon-search:before;
+    @include breakpoint(0 $to-small) {
+      top: 11px;
+    }
+  }
+}
+
+.MainNav-secondaryNavLink--login {
+  &:after {
+    @extend .u-icon-user:before;
+    @include breakpoint(0 $to-small) {
+      top: 11px;
+    }
+  }
+}
+
+.MainNav-secondaryNavLink--sustainability {
+  &:after {
+    @extend .u-icon-heartinring:before;
+    @include breakpoint(0 $to-small) {
+      top: 11px;
+    }
+  }
+}

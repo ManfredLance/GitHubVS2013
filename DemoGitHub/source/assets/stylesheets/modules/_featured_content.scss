@@ -1,0 +1,104 @@
+$_more-btn-height: 18px;
+
+.FeaturedContent {
+  position: relative;
+  @include breakpoint(0 $to-small) {
+    margin-bottom: $u-group-margin-mini;
+  }
+  @include breakpoint($small, $no-query: true) {
+    @include clearfix;
+    margin-bottom: 20px;
+  }
+}
+
+.FeaturedContent-sidebar {
+  @include breakpoint(0 $to-small) {
+    margin-bottom: $u-group-margin-mini;
+  }
+  @include breakpoint($small $to-medium) {
+    margin-bottom: $u-group-margin;
+  }
+  @include breakpoint($small, $no-query: true) {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+  @include breakpoint($small $to-medium) {
+    @include span(4);
+  }
+  @include breakpoint($medium, $no-query: true) {
+    @include span(3);
+  }
+}
+
+.FeaturedContent-sidebar--is-open {
+  @include breakpoint($small, $no-query: true) {
+    height: auto;
+    padding-bottom: $_more-btn-height;
+  }
+}
+
+.FeaturedContent-sidebarContent {
+  height: 100%;
+}
+
+.FeaturedContent-sidebarContentInner {
+  height: 100%;
+  overflow: hidden;
+}
+
+.FeaturedContent-sidebarMore {
+  @include reset-button;
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $_more-btn-height;
+  border: 1px solid $grey-light;
+  background: #fff;
+  color: $grey-light;
+  text-align: center;
+  &:before {
+    position: relative;
+    top: -1px;
+  }
+  &:after {
+    @include linear-gradient(rgba(255, 255, 255, 0), #fff 100%);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    left: 0;
+    top: -16px;
+  }
+  &:hover {
+    background: $grey-lightest;
+    color: $grey-medium;
+  }
+  span {
+    display: none;
+  }
+  .FeaturedContent-sidebar--has-overflow & {
+    @include breakpoint($small, $no-query: true) {
+      display: block;
+    }
+  }
+  .FeaturedContent-sidebar--is-open & {
+    border-top: none;
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.FeaturedContent-main {
+  @include breakpoint($small $to-medium) {
+    @include span(last 8);
+  }
+  @include breakpoint($medium, $no-query: true) {
+    @include span(last 9);
+  }
+}

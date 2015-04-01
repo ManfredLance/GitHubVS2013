@@ -1,0 +1,57 @@
+.Overlay {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  overflow: auto;
+
+
+  @include breakpoint(0 $to-small) {
+    bottom: 0;
+    background: $grey-lightest;
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    @include box-sizing(content-box); // Fix for scrollbar position in IE9
+    top: 71px;
+    left: 25px;
+    width: 358px;
+    margin: 0;
+    background: #fff;
+    border: 1px solid $grey-light;
+    border-top: 0;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    top: 76px;
+    left: 30px;
+  }
+}
+
+.Overlay--filter {
+  @include breakpoint($small, $no-query: true) {
+    width: 388px;
+  }
+}
+
+.Overlay--is-active {
+  display: block;
+}
+
+.Overlay-closeBtn {
+  @include breakpoint($small, $no-query: true) {
+    display: none;
+  }
+}
+
+.Overlay-headline {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  
+  @include breakpoint($small, $no-query: true) {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+}

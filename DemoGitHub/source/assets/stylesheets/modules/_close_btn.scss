@@ -1,0 +1,35 @@
+.CloseBtn {
+  @include reset-button;
+  @include icon(close);
+  position: relative;
+  padding: 0 25px 0 0;
+  font-size: 18px;
+  color: $green;
+  &:hover {
+    color: #000;
+  }
+  &:before {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    font-size: 20px;
+  }
+}
+
+.CloseBtn--top {
+  position: absolute;
+  right: 0;
+}
+
+.CloseBtn--right {
+  float: right;
+}
+
+.CloseBtn--no-text {
+  &:before {
+    margin-right: 0;
+  }
+  span {
+    display: none;
+  }
+}

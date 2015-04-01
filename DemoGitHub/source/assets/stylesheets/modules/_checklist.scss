@@ -1,0 +1,19 @@
+.Checklist {
+  @include reset-list;
+}
+
+.Checklist-item {
+  position: relative;
+  margin: 0 0 5px;
+  padding: 0 0 0 22px;
+  &:last-child {
+    margin: 0;
+  }
+  &:before {
+    position: absolute;
+    color: $green;
+    left: 2px;
+    top: 3px;
+    font-size: 14px;
+  }
+}

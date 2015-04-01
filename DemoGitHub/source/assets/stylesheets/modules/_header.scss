@@ -1,0 +1,271 @@
+.Header {
+  @include breakpoint($small, $no-query: true) {
+    position: relative;
+    z-index: 1;
+    background: $beige;
+  }
+  @media print {
+    display: none;
+  }
+}
+
+.Header--fullPage {
+  position: absolute;
+  width: 100%;
+  @include breakpoint($small, $no-query: true) {
+    z-index: 2;
+  }
+}
+
+.Header-inner {
+  @include wrapper;
+  @include breakpoint(0 $to-small) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @include breakpoint($small, $no-query: true) {
+    @include clearfix;
+    width: auto;
+    padding-top: 20px;
+    .Header--standalone & {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.Header-bar {
+  position: relative;
+  @include breakpoint(0 $to-small) {
+    height: 56px;
+    background: $beige;
+    z-index: 3;
+    -webkit-backface-visibility: hidden; // Fix background on scrolling in ios
+  }
+  @include breakpoint($small $to-medium) {
+    position: absolute;
+    z-index: 3;
+    left: 25px;
+    top: 15px;
+    width: 62px;
+    .Header--standalone & {
+      position: relative;
+      left: auto;
+      top: auto;
+      width: auto;
+    }
+  }
+  @include breakpoint($medium, $no-query: true) {
+    @include clearfix;
+    width: 10.9%;
+    margin: 0 3.65% 0 0;
+    float: left;
+    .Header--standalone & {
+      width: auto;
+      margin: 0;
+      float: none;
+    }
+  }
+}
+
+.Header-menuToggle {
+  @include breakpoint(0 $to-small) {
+    @include reset-button;
+    position: absolute;
+    width: 54px;
+    height: 56px;
+    padding: 17px 12px;
+    left: 0;
+    top: 0;
+  }
+  @include breakpoint($small, $no-query: true) {
+    display: none;
+  }
+}
+
+.Header-searchToggle {
+  @include breakpoint(0 $to-small) {
+    @include reset-button;
+    position: absolute;
+    width: 54px;
+    height: 56px;
+    right: 0;
+    top: 0;
+    color: $green;
+    font-size: 31px;
+    &:before {
+      position: absolute;
+      left: 11px;
+      top: 11px;
+    }
+  }
+  @include breakpoint($small, $no-query: true) {
+    display: none;
+  }
+}
+
+.Header-searchToggleInner {
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+}
+
+.Header-menuToggleInner {
+  @include breakpoint(0 $to-small) {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    top: 17px;
+    left: 12px;
+    background: $green;
+    border-radius: 2px;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      left: 0;
+      background: $green;
+      border-radius: 2px;
+    }
+    &:before {
+      top: 9px;
+    }
+    &:after {
+      top: 18px;
+    }
+  }
+}
+
+.Header-logotype {
+  @include breakpoint(0 $to-small) {
+    @include hide-text;
+    position: absolute;
+    z-index: 1;
+    height: 56px;
+    width: 56px;
+    left: 50%;
+    top: 0;
+    padding: 7px;
+    margin: 0 0 0 -29px;
+    .Header--standalone & {
+      left: 7px;
+      margin: 0;
+    }
+  }
+  @include breakpoint($small, $no-query: true) {
+    display: block;
+    max-width: 120px;
+    .Header--standalone & {
+      max-width: 102px;
+    }
+  }
+}
+
+.Header-logotypeImage {
+  width: 100%;
+  height: auto;
+}
+
+.Header-stationFinderLink {
+  @include gotham-condensed-bold;
+  position: absolute;
+  top: 19px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include breakpoint(0 $to-small) {
+    left: 70px;
+    font-size: 19px;
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    top: 30px;
+    left: 130px;
+    font-size: 43px;
+  }
+}
+
+.Header-stationFinderLinkFind,
+.Header-stationFinderLinkStation {
+  display: block;
+}
+
+.Header-stationFinderLinkFind {
+  color: $green;
+}
+
+.Header-stationFinderLinkStation {
+  color: $green-tone-3;
+}
+
+.Header-fullSiteLink {
+  position: absolute;
+  right: 12px;
+  color: $green-tone-4;
+  &:hover {
+    text-decoration: none;
+  }
+  @include breakpoint(0 $to-small) {
+    top: 17px;
+    font-size: 14px;
+  }
+  @include breakpoint($small, $no-query: true) {
+    top: 27px;
+    font-size: 26px;
+  }
+  &--mini{
+    &:before{
+      content: "";
+      width: 35px;
+      height: 35px;
+      float: left;
+      padding: 5px;
+      border-bottom-left-radius: 5px;
+      background: rgba(0,0,0,0.4) url('../images/general/logotype_small.png') 50% 50% no-repeat;
+      background-size: 25px auto;
+      border-bottom-left-radius: 5px;
+      margin: 0 -46px;
+    }
+    @include gotham-condensed-bold;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 35px;
+    padding: 0 10px;
+    background: rgba(0,0,0,0.4);
+    border-bottom-right-radius: 5px;
+    z-index: 2;
+    .Header-fullSiteLinkAddress {
+      text-decoration: none;
+    }
+    @include breakpoint(0 $to-small) {
+      right: 13px
+    }
+  }
+  &--white{
+    &:before{
+      background-color: rgba(255,255,255,0.5);
+    }
+    background-color: rgba(255,255,255,0.5);
+    color: #00753b;
+  }
+  &--green{
+    &:before{
+      background-color: #00753b;
+    }
+    background-color: #00753b;
+  }
+}
+
+.Header-fullSiteLinkAddress {
+  text-decoration: underline;
+}

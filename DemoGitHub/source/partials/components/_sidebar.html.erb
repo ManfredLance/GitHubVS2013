@@ -1,0 +1,33 @@
+<aside class="Sidebar">
+  <h2 class="Sidebar-headline"><a href="#">I butiken</a></h2>
+
+  <nav class="Sidebar-nav">
+    <ul class="Sidebar-navList">
+      <% data.sidebar.each do |item| %>
+        <li class="Sidebar-navListItem<%= item.sub_items.present? ? ' Sidebar-navListItem--has-sub u-icon-arrowdown' : '' %>">
+          <a href="<%= item.path %>" class="Sidebar-navListItemLink"><%= item.name %></a>
+
+          <% if item.sub_items.present? %>
+            <ul class="Sidebar-navList Sidebar-navList--sub">
+              <% item.sub_items.each_with_index do |item, i| %>
+                <li class="Sidebar-navListItem<%= i == 1 ? ' Sidebar-navListItem--is-current' : '' %><%= item.sub_items.present? ? ' Sidebar-navListItem--has-sub u-icon-arrowdown' : '' %>">
+                  <a href="<%= item.path %>" class="Sidebar-navListItemLink"><%= item.name %></a>
+
+                  <% if item.sub_items.present? %>
+                    <ul class="Sidebar-navList Sidebar-navList--subSub">
+                      <% item.sub_items.each do |item| %>
+                        <li class="Sidebar-navListItem">
+                          <a href="<%= item.path %>" class="Sidebar-navListItemLink"><%= item.name %></a>
+                        </li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</aside>

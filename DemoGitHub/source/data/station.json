@@ -1,0 +1,22 @@
+{
+  "id": 2200,
+  "name": "Sundsvall, Förmansvägen",
+  "address": "Förmansvägen 9, Bistra Ind Omr",
+  "postalCode": "850 10",
+  "city": "Sundsvall",
+  "phoneNumber": "060-100100",
+  "stationType": "Automat",
+  "stationSort": "Såifa",
+  "concept": "14 Såifa standard",
+  "isSåifa": true,
+  "openingHourWeekday": "0001-01-01T00:00:00",
+  "closingHourWeekday": "0001-01-01T00:00:00",
+  "openingHourSaturday": "0001-01-01T00:00:00",
+  "closingHourSaturday": "0001-01-01T00:00:00",
+  "openingHourSunday": "0001-01-01T00:00:00",
+  "closingHourSunday": "0001-01-01T00:00:00",
+  "coordinateLatitude": 62.44488,
+  "coordinateLongitude": 17.32027,
+  "services": ["Anpassad för 24 m fordon"],
+  "fuelTypes": ["ACP Diesel"]
+}

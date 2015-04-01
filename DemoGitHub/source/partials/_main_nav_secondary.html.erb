@@ -1,0 +1,22 @@
+<nav class="MainNav-secondary">
+  <ul class="MainNav-secondaryNavList">
+    <% data.top_navigation.each_with_index do |item, i| %>
+      <li class="MainNav-secondaryNavListItem MainNav-secondaryNavListItem--<%= item.class_name %><%= i == 0 ? ' MainNav-secondaryNavListItem--is-current' : '' %>">
+        <a href="<%= item.path %>" class="MainNav-secondaryNavLink MainNav-secondaryNavLink--<%= item.class_name %><%= item.class_name == 'search' ? ' js-searchToggler' : '' %><%= item.sub_items.present? ? ' js-MainNav-link--opener MainNav-link--opener MainNav-secondaryNavLink--opener MainNav-secondaryNavLink--opener-is-closed' : '' %>"<% if item.class_name == 'search' %> data-controller='[{"toggler": {"selector": ".Search", "className": "Search--is-open"}}]'<% end %>><%= item.name %></a>
+
+        <% if item.sub_items.present? %>
+          <ul class="MainNav-list MainNav-list--secondary MainNav-list--sub MainNav-list--sub-is-closed">
+            <% item.sub_items.each do |sub_item| %>
+              <li class="MainNav-listItem">
+                <a href="<%= item.path %>" class="MainNav-link MainNav-link--sub MainNav-link--sub">
+                  <span class="MainNav-linkName"><%= sub_item.name %></span>
+                  <span class="MainNav-linkDescription"><%= sub_item.description %></span>
+                </a>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

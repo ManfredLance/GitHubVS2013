@@ -1,0 +1,30 @@
+<%
+ #locals
+ aligncenter ||= false
+ alignright ||= false
+ alignleft ||= !alignright && !aligncenter
+ background_image ||= lorem.image('1600x425', background_color: '172028', color: '000000')
+ lighttheme ||= false
+ image ||= false
+ title ||= "Framtidens bensin kommer från oss på Preem"
+ content ||= "Lorem ipsum dolor sit amet consectetur<br>adipisicing elit, sed do eiusmod"
+ mobilealigncenter ||= false
+ mobilealignleft ||= false
+%>
+<a href="#" class="Full<%= alignleft ? ' Full--alignLeft' : '' %><%= aligncenter ? ' Full--alignCenter' : '' %><%= alignright ? ' Full--alignRight' : '' %><%= mobilealigncenter ? ' Full--mobile-alignCenter' : '' %><%= mobilealignleft ? ' Full--mobile-alignLeft' : '' %><%= background_image ? ' Full--bg-image' : '' %><%= lighttheme ? ' Full--light' : '' %><%= image ? ' Full--with-image': ''%>" style="background-image: url(<%=background_image %>);">
+  <div class="Full-inner">
+    <div class="Full-innerInner">
+      <div class="Full-textWrapper">
+        <h1 class="Full-headline"><%= title %></h1>
+        <div class="Article Full-text">
+          <p><%= content %></p>
+        </div>
+      </div>
+      <% if image %>
+        <figure class="Full-image">
+          <img src="<%= image %>" alt="">
+        </figure>
+      <% end %>
+    </div>
+  </div>
+</a>

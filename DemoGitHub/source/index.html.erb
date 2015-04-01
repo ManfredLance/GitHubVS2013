@@ -1,0 +1,227 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    <title>Preem</title>
+
+    <%= javascript_include_tag 'vendor/libs/modernizr', type: nil %>
+
+    <style>
+      *,
+      *:before,
+      *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-family: "Arial", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        padding: 0 0 20px;
+      }
+
+      .u-wrapper {
+        max-width: 600px;
+        padding: 0 20px;
+        margin: 0 auto;
+      }
+
+      .BreakpointTester {
+        display: none;
+        padding: 20px 0;
+        margin: 0 0 20px;
+        background: #333;
+        -webkit-backface-visibility: hidden; /* Fix background glitch */
+      }
+
+      .BreakpointTester-iframe {
+        position: relative;
+        display: block;
+        margin: 0 auto 20px;
+        border: none;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .BreakpointTester-buttons {
+        text-align: center;
+      }
+
+      .Sitemap {
+        margin: 20px 0;
+      }
+
+      .Sitemap-title {
+        margin: 0 0 20px;
+      }
+
+      .Sitemap-list {
+        list-style: none;
+      }
+
+      .Sitemap-listItem {
+        position: relative;
+      }
+
+      .Sitemap-link {
+        display: block;
+        padding: 20px 0;
+        color: #44f;
+        text-decoration: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .no-touch .Sitemap-link:hover {
+        color: #00a;
+      }
+
+      .Sitemap-link--mobile {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        padding: 0;
+        width: 12px;
+        height: 20px;
+        margin: -10px 0 0;
+        background: #ccc;
+        border-radius: 2px;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        border: none;
+      }
+
+      .no-touch .Sitemap-link--mobile:hover {
+        background: #333;
+      }
+
+      .Sitemap-link--mobile:before,
+      .Sitemap-link--mobile:after {
+        content: "";
+        position: absolute;
+        background: #fff;
+      }
+
+      .Sitemap-link--mobile:before {
+        left: 2px;
+        top: 2px;
+        width: 8px;
+        height: 14px;
+      }
+
+      .Sitemap-link--mobile:after {
+        left: 5px;
+        bottom: 1px;
+        width: 2px;
+        height: 2px;
+        border-radius: 1px;
+      }
+
+      .no-touch .Sitemap-listItem:hover .Sitemap-link--mobile {
+        display: block;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 5px;
+        margin: 0 10px;
+        border: none;
+        background: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="BreakpointTester js-BreakpoinkTester">
+      <div class="u-wrapper">
+        <iframe src="" width="320" height="568" frameBorder="0" class="BreakpointTester-iframe"></iframe>
+        <div class="BreakpointTester-buttons">
+          <button class="button js-BreakpointTester-close">Stäng</button>
+          <button class="button js-BreakpointTester-size" data-size="320x568">Mobil stående</button>
+          <button class="button js-BreakpointTester-size" data-size="568x320">Mobil liggande</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="u-wrapper">
+      <div class="Sitemap">
+        <h1 class="Sitemap-title">Sidmallar</h1>
+
+        <ul class="Sitemap-list">
+          <% sitemap.resources.find_all{ |x| x.ext == '.html' && x.path != 'index.html' }.sort_by{ |x| x.data.template.to_s }.each do | template| %>
+            <li class="Sitemap-listItem">
+              <%= link_to template.data.template, template.path, class: 'Sitemap-link' %>
+              <%= link_to 'Simulera mobil version', template.path, class: 'Sitemap-link Sitemap-link--mobile js-BreakpointTester-link' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <!--[if lt IE 9]>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <!--<![endif]-->
+
+    <script>
+      function openBreakpointTester() {
+        $('.BreakpointTester').slideDown(200);
+      }
+
+      function closeBreakpointTester() {
+        $('.BreakpointTester').slideUp(200);
+      }
+
+      function setIframeSrc(src) {
+        $('.BreakpointTester-iframe').attr('src', src);
+      }
+
+      function resizeIframe(width, height) {
+        $('.BreakpointTester-iframe')
+          .attr('width', width)
+          .attr('height', height);
+      }
+
+      $(function() {
+        $('.js-BreakpointTester-link').click(function(e) {
+          e.preventDefault();
+          setIframeSrc($(this).attr('href'));
+          openBreakpointTester();
+        });
+
+        $('.js-BreakpointTester-close').click(function(e) {
+          e.preventDefault();
+          closeBreakpointTester();
+        });
+
+        $('.js-BreakpointTester-size').click(function(e) {
+          e.preventDefault();
+          var
+            size = $(this).data('size').split('x'),
+            width = size[0],
+            height = size[1];
+
+          resizeIframe(width, height);
+        });
+      });
+    </script>
+  </body>
+</html>

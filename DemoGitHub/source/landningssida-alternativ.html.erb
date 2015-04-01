@@ -1,0 +1,64 @@
+---
+title: Landningssida alternativ
+template: Landningssida alternativ
+---
+
+<div class="u-wrapper">
+  <div class="TextPage">
+
+    <div class="PageTop">
+      <div class="PageTop-breadcrumbs">
+        <%= partial 'partials/components/breadcrumbs', locals: { items: ['Hyra släp &amp; bil', 'Villkor'] } %>
+      </div>
+      <div class="PageTop-share">
+        <%= partial 'partials/components/share_actions', locals: { on_color: false } %>
+      </div>
+    </div>
+
+    <div class="LargeMain">
+      <div class="LargeMain-main TextPage-main">
+
+        <div class="FeaturedContent Article Article--narrow">
+          <h1>Preem i korthet</h1>
+          <img src="<%= lorem.image('1064x500') %>" alt="Bildbeskrivning" class="u-aligncenter">
+          <div class="lead">
+            <p>Vi är Sveriges största drivmedelsbolag och våra två raffinaderier med en raffineringskapacitet på över 18 miljoner kubikmeter råolja per år. Vi har cirka 570 tankställen för privat- och yrkestrafik. Vi har drygt 1 200 anställda varav 900 arbetar vid raffinaderierna.</p>
+          </div>
+          <p>Tillsammans med personal hos återförsäljare och partners är vi över 3 000 medarbetare. För helåret 2013 var Preems omsättning 89 miljarder SEK.</p>
+        </div>
+
+
+        <div class="PromotionBlocks u-alignRows" data-controller='[{"alignRows":{"rows": [{"className": "PromotionBlocks-block--small", "elementsPerRow": 3}, {"className": "PromotionBlocks-block--medium", "elementsPerRow": 2}], "aboveBreakpoint": "small"}}]'>
+          <div class="PromotionBlocks-block PromotionBlocks-block--small">
+            <div class="ContentBlock ContentBlock--green">
+              <%= partial 'partials/components/featured_block', locals: { headline: 'Anslut kort &amp; spara pengar' } %>
+            </div>
+          </div>
+
+          <div class="PromotionBlocks-block PromotionBlocks-block--small">
+            <div class="ContentBlock ContentBlock--green">
+              <%= partial 'partials/components/featured_block', locals: { headline: 'Hyr släp – boka online' } %>
+            </div>
+          </div>
+
+          <div class="PromotionBlocks-block PromotionBlocks-block--small">
+            <div class="ContentBlock ContentBlock--green">
+              <%= partial 'partials/components/featured_block', locals: { headline: 'Hyr släp – boka online' } %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="LargeMain-sidebar">
+        <div class="u-group">
+          <%= partial 'partials/components/sidebar' %>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<% content_for :footer_script do %>
+  <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{google_maps_api_key}&sensor=false&libraries=places", type: nil %>
+<% end %>

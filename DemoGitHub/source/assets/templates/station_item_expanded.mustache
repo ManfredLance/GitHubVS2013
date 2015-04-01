@@ -1,0 +1,98 @@
+<div class="StationItem-group">
+  <ul class="ActionBar ActionBar--2">
+  <!-- TODO: Enable trailer rental later -->
+  <!--<ul class="ActionBar {{#trailer}}ActionBar++3{{/trailer}}{{^trailer}}ActionBar++2{{/trailer}}">-->
+    <li class="ActionBar-item">
+      <button class="ActionBar-action {{#favorite}}ActionBar-action--favorite--is-favorite{{/favorite}} u-icon-heart js-StationItem-favorite" data-favorite-add-text="Spara favorit" data-favorite-remove-text="Ta bort favorit">
+        <span class="ActionBar-actionText js-StationItem-favoriteText">
+          {{#favorite}}Ta bort favorit{{/favorite}}
+          {{^favorite}}Spara favorit{{/favorite}}
+        </span>
+      </button>
+    </li>
+
+    {{#trailer}}
+    <!-- TODO: Enable trailer rental later -->
+    <!--<li class="ActionBar-item">
+      <a href="{{TrailerRentalUrl}}" class="ActionBar-action u-icon-trailer js-StationItem-trailer" target="_blank"><span class="ActionBar-actionText">Hyra släp</span></a>
+    </li>-->
+    {{/trailer}}
+
+    <li class="ActionBar-item">
+      <a href="{{FriendlyUrl}}" class="ActionBar-action u-icon-info"><span class="ActionBar-actionText js-StationItem-moreInfo">Mer info</span></a>
+    </li>
+  </ul>
+</div>
+
+<div class="StationItem-group">
+  <a href="#" class="js-StationItem-showOnMap ContentBlock ContentBlock--headerLink ContentBlock--green Article">
+    <header class="ContentBlock-header ContentBlock-header--more ContentBlock-header--icon u-icon-location">
+      <h3 class="ContentBlock-headline">Visa på karta</h3>
+    </header>
+  </a>
+</div>
+
+<div class="StationItem-group">
+  <a href="https://maps.google.com?daddr={{Address}},{{PostalCode}} {{City}}" target="_blank" class="ContentBlock ContentBlock--headerLink ContentBlock--green Article js-StationItem-directions">
+    <header class="ContentBlock-header ContentBlock-header--more ContentBlock-header--icon u-icon-location">
+      <h3 class="ContentBlock-headline">Vägbeskrivning</h3>
+      <div class="ContentBlock-headerMore">
+        <span class="StationItem-distanceContainer js-StationItem-distanceContainer">ca
+          <span class="js-StationItem-distance"></span>
+        </span>
+      </div>
+    </header>
+  </a>
+</div>
+
+<div class="StationItem-group">
+  <div class="ContentBlock ContentBlock--green Article">
+    <header class="ContentBlock-header ContentBlock-header--icon u-icon-clock">
+      <h3 class="ContentBlock-headline">Öppettider</h3>
+    </header>
+    <div class="ContentBlock-content">
+      <div class="OpeningHours">
+        {{{openingHourText}}}
+      </div>
+      {{#isBemannad}}
+      <span class="u-meta">Tanka dygnet runt (kort &amp; kontant)</span>
+      {{/isBemannad}}
+    </div>
+  </div>
+</div>
+
+<div class="StationItem-group">
+  <div class="ContentBlock ContentBlock--green Article">
+    <header class="ContentBlock-header ContentBlock-header--icon u-icon-gasoline">
+      <h3 class="ContentBlock-headline">Drivmedel</h3>
+    </header>
+    <div class="ContentBlock-content">
+
+      <div class="FuelTypes">
+        <ul class="FuelTypes-list">
+          {{#FuelTypes}}
+            <li class="FuelTypes-type" style="color: {{TextColor}}; background: {{BackgroundColor}}; border-color: {{BorderColor}};">{{Name}}</li>
+          {{/FuelTypes}}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{{#Services.length}}
+<div class="StationItem-group">
+  <div class="ContentBlock ContentBlock--green Article">
+    <header class="ContentBlock-header ContentBlock-header--icon u-icon-meter">
+      <h3 class="ContentBlock-headline">På stationen</h3>
+    </header>
+    <div class="ContentBlock-content">
+      <ul class="Checklist">
+      {{#Services}}
+        <li class="Checklist-item u-icon-check">{{Name}}</li>
+      {{/Services}}
+      </ul>
+    </div>
+  </div>
+</div>
+{{/Services.length}}

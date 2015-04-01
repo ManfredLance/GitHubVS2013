@@ -1,0 +1,18 @@
+<div class="ActionBlock<%= color.present? ? " ActionBlock--#{color}" : '' %>">
+  <a href="#" class="ActionBlock-imageWrapper<%= variant.present? ? " ActionBlock-imageWrapper--#{variant}" : '' %>">
+    <% if variant == 'full' %>
+      <img src="<%= lorem.image('700x350') %>" class="ActionBlock-image" alt="Bildbeskrivning">
+    <% else %>
+      <img src="<%= lorem.image('400x230', background_color: 'eee', color: '969696') %>" class="ActionBlock-image" alt="Bildbeskrivning">
+    <% end %>
+  </a>
+  <div class="ActionBlock-content">
+    <div class="ActionBlock-text Article">
+      <h3 class="ActionBlock-headline">Nu är våren här och många väljer då att göra bilen</h3>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, beatae.</p>
+      </div>
+    </div>
+    <a href="#" class="Button Button--full <%= color.present? ? " Button--#{color}" : '' %> ActionBlock-link">Ansök nu!</a>
+  </div>
+</div>

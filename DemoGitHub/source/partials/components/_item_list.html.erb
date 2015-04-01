@@ -1,0 +1,14 @@
+<% items = 'Salladsbar', 'Varma rätter', 'Kalla rätter', 'Wok', 'Kravmärkt kaffe', 'Läkemedel', 'Biltillbehör', 'Tidningar' %>
+<ul class="ItemList<%= square ? ' ItemList--square' : '' %>">
+  <% items.each do |item| %>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="<%= lorem.image('150x150') %>" class="ItemList-image">
+        <div class="ItemList-title"><%= item %></div>
+        <% if price %>
+          <div class="ItemList-price">20 kr</div>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>

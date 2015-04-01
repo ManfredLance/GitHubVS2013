@@ -1,0 +1,24 @@
+.Breadcrumbs {
+  @include reset-list;
+  font-size: 14px;
+  line-height: 1.5 !important;
+}
+
+.Breadcrumbs-item {
+  position: relative;
+  display: inline-block;
+  margin: 0 21px 0 0;
+  &:before {
+    position: absolute;
+    right: -16px;
+    top: 6px;
+    font-size: 10px;
+    color: $grey-medium;
+  }
+  &:last-child {
+    margin: 0;
+    &:before {
+      content: none;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+<button class="StationItem-closeBtn js-StationItem-closeBtn u-icon-close-filled"><span>Stäng</span></button>
+
+<div class="StationItem-inner">
+  <h2 class="StationItem-header StationItem-header--big">
+    <span class="StationItem-headerNameCity">{{nameCity}}{{#nameLocation}},{{/nameLocation}}</span>
+    {{#nameLocation}}
+      <span class="StationItem-headerNameLocation">{{nameLocation}}</span>
+    {{/nameLocation}}
+  </h2>
+
+  <p class="StationItem-contact">
+    {{StationType}}, {{Address}}, {{City}}, {{PhoneNumber}}
+  </p>
+
+  <div class="StationItem-group">
+    <ul class="ActionBar ActionBar--2">
+    <!-- TODO: Remove trailer rental temporarily -->
+    <!--<ul class="ActionBar {{#trailer}}ActionBar++3{{/trailer}}{{^trailer}}ActionBar+++2{{/trailer}}">-->
+      <li class="ActionBar-item">
+        <button class="ActionBar-action {{#favorite}}ActionBar-action--favorite--is-favorite{{/favorite}} u-icon-heart js-StationItem-favorite" data-favorite-add-text="Spara favorit" data-favorite-remove-text="Ta bort favorit">
+          <span class="ActionBar-actionText js-StationItem-favoriteText">
+            {{#favorite}}Ta bort favorit{{/favorite}}
+            {{^favorite}}Spara favorit{{/favorite}}
+          </span>
+        </button>
+      </li>
+
+      {{#trailer}}
+        <!-- TODO: Remove trailer rental temporarily -->
+        <!--<li class="ActionBar-item">
+          <a href="{{TrailerRentalUrl}}" class="ActionBar-action u-icon-trailer js-StationItem-trailer" target="_blank"><span class="ActionBar-actionText">Hyra släp</span></a>
+        </li>-->
+      {{/trailer}}
+
+      <li class="ActionBar-item">
+        <a href="{{FriendlyUrl}}" class="ActionBar-action u-icon-info"><span class="ActionBar-actionText js-StationItem-moreInfo">Mer info</span></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="StationItem-group">
+    <a href="https://maps.google.com?daddr={{Address}},{{PostalCode}} {{City}}" target="_blank" class="ContentBlock ContentBlock--headerLink ContentBlock--green Article js-StationItem-directions">
+      <header class="ContentBlock-header ContentBlock-header--more ContentBlock-header--icon u-icon-location">
+        <h3 class="ContentBlock-headline">Vägbeskrivning</h3>
+        <div class="ContentBlock-headerMore">
+          <span class="StationItem-distanceContainer js-StationItem-distanceContainer">ca
+            <span class="js-StationItem-distance"></span>
+          </span>
+        </div>
+      </header>
+    </a>
+  </div>
+
+  <div class="StationItem-group">
+    <div class="ContentBlock ContentBlock--green Article">
+      <header class="ContentBlock-header ContentBlock-header--icon u-icon-clock">
+        <h3 class="ContentBlock-headline">Öppettider</h3>
+      </header>
+      <div class="ContentBlock-content">
+        <div class="OpeningHours">
+          {{{openingHourText}}}
+        </div>
+        {{#isBemannad}}
+        <span class="u-meta">Tanka dygnet runt, vi tar de flesta kort</span>
+        {{/isBemannad}}
+      </div>
+    </div>
+  </div>
+
+  <div class="StationItem-group">
+    <div class="ContentBlock ContentBlock--green Article">
+      <header class="ContentBlock-header ContentBlock-header--icon u-icon-gasoline">
+        <h3 class="ContentBlock-headline">Drivmedel</h3>
+      </header>
+      <div class="ContentBlock-content">
+        <div class="FuelTypes">
+          <ul class="FuelTypes-list">
+          {{#FuelTypes}}
+            <li class="FuelTypes-type" style="{{#TextColor}}color: {{TextColor}};{{/TextColor}}{{#BackgroundColor}}background: {{BackgroundColor}};{{/BackgroundColor}}{{#BorderColor}}border-color: {{BorderColor}};{{/BorderColor}}">{{Name}}</li>
+          {{/FuelTypes}}
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{#Services.length}}
+    <div class="StationItem-group">
+      <div class="ContentBlock ContentBlock--green Article">
+        <header class="ContentBlock-header ContentBlock-header--icon u-icon-meter">
+          <h3 class="ContentBlock-headline">På stationen</h3>
+        </header>
+        <div class="ContentBlock-content">
+          <ul class="Checklist">
+          {{#Services}}
+            <li class="Checklist-item u-icon-check">{{Name}}</li>
+          {{/Services}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {{/Services.length}}
+
+  {{#CampaignImage}}
+    <div class="StationItem-group">
+      <div class="ContentBlock ContentBlock--orange Article">
+        <header class="ContentBlock-header ContentBlock-header--icon u-icon-heart">
+          <h3 class="ContentBlock-headline">Just nu!</h3>
+        </header>
+        <div class="ContentBlock-content">
+          <img src="{{CampaignImage}}" alt="">
+        </div>
+      </div>
+    </div>
+  {{/CampaignImage}}
+
+</div>

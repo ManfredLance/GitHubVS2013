@@ -1,0 +1,14 @@
+<ul class="StationList" data-controller="stationList">
+  <% 4.times do %>
+    <li class="StationList-item js-StationList-item" data-station-id="51621">
+      <a href="#" class="StationList-link" title="Stockholm, Norrmälarstrand">
+        <img src="<%= lorem.image('72x72') %>" alt="Personalen" class="StationList-image">
+        <div class="StationList-name">Stockholm, Norrmälarstrand</div>
+        <div class="StationList-openingHours">Vardagar 08:00-22:00</div>
+      </a>
+      <button class="StationList-remove u-icon-close js-StationList-remove" title="Ta bort favorit">
+        <span>Ta bort</span>
+      </button>
+    </li>
+  <% end %>
+</ul>

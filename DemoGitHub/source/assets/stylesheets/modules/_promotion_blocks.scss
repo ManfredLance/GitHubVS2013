@@ -1,0 +1,31 @@
+.PromotionBlocks {
+  @include breakpoint($small, $no-query: true) {
+    @include clearfix;
+    margin: 0 (- gutter()/2);
+  }
+}
+
+.PromotionBlocks-block {
+  @include breakpoint(0 $to-small) {
+    margin-bottom: $u-group-margin-mini;
+  }
+  @include breakpoint($small, $no-query: true) {
+    margin-bottom: $u-group-margin;
+  }
+}
+
+.PromotionBlocks-block--small {
+  @include breakpoint($small, $no-query: true) {
+    @include with-layout(split) {
+      @include span(4);
+    }
+  }
+}
+
+.PromotionBlocks-block--medium {
+  @include breakpoint($small, $no-query: true) {
+    @include with-layout(split) {
+      @include span(6);
+    }
+  }
+}

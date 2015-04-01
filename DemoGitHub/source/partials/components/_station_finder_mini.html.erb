@@ -1,0 +1,39 @@
+<div class="StationFinderMini" data-controller='[{"stationFinderMini": {"stationFinderUrl": "/hitta-station.html"}}]'>
+  <a href="/hitta-station.html" class="StationFinderMini-stationFinderLink ButtonLight u-icon-map js-trackLink" data-tracking-category="Station finder widget" data-tracking-action="Stations close to me">Stationer nära mig</a>
+
+  <div class="u-searchInputWrapper u-icon-search" data-controller="clearInput">
+    <form class="StationFinderMini-searchForm js-StationFinderMini-searchForm">
+      <input type="search" class="StationFinderMini-searchInput js-StationFinderMini-searchInput u-searchInput" placeholder="Sök adress, ort, postnummer">
+    </form>
+    <button class="ButtonClear u-icon-close js-clearInputBtn" title="Rensa fältet">
+      <span>Rensa</span>
+    </button>
+  </div>
+
+  <p class="StationFinderMini-lastVisited js-trackLink" data-tracking-category="Station finder widget" data-tracking-action="Click latest visit">
+    <% if has_last_visited %>
+      Senast besökta
+      <a href="/station.html" title="Stockholm Norrmalm">Stockholm Norrmalm</a>,
+      <a href="/station.html" title="Stockholm Bredäng">Stockholm Bredäng</a>
+    <% else %>
+      Du har inte besökt några stationer
+    <% end %>
+  </p>
+
+  <% if show_favorites %>
+    <div class="StationFinderMini-favorites<%= ' StationFinderMini-favorites--has-none' unless has_favorites %>">
+      <h4>Favoritstationer</h4>
+
+      <% if has_favorites %>
+        <div class="js-trackLink" data-tracking-category="Station finder widget" data-tracking-action="Click favorite">
+          <%= partial 'partials/components/station_list' %>
+        </div>
+      <% else %>
+        <p class="StationFinderMini-noFavorites u-meta u-icon-heart">
+          Favoritmarkera en station genom att klicka på hjärtat på en stationssida.
+          Då får du snabb åtkomst till öppettider, specialerbjudanden och mycket mer.
+        </p>
+      <% end %>
+    </div>
+  <% end %>
+</div>

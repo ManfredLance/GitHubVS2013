@@ -1,0 +1,58 @@
+.ItemList {
+  @include reset-list;
+  overflow: hidden;
+  @include breakpoint(0 $to-small) {
+    padding: 0 0 5px;
+  }
+  @include breakpoint($small $to-medium) {
+    padding: 0 0 6px;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    padding: 0 0 7px;
+  }
+}
+
+.ItemList-item {
+  float: left;
+  text-align: center;
+  @include breakpoint(0 $to-small) {
+    width: 33.333%;
+    margin: 11px 0 0;
+  }
+  @include breakpoint($small $to-medium) {
+    width: 25%;
+    margin: 13px 0 0;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    width: 20%;
+    margin: 15px 0 0;
+  }
+}
+
+.ItemList-itemInner {
+  padding: 0 4px;
+}
+
+.ItemList-image {
+  max-width: 75px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 5px;
+  border-radius: 75px;
+  .ItemList--square & {
+    border-radius: 0;
+  }
+}
+
+.ItemList-title {
+  font-size: 14px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ItemList-price {
+  font-size: 13px;
+  color: $grey-medium;
+}

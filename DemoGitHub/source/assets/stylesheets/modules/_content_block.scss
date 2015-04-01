@@ -1,0 +1,140 @@
+$_colors: (
+  "orange": $orange,
+  "green": $green,
+  "blue": $blue,
+  "facebookBlue": $facebook-blue
+);
+
+.ContentBlock {
+  position: relative;
+  border: 1px solid $grey-light;
+  background: #fff;
+  .u-alignRows & {
+    height: 100%;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 4px;
+  }
+  &:after {
+    content: "";
+    display: table;
+    height: 0;
+    clear: both;
+  }
+}
+
+@each $_color, $_color_value in $_colors {
+  .ContentBlock--#{$_color} {
+    &:before {
+      background: $_color_value;
+    }
+    .ContentBlock-header {
+      color: $_color_value;
+    }
+    .ContentBlock-headline,
+    .ContentBlock-headline a {
+      color: $_color_value;
+    }
+  }
+}
+
+.ContentBlock--headerLink {
+  display: block;
+  border-bottom: none;
+  &:hover {
+    color: #000;
+  }
+}
+
+.ContentBlock-header {
+  position: relative;
+  padding: 15px 15px 13px;
+  border-bottom: 1px solid $grey-light;
+}
+
+.ContentBlock-header--icon {
+  padding-left: 40px;
+  &:before {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin: -11px 0 0;
+    font-size: 22px;
+    @each $_color, $_color_value in $_colors {
+      .ContentBlock--#{$_color} & {
+        color: $_color_value;
+      }
+    }
+  }
+}
+
+.ContentBlock-header--more {
+  overflow: hidden;
+}
+
+.ContentBlock-headline {
+  @include gotham-condensed-bold($i: true);
+
+  font-size: 26px !important;
+  line-height: 1 !important;
+  text-transform: uppercase;
+
+  margin: 0 !important;
+
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .ContentBlock-header--more & {
+    float: left;
+  }
+}
+
+.ContentBlock-headerMore {
+  float: right;
+  font-size: 18px;
+  line-height: 1.1;
+  color: $grey-medium;
+  margin: 3px 0;
+  a {
+    color: $green;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.ContentBlock-headerMore--toggle {
+  @include breakpoint($small, $no-query: true) {
+    display: none;
+  }
+}
+
+.ContentBlock-content {
+  position: relative;
+  padding: 19px;
+}
+.ContentBlock-content--tight {
+  padding: 10px;
+}
+
+.ContentBlock-content--full {
+  padding: 0;
+}
+
+.ContentBlock-slideshow {
+  padding: 19px 0 0;
+}
+
+.ContentBlock-contentImage {
+  margin: 0 0 10px;
+}

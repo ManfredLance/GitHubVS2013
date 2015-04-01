@@ -1,0 +1,13 @@
+<div class="Pagination">
+  <a href="#" class="Pagination-prev">Föregående</a>
+
+  <ul class="Pagination-list">
+    <% 10.times do |i| %>
+      <li class="Pagination-item<%= i == 3 ? ' Pagination-item--is-current' : '' %>">
+        <a href="#" class="Pagination-link"><%= i + 1 %></a>
+      </li>
+    <% end %>
+  </ul>
+
+  <a href="#" class="Pagination-next">Nästa</a>
+</div>

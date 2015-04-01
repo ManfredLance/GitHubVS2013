@@ -1,0 +1,82 @@
+---
+title: Produktblad
+template: Produktbladslista
+---
+<div class="u-wrapper">
+  <%= partial 'partials/components/notice', locals: { type: 'alert' } %>
+  <div class="TextPage">
+    <div class="PageTop">
+      <div class="PageTop-breadcrumbs">
+        <%= partial 'partials/components/breadcrumbs', locals: { items: ['Hyra släp &amp; bil', 'Villkor'] } %>
+      </div>
+      <div class="PageTop-share">
+        <%= partial 'partials/components/share_actions', locals: { on_color: false } %>
+      </div>
+    </div>
+    <div class="TextPage-primary">
+      <div class="TextPage-main">
+        <div class="Article">
+          <h1>Nu är våren här och många väljer då att göra bilen vårfin</h1>
+
+          <img src="<%= lorem.image('1064x500') %>" alt="Bildbeskrivning" class="u-aligncenter">
+
+          <div class="lead">
+            <p>
+              Nu är våren här och många väljer då att göra bilen vårfin genom tvätt.
+              Men även om svenskarna vet att det är bättre för miljön att tvätta bilen
+              i en biltvätt visar en färsk undersökning från Svenskt Vatten att 26 % av
+              bilägarna i Sverige (37 % av de som bor i villa) tvättar bilen på gatan.
+            </p>
+
+            <p>
+              Nu är våren här och många väljer då att göra bilen vårfin genom tvätt.
+            </p>
+          </div>
+        </div>
+
+        <%
+          # The full alphabet
+          letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Å", "Ä", "Ö"]
+
+          # Exclude letters on random for simulation
+          rand(letters.length / 2).times do |time|
+            letters.delete_at(rand(letters.length))
+          end
+
+          sections = Array.new()
+
+          # Add fake documents
+          letters.each do |letter|
+            documents = []
+            docs_num = 1 + rand(5)
+            docs_num.times do |time|
+              documents << letter + lorem.words(4).downcase
+            end
+            sections << {
+              "totop" => true,
+              "id" => "section-#{letter.upcase}",
+              "head" => letter.upcase,
+              "documents" => documents
+            }
+
+          end
+        %>
+        <div class="u-group">
+          <%= partial 'partials/components/index_nav', locals: { letters: letters } %>
+        </div>
+        <%= partial 'partials/components/section_list', locals: { sections: sections } %>
+      </div>
+
+      <div class="TextPage-sidebarMenu u-group">
+        <%= partial 'partials/components/sidebar' %>
+      </div>
+    </div>
+    <div class="TextPage-sidebarContent">
+      <% 4.times do %>
+        <div class="u-group">
+          <%= partial 'partials/components/content_block', locals: { color: 'orange', icon: nil } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

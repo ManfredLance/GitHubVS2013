@@ -1,0 +1,43 @@
+---
+title: tvätt | Sökresultat | Preem
+template: Sökresultat
+---
+
+<div class="u-wrapper">
+  <div class="SearchPage">
+    <form class="Search Search--page u-group" action="/" method="get">
+      <div class="Search-inner">
+        <label class="Search-label" for="header-search">Sök</label>
+        <input class="Search-field js-Search-field" id="header-search" type="search" placeholder="Skriv in ett sökord" value="tvätt">
+        <button class="Search-submit u-icon-search" type="submit">
+          <span class="Search-submitInner">Sök</span>
+        </button>
+      </div>
+    </form>
+
+    <h1 class="u-group">Ditt sökresultat gav 107 träffar</h1>
+
+    <div class="ArticleList u-group">
+      <ul class="ArticleList-list">
+        <% 10.times do %>
+          <li class="ArticleList-item">
+            <div class="ArticleList-itemText Article">
+              <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+              <div class="ArticleList-meta">
+                <%= partial 'partials/components/breadcrumbs', locals: { items: ['Bilvård', 'Tvätt'] } %>
+              </div>
+
+              <p>
+                Nu är våren här och många väljer då att göra bilen vårfin
+                genom <span class="u-highlight">tvätt</span>. Men även om…
+              </p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <%= partial 'partials/components/pagination' %>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    <title><%= current_page.data.title || 'Preem' %></title>
+
+    <%= javascript_include_tag 'vendor/libs/modernizr', type: nil %>
+
+    <%= stylesheet_link_tag '//cloud.typography.com/7319472/760864/css/fonts.css', type: nil %>
+    <%= stylesheet_link_tag '//fast.fonts.net/cssapi/ed89d67b-cc4e-4c93-bdd1-5da290ce606d.css', type: nil %>
+
+    <!--[if gte IE 9]><!-->
+      <%= stylesheet_link_tag 'application', type: nil %>
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+      <%= stylesheet_link_tag 'application_old_ie', type: nil %>
+    <![endif]-->
+
+    <style>
+      body {
+        background: #fff9da;
+        padding: 5% 0;
+      }
+
+      header a,
+      header h1 {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      header img {
+        max-width: 120px;
+        margin-right: 2em;
+      }
+
+      .Component {
+        background: #fff;
+        padding: 3em;
+        margin-top: 10%;
+        box-shadow: rgba(0,0,0,.1) 0 1px 1px;
+      }
+      .Component:last-child {
+        margin-bottom: 0;
+      }
+      .Component-head {
+        margin-bottom: 1em;
+      }
+      
+      .Component--icons > div {
+        columns: 4;
+        -webkit-columns: 4;
+        -moz-columns: 4;
+        display: block;
+      }
+      .Component--icons > div span {
+        display: block;
+        margin-bottom: 1em;
+      }
+      .Component--icons > div span:before {
+        margin-right: 1em;
+      }
+      .Component--symbols figure {
+        margin: 0 20px 20px 0;
+      }
+    </style>
+
+  </head>
+
+  <body class="<%= page_classes %>">
+
+    <%= yield %>
+
+    <%= yield_content :footer_script %>
+
+    <!--[if lt IE 9]>
+      <% if build? %>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <% else %>
+        <%= javascript_include_tag 'vendor/libs/jquery-1.11.0.min', type: nil %>
+      <% end %>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+      <% if build? %>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+      <% else %>
+        <%= javascript_include_tag 'vendor/libs/jquery-2.1.0.min', type: nil %>
+      <% end %>
+    <!--<![endif]-->
+
+    <%= javascript_include_tag 'application', type: nil %>
+  </body>
+</html>

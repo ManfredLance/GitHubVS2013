@@ -1,0 +1,144 @@
+.Footer {
+  background: $beige;
+  @include breakpoint(0 $to-small) {
+    padding: 35px 0 0;
+  }
+  @include breakpoint($small, $no-query: true) {
+    padding: 46px 0 0;
+  }
+  @include breakpoint(0 $to-medium) {
+    text-align: center;
+  }
+  @media print {
+    display: none;
+  }
+}
+
+.Footer-sections {
+  @include breakpoint($small, $no-query: true) {
+    @include clearfix;
+    margin: 0 0 51px;
+  }
+}
+
+.Footer-menus {
+  @include breakpoint($small $to-medium) {
+    overflow: hidden;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    @include span(6);
+  }
+}
+
+.Footer-menu {
+  margin: 0 0 25px;
+  @include breakpoint($small $to-medium) {
+    @include span(4);
+  }
+  @include breakpoint($medium, $no-query: true) {
+    @include span(2 of 6);
+  }
+}
+
+.Footer-menu--last {
+  @include breakpoint($small, $no-query: true) {
+    margin-right: 0;
+  }
+}
+
+.Footer-contact {
+  @include breakpoint(0 $to-small) {
+    margin: 0 0 25px;
+  }
+
+  @include breakpoint($small $to-medium) {
+    overflow: hidden;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    @include span(6 last);
+  }
+}
+
+.Footer-sectionHeadline {
+  @include sansserif-bold;
+  font-size: 16px;
+  @include breakpoint(0 $to-small) {
+    margin: 0 0 3px;
+  }
+  @include breakpoint($small, $no-query: true) {
+    margin: 0 0 14px;
+  }
+}
+
+.Footer-sectionHeadlineLink {
+  color: $black-text;
+}
+
+.Footer-menuItems {
+  @include reset-list;
+}
+
+.Footer-menuItem {
+  @include breakpoint($small, $no-query: true) {
+    margin: 0 0 1px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.Footer-contactSection {
+  font-size: 12px;
+  @include breakpoint(0 $to-small) {
+    margin: 0 0 18px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  @include breakpoint($small, $no-query: true) {
+    padding: 4px 0 0;
+  }
+  @include breakpoint($small $to-medium) {
+    @include span(4);
+  }
+  @include breakpoint($medium, $no-query: true) {
+    @include span(2 of 6);
+  }
+}
+
+.Footer-contactSection--last {
+  @include breakpoint($small, $no-query: true) {
+    margin-right: 0;
+  }
+}
+
+.Footer-contactGroup {
+  margin: 0 0 18px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contactHeadline {
+  @include sansserif-bold;
+  color: $green;
+}
+
+.contactHeadline--secondary {
+  color: #000;
+}
+
+.Footer-link {
+  color: $green;
+  text-decoration: none;
+  &:hover {
+    color: $green;
+    text-decoration: underline;
+  }
+}
+
+.Footer-copyright {
+  padding: 19px 0;
+  border-top: 1px solid $beige-grey;
+  font-size: 12px;
+}

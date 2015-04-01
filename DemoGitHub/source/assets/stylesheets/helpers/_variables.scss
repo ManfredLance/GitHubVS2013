@@ -1,0 +1,71 @@
+// 0. Colors
+// -----------------------------------------------------------------------------
+// Primary colors
+$orange-red: #dc7204;
+$orange: #f4983b;
+$green: #00753b;
+$lightgreen: #acc75a;
+$blue: #2bb0e9;
+$beige: #fff9da;
+$red: #dc0404;
+$yellow: #ffeb59;
+
+// Primary tones
+$beige-grey: #e0d8c8;
+$beige-light: #fffbf0;
+$orange-dark: #dc7204;
+
+// Green tones
+$green-tone-1: #d3d93d;
+$green-tone-2: #abc952;
+$green-tone-3: #93b064;
+$green-tone-4: #829577;
+$green-tone-5: #4d8c5e;
+$green-tone-6: #eef4dc;
+$green-tone-7: #c4e6d5;
+
+// Blacks
+$black-text: #333;
+$grey-light: #dfdfdf;
+$grey-lightest: #f1f1f1;
+$grey-medium: #a1a1a1;
+$grey-dark: #5d5c5c;
+
+// Others
+$facebook-blue: #3b5998;
+$twitter-blue: #55acee;
+$googleplus-red: #dd4b39;
+
+
+// 1. Breakpoints
+// -----------------------------------------------------------------------------
+$small: 569px;
+$medium: 850px;
+$large: 1400px;
+$to-small: $small - 1;
+$to-medium: $medium - 1;
+$to-large: $large - 1;
+
+// 2. Grid settings
+// -----------------------------------------------------------------------------
+$susy: (
+  columns: 12,
+  gutters: 42 / 70,
+  global-box-sizing: border-box
+);
+
+
+// 3. Global component settings
+// -----------------------------------------------------------------------------
+$MainNav-narrow-width: 265px;
+$u-group-margin: 30px;
+$u-group-margin-mini: 15px;
+
+
+// 4. Global utilities settings
+// -----------------------------------------------------------------------------
+$u-pusher-pushWidth: $MainNav-narrow-width;
+$u-wrapper-zero-to-small-padding: 13px;
+$u-wrapper-small-to-medium-padding: 25px;
+$u-wrapper-medium-and-up-padding: 30px;
+$u-wrapper-max-width: 1160px;

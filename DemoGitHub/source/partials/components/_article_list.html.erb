@@ -1,0 +1,32 @@
+<div class="ArticleList<%= split ? ' ArticleList--split' : '' %>">
+  <ul class="ArticleList-list">
+    <% item_count.times do |i| %>
+      <li class="ArticleList-item<%= (i % 2 == 1 && split) ? ' ArticleList-item--last' : '' %><%= has_image ? ' ArticleList-item--has-image' : '' %>">
+        <% if has_image %>
+          <a href="#" class="ArticleList-imageWrapper">
+            <% if split %>
+              <img src="<%= lorem.image('320x200') %>" class="ArticleList-image" alt="Bildtext">
+            <% else %>
+              <img src="<%= lorem.image('660x416') %>" class="ArticleList-image" alt="Bildtext">
+            <% end %>
+          </a>
+        <% end %>
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="u-moreActionWrapper">
+    <a href="#" class="u-moreAction u-icon-arrowright-light">Fler nyheter</a>
+  </div>
+</div>

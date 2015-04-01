@@ -1,0 +1,7 @@
+<% last_item = items.pop %>
+<ul class="Breadcrumbs">
+  <% items.each do |item| %>
+    <li class="Breadcrumbs-item u-icon-arrowright"><a href="#" class="Breadcrumbs-link"><%= item %></a>
+  <% end %>
+  <li class="Breadcrumbs-item"><%= last_item %></li>
+</ul>

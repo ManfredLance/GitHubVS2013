@@ -1,0 +1,62 @@
+.Route {
+  padding: 15px;
+}
+
+.Route label {
+  display: none;
+}
+
+.Route-start,
+.Route-end {
+  padding-right: 34px;
+  background: #fff;
+}
+
+.Route-flip,
+.Route-clear {
+  @include breakpoint(0 $to-small) {
+    margin-bottom: 10px;
+  }
+}
+
+.Route-flip {
+  @include span(6);
+  @include icon(change-direction);
+}
+
+.Route-clear {
+  @include span(6 last);
+  @include icon(close);
+}
+
+.Route-submitBtn {
+  @extend %station-finder-submit-btn;
+
+  @include breakpoint($small, $no-query: true) {
+    display: none;
+  }
+}
+
+.Route-inputWrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.Route-myPositionBtn {
+  @include reset-button;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 6px;
+  right: 10px;
+  font-size: 24px;
+  color: $green;
+
+  &:focus {
+    color: #000;
+  }
+}
+
+.Route-myPositionBtn--has-position {
+  display: block;
+}

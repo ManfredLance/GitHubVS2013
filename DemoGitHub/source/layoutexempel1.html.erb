@@ -1,0 +1,66 @@
+---
+title: Layoutexempel 1
+template: Layoutexempel 1
+---
+
+<div class="u-wrapper">
+
+  <div class="u-group">
+    <div class="ContentBlock ContentBlock--orange Article">
+      <header class="ContentBlock-header ContentBlock-header--icon u-icon-star">
+        <h3 class="ContentBlock-headline">Exempeltext</h3>
+      </header>
+
+      <div class="ContentBlock-content ContentBlock-content--full">
+        <a href="#"><img src="<%= lorem.image('1100x340', text: 'Kampanjbild', background_color: 'fff9da', color: 'f4983b') %>" alt="Kampanjbild"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="LargeMain">
+    <div class="LargeMain-main">
+      <div class="u-group">
+        <div class="ContentBlock ContentBlock--orange">
+          <header class="ContentBlock-header ContentBlock-header--icon u-icon-coffee">
+            <h3 class="ContentBlock-headline">Take away hos Preem</h3>
+          </header>
+          <div class="ContentBlock-content ContentBlock-content--full">
+            <div class="ContentBlock-slideshow">
+              <%= partial 'partials/components/slideshow' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="u-clearfix">
+        <% 3.times do %>
+          <div class="LargeMain-mainPromo u-group">
+            <%= partial 'partials/components/content_block', locals: { color: 'orange', icon: 'heart' } %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="LargeMain-mainNarrow">
+        <div class="u-group">
+          <%= partial 'partials/components/content_block', locals: { color: 'green', icon: 'idea' } %>
+        </div>
+      </div>
+
+      <aside class="LargeMain-mainSidebar">
+        <div class="u-group">
+          <%= partial 'partials/components/content_block', locals: { color: 'blue', icon: 'bubbles' } %>
+        </div>
+      </aside>
+    </div>
+
+    <aside class="LargeMain-sidebar">
+      <div class="u-group">
+        <%= partial 'partials/components/sidebar' %>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<% content_for :footer_script do %>
+  <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{google_maps_api_key}&sensor=false&libraries=places", type: nil %>
+<% end %>

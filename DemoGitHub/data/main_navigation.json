@@ -1,0 +1,159 @@
+{
+  "private": [
+    {
+      "name": "Hitta station",
+      "path": "/hitta-station.html"
+    },
+    {
+      "name": "I butiken",
+      "path": "/textsida.html",
+      "sub_items" : [
+        {
+          "name": "Aktuella erbjudanden",
+          "path": "/textsida.html",
+          "sub_items" : [
+            {
+              "name": "Ett erbjudande",
+              "path": "/textsida.html",
+              "sub_items" : [
+                {
+                  "name": "Ett erbjudande",
+                  "path": "/textsida.html"
+                },
+                {
+                  "name": "Ett annat erbjudande",
+                  "path": "/textsida.html"
+                }
+              ]
+            },
+            {
+              "name": "Ett annat erbjudande",
+              "path": "/textsida.html"
+            }
+          ]
+        },
+        {
+          "name": "Mat &amp; dryck",
+          "path": "/textsida.html"
+        },
+        {
+          "name": "Läkemedel",
+          "path": "/textsida.html"
+        },
+        {
+          "name": "Service",
+          "path": "/textsida.html"
+        },
+        {
+          "name": "Sortiment",
+          "path": "/textsida.html"
+        }
+      ]
+    },
+    {
+      "name": "Hyra släp",
+      "path": "/hyra-slap-och-bil.html"
+    },
+    {
+      "name": "Kort &amp; Förmåner",
+      "path": "/textsida.html",
+      "sub_items": [
+        {
+          "name": "Företagskort",
+          "path": "/textsida.html"
+        },
+        {
+          "name": "Såifakort",
+          "path": "/textsida.html"
+        },
+        {
+          "name": "Privatkort",
+          "path": "/textsida.html"
+        },
+        {
+          "name": "Bankkort",
+          "path": "/textsida.html"
+        },
+        {
+          "name": "Bonuskort",
+          "path": "/textsida.html"
+        }
+      ]
+    },
+    {
+      "name": "För bilen",
+      "path": "/textsida.html",
+      "sub_items": [
+        {
+          "name": "Biltvätt",
+          "path": "/textsida.html"
+        },
+        {
+          "name": "Våra drivmedel",
+          "path": "/textsida.html"
+        },
+        {
+          "name": "Välj olja",
+          "path": "/textsida.html"
+        },
+        {
+          "name": "Drivmedelspriser",
+          "path": "/textsida.html"
+        }
+      ]
+    },
+    {
+      "name": "Drivmedel",
+      "path": "/textsida.html"
+    }
+  ],
+  "company": [
+    {
+      "name": "Produkter &amp; tjänster",
+      "sub_items": [],
+      "path": "/textsida.html"
+    },
+    {
+      "name": "Klimat &amp; miljö",
+      "sub_items": [],
+      "path": "/textsida.html"
+    },
+    {
+      "name": "Kort &amp; förmåner",
+      "sub_items": [],
+      "path": "/textsida.html"
+    },
+    {
+      "name": "Återförsäljare",
+      "sub_items": [],
+      "path": "/textsida.html"
+    }
+  ],
+  "about": [
+    {
+      "name": "Om Preem",
+      "sub_items": [],
+      "path": "/textsida.html"
+    },
+    {
+      "name": "Hållbarhet",
+      "sub_items": [],
+      "path": "/textsida.html"
+    },
+    {
+      "name": "Press",
+      "sub_items": [],
+      "path": "/textsida.html"
+    },
+    {
+      "name": "Karriär",
+      "sub_items": [],
+      "path": "/textsida.html"
+    },
+    {
+      "name": "Finansiell information",
+      "sub_items": [],
+      "path": "/textsida.html"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+$_colors: (
+  "orange": $orange,
+  "green": $green,
+  "blue": $blue,
+  "facebookBlue": $facebook-blue
+);
+
+.FeaturedBlock {
+  padding: 19px;
+  text-align: left;
+}
+
+.FeaturedBlock-inner {
+  max-width: 780px;
+  margin: 0;
+}
+
+.FeaturedBlock--center {
+  text-align: center;
+  .FeaturedBlock-inner {
+    margin: 0 auto;
+  }
+}
+.FeaturedBlock--right {
+  text-align: right;
+}
+
+.FeaturedBlock-image {
+  margin: 0 auto 13px;
+}
+
+.FeaturedBlock .FeaturedBlock-headline {
+  @include gotham-condensed-bold;
+  padding: 0;
+  margin: 0 0 5px;
+  font-size: 28px;
+  text-transform: uppercase;
+  color: $green;
+  line-height: 1;
+  a {
+    text-decoration: none;
+    
+    @each $_color, $_color_value in $_colors {
+      .ContentBlock--#{$_color} & {
+        color: $_color_value;
+      }
+    }
+    
+  }
+}
+
+.FeaturedBlock-text {
+  padding: 0;
+  max-width: 780px;
+  margin: 0;
+}

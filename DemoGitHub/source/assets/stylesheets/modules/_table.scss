@@ -1,0 +1,65 @@
+$_cell-padding: 11px 14px;
+$_cell-padding-small: 6px 8px;
+
+
+
+.Table {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  table {
+    width: 100%;
+    min-width: 600px;
+    table-layout: fixed;
+  }
+
+  tr {
+    background: $green-tone-6;
+    border-bottom: 1px solid #fff;
+  }
+
+  th,
+  td {
+    padding: $_cell-padding-small;
+    vertical-align: top;
+    font-size: 13px;
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    table {
+      table-layout: auto;
+    }
+
+    th,
+    td {
+      padding: $_cell-padding;
+      font-size: 15px;
+    }
+  }
+}
+
+.Table-head {
+  text-align: left;
+
+  tr {
+    background: $green-tone-6;
+  }
+
+  th {
+    color: #000;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    th {
+      font-size: 14px;
+    }
+  }
+}
+
+.Table-body {
+  tr:nth-child(odd) {
+    background: lighten($green-tone-6, 4);
+  }
+}

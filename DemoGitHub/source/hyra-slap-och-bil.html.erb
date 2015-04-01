@@ -1,0 +1,27 @@
+---
+title: Hyra släp och bil
+template: Hyra släp och bil
+---
+
+<div class="u-wrapper">
+  <div class="ThuleWebRental">
+    <div class="ThuleWebRental-extern">
+      <div class="u-group">
+        <a href="http://turbo3.thulerental.com/WebRental/index?xid=<%= thule_web_rental_id %>&amp;cssurl=<%= thule_web_rental_css %>" class="Button Button--full" target="_blank">Hyr släp &amp; bil här</a>
+      </div>
+
+      <p class="u-meta">Sidan öppnas i ett nytt fönster</p>
+    </div>
+
+    <div class="ThuleWebRental-iframeWrapper"></div>
+  </div>
+
+  <% content_for :footer_script_end do %>
+    <script src="http://turbo3.thulerental.com/Scripts/WebRental.js"></script>
+    <script type="text/javascript">
+      $(function() {
+          $('.ThuleWebRental-iframeWrapper').ShowWebRental('<%= thule_web_rental_id %>', '<%= thule_web_rental_css %>', 1170);
+      });
+    </script>
+  <% end %>
+</div>

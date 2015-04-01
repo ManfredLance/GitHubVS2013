@@ -1,0 +1,27 @@
+.FuelTypes {
+}
+
+.FuelTypes-list {
+  @include reset-list;
+  overflow: hidden;
+  margin-bottom: -7px !important;
+}
+
+.FuelTypes-type {
+  @include sansserif-bold;
+  float: left;
+  padding: 8px;
+  margin: 0 7px 3px 0;
+  font-size: 14px;
+  line-height: 1;
+  border: 1px solid $grey-light;
+  border-radius: 3px;
+  &:last-child {
+    margin-right: 0;
+    margin-bottom: 7px !important;
+  }
+}
+
+.FuelTypes-type--last {
+  margin-right: 0;
+}

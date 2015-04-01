@@ -1,0 +1,13 @@
+.OpeningHours {
+
+}
+
+.OpeningHours-more {
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+}
+
+.OpeningHours-more--is-open {
+  display: block;
+}

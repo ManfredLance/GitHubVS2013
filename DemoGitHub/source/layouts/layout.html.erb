@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js<%= current_page.data.full_page ? ' u-fullPage' : '' %>">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1<%= current_page.data.full_page ? ',minimal-ui' : '' %>">
+
+    <title><%= current_page.data.title || 'Preem' %></title>
+
+    <%= javascript_include_tag 'vendor/libs/modernizr', type: nil %>
+
+    <%= stylesheet_link_tag '//cloud.typography.com/7319472/760864/css/fonts.css', type: nil %>
+
+    <!--[if gte IE 9]><!-->
+      <%= stylesheet_link_tag 'application', type: nil %>
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+      <%= stylesheet_link_tag 'application_old_ie', type: nil %>
+    <![endif]-->
+
+    <meta name="description" content="Beskrivning här. Inte längre än 155 tecken.">
+
+    <meta property="og:title" content="Sidans titel">
+    <meta property="og:type" content="website"><%# använd 'article' för artiklar %>
+    <meta property="og:url" content=" http://www.example.com">
+    <meta property="og:image" content=" http://example.com/image.jpg">
+    <meta property="og:description" content="Beskrivning här. Inte längre än 155 tecken.">
+  </head>
+
+  <body data-controller="tracking">
+
+    <%= partial 'partials/search' unless current_page.data.standalone %>
+    <%= partial 'partials/header' %>
+
+    <div class="u-pusher js-u-pusher<%= current_page.data.full_page ? ' u-fullPagePusher' : '' %>">
+      <main class="Main<%= current_page.data.main_bleed ? ' Main--bleed' : '' %>" role="main">
+        <%= yield %>
+      </main>
+
+      <% unless current_page.data.title == 'Hitta station' || current_page.data.standalone %>
+        <%= partial 'partials/footer' %>
+      <% end %>
+    </div>
+
+    <%= partial 'partials/accept_cookies' %>
+
+
+    <%= yield_content :footer_script %>
+
+
+    <!--[if lt IE 9]>
+      <% if build? %>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <% else %>
+        <%= javascript_include_tag 'vendor/libs/jquery-1.11.0.min', type: nil %>
+      <% end %>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+      <% if build? %>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+      <% else %>
+        <%= javascript_include_tag 'vendor/libs/jquery-2.1.0.min', type: nil %>
+      <% end %>
+    <!--<![endif]-->
+
+    <% # Use cross domain polyfill for IE9 and below for local testing %>
+    <% unless build? %>
+      <!--[if lte IE 9]>
+        <%= javascript_include_tag 'vendor/libs/jquery.xdomainrequest.js', type: nil %>
+      <![endif]-->
+    <% end %>
+
+    <%= javascript_include_tag 'application', type: nil %>
+
+    <%= yield_content :footer_script_end %>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+$section-list-grey: $grey-lightest;
+$section-head-size: 21px;
+$section-spacing: 14px;
+$section-spacing-tight: ($section-spacing / 1.5);
+$vertical-align-tweak: 1px;
+
+.SectionList {
+  border-top: 4px solid $green;
+  position: relative;
+
+  + .SectionList {
+    margin-top: -2px;
+  }
+}
+
+.SectionList-sectionHead {
+  padding: ($section-spacing-tight + $vertical-align-tweak) 0 $section-spacing-tight 0;
+  font-size: $section-head-size;
+  @include sansserif-bold;
+  border-bottom: 1px solid $section-list-grey;
+}
+
+.SectionList-list {
+  @include reset-list;
+}
+
+.SectionList-item {
+  border-bottom: 1px solid $section-list-grey;
+  padding: $section-spacing 0;
+  margin: 0;
+}
+
+.SectionList-itemList {
+  @include reset-list;
+  li {
+    display: inline-block;
+    margin-right: 1em;
+    margin-bottom: 0;
+    list-style: none;
+    &:before {
+      content: "•";
+      margin-right: 0.3em;
+    }
+  }
+}
+
+.SectionList-totop {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: ($section-spacing-tight + $vertical-align-tweak) 0 $section-spacing-tight 0;
+  font-size: $section-head-size;
+  line-height: 1.5;
+  @include icon(arrowup);
+  text-align: right;
+  color: rgba($green, 0);
+  @include transition(color 0.15s ease-out);
+
+  &:hover {
+    text-decoration: none;
+    color: rgba($green, 1);
+  }
+
+  .touch & {
+    color: rgba($green, 1);
+  }
+}

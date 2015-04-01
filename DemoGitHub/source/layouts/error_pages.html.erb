@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    <title><%= current_page.data.title || 'Preem' %></title>
+
+    <%= stylesheet_link_tag '//fast.fonts.net/cssapi/ed89d67b-cc4e-4c93-bdd1-5da290ce606d.css', type: nil %>
+
+    <!--[if gte IE 9]><!-->
+      <%= stylesheet_link_tag 'application', type: nil %>
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+      <%= stylesheet_link_tag 'application_old_ie', type: nil %>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="Error">
+      <a href="/start-privat.html" class="Error-logotype">
+        <%= image_tag('general/logotype.png', alt: 'Preem', class: 'Error-logotypeImage') %>
+      </a>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>

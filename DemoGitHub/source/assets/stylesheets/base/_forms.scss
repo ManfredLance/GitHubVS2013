@@ -1,0 +1,61 @@
+.Form {
+
+}
+
+.Form-inputWrapper {
+  margin: 0 0 20px;
+}
+
+.Form-label {
+  @include sansserif-bold;
+  display: block;
+  margin-bottom: 3px;
+  input[disabled] + & {
+    @include opacity(0.6);
+  }
+}
+
+.Form-label--after {
+  display: inline-block;
+  margin: 0 30px 0 5px;
+}
+
+.Form-label--error {
+  color: $red;
+}
+
+.Form-input,
+.Form-textarea {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border: 1px solid $grey-light;
+  border-radius: 2px;
+  color: #000;
+  font-size: 16px;
+  -webkit-appearance: none; // Remove input shadow in safari on iOS
+  &:focus {
+    outline: none;
+    border-color: $green;
+  }
+  @include placeholder {
+    color: $grey-dark;
+  }
+}
+
+.Form-input {
+  height: 42px;
+}
+
+.Form-tooltip {
+  display: block;
+  clear: both;
+  color: $red;
+}
+
+.Form-select {
+}
+
+.Form-submit {
+
+}

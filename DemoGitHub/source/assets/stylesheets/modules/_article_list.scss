@@ -1,0 +1,86 @@
+.ArticleList {
+  margin-top: 1px;
+}
+
+.ArticleList-list {
+  @include reset-list;
+  margin: 0 0 22px;
+  @include breakpoint($small, $no-query: true) {
+    @include clearfix;
+  }
+}
+
+.ArticleList-item {
+  padding: 22px 0;
+  border-bottom: 1px solid $grey-light;
+  @include breakpoint(0 $to-small) {
+    &:first-child {
+      border-top: 1px solid $grey-light;
+    }
+  }
+  @include breakpoint($small, $no-query: true) {
+    &:first-child {
+      border-top: 1px solid $grey-light;
+    }
+    overflow: hidden;
+    .ArticleList--split & {
+      &:first-child {
+        & + li {
+          border-top: 1px solid $grey-light;
+        }
+      }
+      @include span(6);
+    }
+  }
+}
+
+.ArticleList-item--last {
+  @include breakpoint($small, $no-query: true) {
+    .ArticleList--split & {
+      margin-right: 0;
+    }
+  }
+}
+
+.ArticleList-breadcrumbs {
+  margin: 0 0 15px;
+}
+
+.ArticleList-imageWrapper {
+  display: block;
+  @include breakpoint($small, $no-query: true) {
+    @include span(4);
+    position: relative;
+    top: 4px;
+    .ArticleList--split & {
+      @include span(2 of 6);
+    }
+  }
+}
+
+.ArticleList-image {
+  @include breakpoint(0 $to-small) {
+    margin: 0 auto 30px;
+  }
+}
+
+.ArticleList-itemText {
+  @include breakpoint($small, $no-query: true) {
+    .ArticleList-item--has-image & {
+      @include span(last 8);
+      .ArticleList--split & {
+        @include span(last 4 of 6);
+      }
+    }
+  }
+}
+
+.ArticleList-headline {
+  @include sansserif-bold;
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.ArticleList-meta {
+  margin: 0 0 9px;
+}

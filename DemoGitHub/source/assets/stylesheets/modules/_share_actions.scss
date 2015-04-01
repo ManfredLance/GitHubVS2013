@@ -1,0 +1,44 @@
+$_networks: (
+  facebook: $facebook-blue,
+  twitter: $twitter-blue,
+  googleplus: $googleplus-red
+);
+
+.ShareActions {
+  overflow: hidden;
+}
+
+.ShareActions-list {
+  @include reset-list;
+  float: left;
+  overflow: hidden;
+  font-size: 24px;
+}
+
+.ShareActions-item {
+  float: left;
+  margin: 0 6px 0 0;
+  text-decoration: none;
+  &:last-child {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    .ShareActions--onColor & {
+      color: #fff !important;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.ShareActions-name {
+  @extend %visuallyhidden;
+}
+
+@each $_network, $_network-color in $_networks {
+  .ShareActions-item--#{$_network} {
+    a {
+      color: $_network-color;
+    }
+  }
+}

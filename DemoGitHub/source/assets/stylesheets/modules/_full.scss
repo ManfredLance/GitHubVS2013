@@ -1,0 +1,187 @@
+$_full-height-large: 400px;
+$_full-height-medium: 320px;
+$_full-height-small: 200px;
+
+
+.Full{
+  min-height: $_full-height-small;
+
+  @include breakpoint($small $to-large, $no-query: true) {
+    min-height: $_full-height-medium;
+  }
+  @include breakpoint($large) {
+    min-height: $_full-height-large;
+  }
+}
+.Full-innerInner,
+.Full-image {
+  height: $_full-height-small;
+
+  @include breakpoint($small $to-large, $no-query: true) {
+    height: $_full-height-medium;
+  }
+  @include breakpoint($large) {
+    height: $_full-height-large;
+  }
+}
+
+.Full {
+  display: block;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  &:hover {
+    text-decoration: none;
+  }
+  @include breakpoint(0 $to-small) {
+    margin-bottom: $u-group-margin-mini;
+    padding: 30px 0;
+    .Main > & ,
+    .Main > .SuperHeroContent > .SuperHeroBlock > & {
+      margin-top: -$u-group-margin-mini;
+    }
+  }
+  @include breakpoint($small, $no-query: true) {
+    margin-bottom: $u-group-margin;
+    .Main > & ,
+    .Main > .SuperHeroContent > .SuperHeroBlock > & {
+      margin-top: -$u-group-margin;
+    }
+  }
+  .Main--bleed > & ,
+  .Main--bleed > .SuperHeroContent > .SuperHeroBlock > & {
+    margin-top: 0;
+  }
+  .Slideshow &{
+    margin-bottom: 0;
+  }
+}
+
+.Full--alignCenter {
+  text-align: center;
+}
+.Full--alignRight {
+  text-align: right;
+}
+@include breakpoint(0 $to-small) {
+  .Full--mobile{
+    &-alignLeft {
+      text-align: left;
+    }
+    &-alignCenter {
+      text-align: center;
+    }
+    &-alignRight {
+      text-align: right;
+    }
+  }
+}
+.Full--bg-image {
+  background-color: #172028;
+  color: #fff;
+  text-shadow: 0 0 1px rgba(0,0,0,0.4);
+}
+.Full--light {
+  color: $green;
+  text-shadow: none;
+  em{
+    display: block;
+    font-style: normal;
+    color: $lightgreen;
+  }
+}
+
+.Full-inner {
+  @include wrapper;
+  max-width: 780px;
+  .Full--with-image &,
+  .Full--alignLeft &,
+  .Full--alignRight &{
+    max-width: 1160px;
+  }
+}
+
+.Full-innerInner {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  max-width: 720px;
+  .Full--with-image &{
+    max-width: none;
+  }
+  .Full--alignRight &{
+    float: right;
+  }
+}
+
+.Full-textWrapper {
+  display: table-cell;
+  vertical-align: middle;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  .Full--with-image &{
+    width: 500px;
+    @include breakpoint(0 $to-medium) {
+      width: 50%;
+    }
+  }
+}
+
+.Full-headline {
+  @include gotham-condensed-bold;
+  margin: 0 0 8px;
+  line-height: 1;
+  text-transform: uppercase;
+
+  line-height: 0.9;
+  @include breakpoint(0 $to-small) {
+    font-size: 36px;
+  }
+  @include breakpoint($small) {
+    font-size: 55px;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    font-size: 60px;
+    margin: 0 0 10px;
+  }
+  @include breakpoint($large) {
+    font-size: 70px;
+  }
+}
+
+.Full-text,
+.Full-text p {
+  @include sansserif-bold;
+  font-size: 16px !important;
+  line-height: 1.25;
+
+  @include breakpoint(0, $to-small) {
+    line-height: 1.25 !important;
+    font-size: 15px !important;
+  }
+  @include breakpoint($small, $no-query: true) {
+    line-height: 1.25;
+    font-size: 17px !important;
+  }
+  @include breakpoint($large) {
+    font-size: 18px !important;
+  }
+}
+.Full-image {
+  display: table-cell;
+  width: 30%;
+  max-height: 100%;
+  vertical-align: middle;
+  pointer-events: none;
+  img{
+    max-height: 100%;
+  }
+  @include breakpoint(0 $to-small){
+    display: none;
+  }
+}

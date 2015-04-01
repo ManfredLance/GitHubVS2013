@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Hållbarhet",
+    "class_name": "sustainability",
+    "path": "/textsida.html"
+  },
+  {
+    "name": "Kontakt",
+    "class_name": "contact",
+    "path": "/textsida.html"
+  },
+  {
+    "name": "Language",
+    "class_name": "language",
+    "path": "/textsida.html"
+  },
+  {
+    "name": "Logga in",
+    "class_name": "login",
+    "path": "/login.html",
+    "sub_items" : [
+      {
+        "name": "En tjänst",
+        "description": "En beskrivning av en tjänst",
+        "path": "/textsida.html"
+      },
+      {
+        "name": "En annan tjänst",
+        "description": "En beskrivning av en annan tjänst",
+        "path": "/textsida.html"
+      },
+      {
+        "name": "En tredje tjänst",
+        "description": "En beskrivning av en tredje tjänst",
+        "path": "/textsida.html"
+      }
+    ]
+  },
+  {
+    "name": "Sök",
+    "class_name": "search",
+    "path": "/sokresultat.html"
+  }
+]

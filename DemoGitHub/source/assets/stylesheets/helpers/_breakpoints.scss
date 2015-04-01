@@ -1,0 +1,26 @@
+.Breakpoints {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: -1px;
+  top: -1px;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  &:before {
+    @include breakpoint(0 $to-small) {
+      content: "zero-to-small";
+    }
+    @include breakpoint($small $to-medium) {
+      content: "small-to-medium";
+    }
+  }
+  &:after {
+    @include breakpoint($small) {
+      content: "small";
+    }
+    @include breakpoint($medium) {
+      content: "small,medium";
+    }
+  }
+}

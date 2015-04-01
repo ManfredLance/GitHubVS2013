@@ -1,0 +1,52 @@
+.StationFinderMini-searchForm {
+  position: relative;
+  margin: 0 0 7px;
+}
+
+.StationFinderMini-searchInput {
+  &::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+.StationFinderMini-stationFinderLink {
+  width: 100%;
+  margin: 0 0 7px;
+}
+
+.StationFinderMini-lastVisited {
+  font-size: 13px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $grey-dark;
+  @include breakpoint(0 $to-small) {
+    margin: 0;
+  }
+  a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.StationFinderMini-favorites--has-none {
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+}
+
+.StationFinderMini-noFavorites {
+  padding: 7px 0 0;
+  text-align: center;
+  &:before {
+    display: block;
+    text-align: center;
+    margin: 0 0 13px;
+    font-size: 42px;
+    color: $green;
+  }
+}

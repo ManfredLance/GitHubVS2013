@@ -1,0 +1,85 @@
+$_alert-border: #eb3e3e;
+$_alert-color: #c50000;
+$_alert-background: #ffd8d8;
+
+.Notice {
+  position: relative;
+  padding: 11px 45px 12px 51px;
+  background: $green-tone-6;
+  border: 1px solid $green-tone-7;
+  color: #000;
+  font-size: 17px;
+  line-height: 1.41;
+  @include breakpoint(0 $to-small) {
+    margin-bottom: $u-group-margin-mini;
+  }
+  @include breakpoint($small, $no-query: true) {
+    margin-bottom: $u-group-margin;
+  }
+  &:before {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    font-size: 27px;
+    color: $green;
+    margin-top: -13px;
+
+  }
+  a {
+    color: $black-text;
+    text-decoration: underline;
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.Notice--noIcon {
+  padding-left: 12px;
+}
+
+.Notice--noClose {
+  padding-right: 12px;
+}
+
+.Notice--alert {
+  border-color: $_alert-border;
+  background: $_alert-background;
+  color: $_alert-color;
+  &:before {
+    color: $_alert-color;
+  }
+  a {
+    color: $_alert-color;
+    &:hover {
+      color: $_alert-color;
+    }
+  }
+}
+
+.Notice-close {
+  @include opacity(0.4);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: $green;
+  &:before {
+    top: 0;
+    font-size: 26px;
+  }
+  .Notice--alert & {
+    @include opacity(1);
+    color: $_alert-color;
+    &:hover {
+      @include opacity(0.8);
+    }
+  }
+  &:hover {
+    @include opacity(1);
+  }
+}

@@ -1,0 +1,240 @@
+.Station {
+  @include breakpoint(0 $to-small) {
+    background: $grey-lightest;
+    margin-bottom: -$u-group-margin-mini;
+    padding-bottom: $u-group-margin-mini;
+  }
+}
+
+.Station--standalone {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.Station-inner {
+  @include breakpoint($small, $no-query: true) {
+    background: #fff;
+  }
+  @include breakpoint($small $to-medium) {
+    margin-top: -45px;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    margin-top: -77px;
+  }
+}
+
+.Station-top {
+  position: relative;
+  @include breakpoint($small, $no-query: true) {
+    @include clearfix;
+    padding: 30px 0 0;
+    margin: 0 0 $u-group-margin;
+  }
+}
+
+.Station-share {
+  position: absolute;
+  @include breakpoint(0 $u-wrapper-max-width - 1) {
+    right: 0px;
+    top: -45px;
+  }
+  @include breakpoint($u-wrapper-max-width, $no-query: true) {
+    right: -30px;
+    top: -35px;
+  }
+}
+
+.Station-introActionsWrapper {
+  @include breakpoint(0 $to-small) {
+    margin: 0 0 $u-group-margin-mini;
+  }
+  @include breakpoint($small, $no-query: true) {
+    @include span(6);
+  }
+}
+
+.Station-mapBlock {
+  @include breakpoint(0 $to-small) {
+    margin: 0 0 $u-group-margin-mini;
+  }
+  @include breakpoint($small, $no-query: true) {
+    @include span(last 6);
+  }
+}
+
+.Station-intro {
+  @include breakpoint(0 $to-small) {
+    margin-bottom: $u-group-margin-mini;
+    font-size: 14px;
+    text-align: center;
+  }
+  @include breakpoint($small, $no-query: true) {
+    margin-bottom: $u-group-margin;
+  }
+}
+
+.Station-coverImage {
+  width: 100%;
+  @include breakpoint(0 $to-small) {
+    margin: 0 0 12px;
+  }
+}
+
+.Station-name {
+  @include gotham-condensed-bold;
+  text-transform: uppercase;
+  line-height: 1;
+  @include breakpoint(0 $to-small) {
+    margin: 0 0 6px;
+    font-size: 33px;
+  }
+  @include breakpoint($small, $no-query: true) {
+    margin: -8px 0 3px;
+    font-size: 55px;
+  }
+}
+
+.Station-nameCity {
+  color: $green;
+}
+
+.Station-nameLocation {
+  color: $green-tone-3;
+}
+
+.Station-addressTelephone {
+  @include breakpoint(0 $to-small) {
+    margin: 0 0 5px;
+  }
+  @include breakpoint($small, $no-query: true) {
+    @include sansserif-bold;
+    margin: 0 0 30px;
+    font-size: 17px;
+  }
+}
+
+.Station-staff {
+  @include breakpoint($small, $no-query: true) {
+    position: relative;
+    padding: 0 0 0 100px;
+    min-height: 78px;
+  }
+}
+
+.Station-staffImage {
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+  @include breakpoint($small, $no-query: true) {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 78px;
+    height: 78px;
+    margin: -39px 0 0;
+    border-radius: 39px;
+  }
+}
+
+.Station-staffMessage {
+  position: relative;
+  margin: 0;
+  font-style: italic;
+  line-height: 1.323;
+  @include breakpoint(0 $to-small) {
+    font-size: 14px;
+    color: $grey-dark;
+    overflow: hidden;
+    max-height: 37px;
+    &:before {
+      @include linear-gradient(rgba(255, 255, 255, 0), $grey-lightest 70%);
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 15px;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  @include breakpoint($small, $no-query: true) {
+    padding: 0 0 0 20px;
+    border-left: 1px solid $grey-light;
+    &:before,
+    &:after {
+      @include triangle(16px, $grey-light, left);
+      content: "";
+      position: absolute;
+      top: 12px;
+    }
+    &:before {
+      left: -8px;
+    }
+    &:after {
+      left: -7px;
+      border-right-color: #fff;
+    }
+  }
+}
+
+.Station-staffMessage--is-open {
+  @include breakpoint(0 $to-small) {
+    max-height: none;
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.Station-distanceContainer {
+  display: none;
+}
+
+.Station-distanceContainer--has-distance {
+  display: inline-block;
+  + .Station-stationFinderLink {
+    padding: 0 0 0 14px;
+    &:before {
+      content: " – ";
+      position: absolute;
+      left: 0;
+      color: $grey-medium;
+    }
+  }
+}
+
+.Station-stationFinderLink {
+  position: relative;
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+}
+
+.Station-map {
+  position: relative;
+  @include breakpoint($small, $no-query: true) {
+    height: 229px;
+  }
+  img {
+    max-width: none;
+  }
+}
+
+.Station-mapLoading {
+  padding: 10px;
+}
+
+.Station-mapMarker {
+  @include hide-text;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 39px;
+  margin: -19px 0 0 -14px;
+  background-image: url(../images/map_markers/station_default.png);
+  background-size: 28px 39px;
+}
+
+.Station-mapMarker--saifa {
+  background-image: url(../images/map_markers/station_saifa.png);
+}

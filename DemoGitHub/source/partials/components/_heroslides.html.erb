@@ -1,0 +1,15 @@
+<%
+  transition ||= "swipe"
+  duration ||= 5000
+  speed ||= 500
+%>
+<div class="Slideshow Slideshow--hero Full" data-controller='[{"slideshow": {"loop":true,"duration":<%= duration %>,"buttons":true,"pagination":true, "transition": "<%= transition %>", "speed": <%= speed %>}}]'>
+  <div class="Slideshow-slider Slideshow-slider--is-loading js-Slideshow-slider">
+    <ul class="Slideshow-list">
+      <li class="Slideshow-item"><%= partial 'partials/components/full', locals: { aligncenter: true, background_image: "/assets/images/hr.jpg", title: "Preem utnämnda till ett av Sveriges Karriär&shy;företag 2015", content: "Preem är för andra året i rad utnämnda av företaget Jobtip till ett av Sveriges mest spännande företag att göra karriär på. Vill du jobba för framtiden redan idag? Läs mer på våra karriärsidor!" } %></li>
+      <li class="Slideshow-item"><%= partial 'partials/components/full', locals: { alignright: true, background_image: "/assets/images/framtiden.jpg", title: "Framtiden är vår viktigaste marknad", content: "Som Sveriges största drivmedelsföretag är vår vision att leda omvandlingen mot ett hållbart samhälle. Det innebär att vi ser framtiden som vår viktigaste marknad." } %></li>
+      <li class="Slideshow-item"><%= partial 'partials/components/full', locals: { aligncenter: true, background_image: "/assets/images/kaffe.jpg", title: "Vårt kaffe är alltid Krav- och Fairtrademärkt", content: "Vi och Bergstrands Kafferosteri har tillsammans tagit fram unika blandningar som serveras på våra stationer med de bästa KRAV och Fairtrade-märkta råvarorna i världen." } %></li>
+      <li class="Slideshow-item"><%= partial 'partials/components/full', locals: { aligncenter: false, mobilealigncenter: true, background_image: "/assets/images/bakgrund-för-bild-till-höger.jpg", lighttheme: true, title: "Hitta rätt företagskort <em>för din verksamhet</em>", content: "Du tjänar på att vara kortkund hos Preem. Du kan skräddarsy Preems företagskort så att det passar just ditt bolags behov.", image: "/assets/images/bild-till-höger.png" } %></li>
+    </ul>
+  </div>
+</div>

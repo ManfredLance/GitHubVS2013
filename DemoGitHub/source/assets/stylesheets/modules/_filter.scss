@@ -1,0 +1,154 @@
+.Filter {
+  padding-bottom: 66px;
+}
+
+.Filter-inner {
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  height: 100%;
+
+  @include breakpoint(0 $to-small) {
+    padding: 15px;
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    max-height: inherit;
+    padding: 15px 15px 0 15px;
+  }
+}
+
+.Filter input {
+  @include opacity(0);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Filter-stationTypes,
+.Filter-fuelTypes,
+.Filter-services {
+  @include breakpoint(0 $to-small) {
+    border-top: 1px solid $grey-light;
+  }
+
+  label {
+    @include user-select(none);
+    position: relative;
+    cursor: pointer;
+
+    @include breakpoint(0 $to-small) {
+      display: block;
+      border: 1px solid $grey-light;
+      border-top: 0;
+      height: 38px;
+      line-height: 38px;
+      padding-left: 12px;
+      background-color: #fff;
+    }
+
+    @include breakpoint($small, $no-query: true) {
+      display: inline-block;
+      line-height: 30px;
+      padding-left: 38px;
+      padding-right: 20px;
+      vertical-align: top;
+    }
+
+    &:hover {
+      color: #000;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      color: $green;
+      font-size: 1.25em;
+
+      @include breakpoint(0 $to-small) {
+        right: 12px;
+        top: 6px;
+      }
+
+      @include breakpoint($small, $no-query: true) {
+        left: 0;
+        border: 1px solid $grey-light;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  input:checked + label {
+    @include icon(check);
+    &:before {
+      line-height: 1.33;
+    }
+  }
+}
+
+.Filter-fuelTypes,
+.Filter-services {
+  margin-bottom: 10px;
+
+  @include breakpoint($small, $no-query: true) {
+    label {
+      font-size: 13px;
+      width: 49%;
+      line-height: 20px;
+      padding-left: 28px;
+      padding-right: 0;
+      margin-bottom: 10px;
+
+      &:before {
+        font-size: 1em;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.Filter-stationTypes {
+  margin-bottom: 15px;
+  font-size: 0; // remove whitespace between elements
+
+  @include breakpoint($small, $no-query: true) {
+    padding-bottom: 23px;
+    border-bottom: 1px solid $grey-light;
+  }
+}
+
+.Filter-stationTypes label {
+  font-size: 16px;
+}
+
+.Filter-submit {
+  @include breakpoint(0 $to-small) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: $grey-lightest;
+    height: 66px;
+    padding-top: 14px;
+    padding-right: $u-wrapper-zero-to-small-padding;
+    padding-left: $u-wrapper-zero-to-small-padding;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+.Filter-submit-btn {
+  @extend %station-finder-submit-btn;
+}

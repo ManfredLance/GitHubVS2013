@@ -1,0 +1,36 @@
+.LargeMain {
+  @include clearfix;
+}
+
+.LargeMain-sidebar {
+  @include breakpoint($small, $no-query: true) {
+    @include span(3);
+  }
+}
+
+.LargeMain-main {
+  @include breakpoint($small, $no-query: true) {
+    @include span(last 9);
+  }
+}
+
+.LargeMain-mainNarrow {
+  @include breakpoint($small, $no-query: true) {
+    @include span(6 of 9);
+  }
+}
+
+.LargeMain-mainSidebar {
+  @include breakpoint($small, $no-query: true) {
+    @include span(last 3 of 9);
+  }
+}
+
+.LargeMain-mainPromo {
+  @include breakpoint($small, $no-query: true) {
+    @include span(3 of 9);
+    &:last-child {
+      @include last;
+    }
+  }
+}

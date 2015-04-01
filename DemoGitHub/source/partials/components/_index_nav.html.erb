@@ -1,0 +1,10 @@
+<% items = letters rescue ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Å", "Ä", "Ö"] %>
+<div class="IndexNav">
+  <ul class="IndexNav-list" id="indexNav1">
+    <% items.each do |letter| %>
+      <li class="IndexNav-item">
+        <a href="#section-<%= letter %>" class="IndexNav-link"><%= letter %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>

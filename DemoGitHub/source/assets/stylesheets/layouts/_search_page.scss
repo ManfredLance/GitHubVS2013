@@ -1,0 +1,8 @@
+.SearchPage {
+  @include breakpoint($medium, $no-query: true) {
+    @include span(8);
+    @include pre(2);
+    @include post(2);
+    float: none;
+  }
+}

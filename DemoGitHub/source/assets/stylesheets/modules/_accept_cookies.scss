@@ -1,0 +1,36 @@
+.AcceptCookies {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  background: $green;
+  font-size: 14px;
+  color: #fff;
+  @include breakpoint(0 $to-small) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.AcceptCookies--is-open {
+  display: block;
+}
+
+.AcceptCookies-text {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  a {
+    color: #fff;
+    text-decoration: underline;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+.AcceptCookies-acceptBtn {
+
+}

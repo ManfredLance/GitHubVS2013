@@ -1,0 +1,33 @@
+.ProductList {
+  @include reset-list;
+  text-align: center;
+  overflow: hidden;
+  .Slideshow &{
+    margin: 0 10px;
+  }
+}
+
+.ProductList-item {
+  width: 33.333%;
+  float: left;
+}
+
+.ProductList-itemInner {
+  padding: 0 10px;
+}
+
+.ProductList-image {
+  margin: 0 auto 7px;
+}
+
+.ProductList-title {
+  @include sansserif-bold;
+  font-size: 15px;
+  line-height: 1;
+  margin: 0 0 1px;
+}
+
+.ProductList-price {
+  font-size: 14px;
+  color: $grey-medium;
+}

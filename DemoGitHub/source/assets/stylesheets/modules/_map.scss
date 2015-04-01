@@ -1,0 +1,15 @@
+.Map {
+  display: none;
+  height: 100%;
+}
+
+.Map--is-active {
+  display: block;
+}
+
+.Map-canvas {
+  height: 100%;
+  img {
+    max-width: none;
+  }
+}

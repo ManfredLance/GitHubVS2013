@@ -1,0 +1,50 @@
+---
+title: Textsida
+template: Textsida
+---
+<div class="u-wrapper">
+  <%= partial 'partials/components/notice', locals: { type: 'alert' } %>
+
+  <div class="TextPage">
+    <div class="PageTop">
+      <div class="PageTop-breadcrumbs">
+        <%= partial 'partials/components/breadcrumbs', locals: { items: ['Hyra släp &amp; bil', 'Villkor'] } %>
+      </div>
+      <div class="PageTop-share">
+        <%= partial 'partials/components/share_actions', locals: { on_color: false } %>
+      </div>
+    </div>
+    <div class="TextPage-primary">
+      <div class="TextPage-main Article">
+        <%= partial 'partials/article_content' %>
+      </div>
+
+      <div class="TextPage-sidebarMenu u-group">
+        <%= partial 'partials/components/sidebar' %>
+      </div>
+    </div>
+
+    <div class="TextPage-sidebarContent">
+      <div class="u-group">
+        <div class="ContentBlock ContentBlock--green">
+          <header class="ContentBlock-header ContentBlock-header--icon u-icon-location">
+              <h3 class="ContentBlock-headline">Hitta station</h3>
+            </header>
+          <div class="ContentBlock-content">
+            <%= partial 'partials/components/station_finder_mini', locals: { show_favorites: false, has_last_visited: true } %>
+          </div>
+        </div>
+      </div>
+
+      <% 4.times do %>
+        <div class="u-group">
+          <%= partial 'partials/components/content_block', locals: { color: 'orange', icon: nil } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% content_for :footer_script do %>
+  <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{google_maps_api_key}&sensor=false&libraries=places", type: nil %>
+<% end %>

@@ -1,0 +1,63 @@
+---
+title: Formulär
+template: Formulär
+---
+<div class="u-wrapper">
+  <form class="Form">
+    <div class="Notice Notice--alert Notice--noIcon Notice--noClose" role="alert">
+      <p>Formuläret innehåller följande fel:</p>
+      <ul>
+        <li>Du måste ange ett fält</li>
+        <li>Du måste ange en korrekt e-postadress</li>
+      </ul>
+    </div>
+
+    <div class="Form-inputWrapper">
+      <label class="Form-label Form-label--error" for="input1" placeholder="En placeholder">Ett fält</label>
+      <input class="Form-input" id="input1" type="text" aria-describedby="error-tip-1">
+      <span class="Form-tooltip" id="error-tip-1" role="tooltip">Du har inte angett det obligatoriska fältet "Ange för- och efternamn".</span>
+    </div>
+
+    <div class="Form-inputWrapper">
+      <label class="Form-label" for="input2">Ett annat fält</label>
+      <input class="Form-input" id="input2" type="email">
+    </div>
+
+    <div class="Form-inputWrapper">
+      <div><input type="checkbox" name="checkbox-example1" id="checkbox1"> <label class="Form-label Form-label--after Form-label--error" for="checkbox1">Ett val</label></div>
+      <div><input type="checkbox" name="checkbox-example1" id="checkbox2"> <label class="Form-label Form-label--after" for="checkbox2">Ett annat val</label></div>
+      <div><input type="checkbox" name="checkbox-example1" id="checkbox3" disabled> <label class="Form-label Form-label--after" for="checkbox3">Ett tredje val som inte går att välja</label></div>
+    </div>
+
+    <div class="Form-inputWrapper">
+      <div><input type="radio" name="radio-example1" id="radio1"> <label class="Form-label Form-label--after" for="radio1">Ett val</label></div>
+      <div><input type="radio" name="radio-example1" id="radio2"> <label class="Form-label Form-label--after" for="radio2">Ett annat val</label></div>
+      <div><input type="radio" name="radio-example1" id="radio3" disabled> <label class="Form-label Form-label--after" for="radio3">Ett tredje val</label></div>
+    </div>
+
+    <div class="Form-inputWrapper">
+      <label class="Form-label" for="select1">En select</label>
+      <select class="Form-select" id="select1">
+        <option value="value1">Value 1</option>
+        <option value="value2" selected>Value 2</option>
+        <option value="value3">Value 3</option>
+      </select>
+    </div>
+
+    <div class="Form-inputWrapper">
+      <label class="Form-label" for="textarea1">En textarea</label>
+      <textarea class="Form-textarea" id="textarea1" rows="5" cols="10"></textarea>
+    </div>
+
+    <div class="Form-inputWrapper">
+      <label class="Form-label" for="file1">Välj en fil</label>
+      <input id="file1" type="file">
+    </div>
+
+    <input type="submit" class="ButtonLight ButtonLight--submit" value="Skicka">
+  </form>
+</div>
+
+<% content_for :footer_script do %>
+  <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{google_maps_api_key}&sensor=false&libraries=places", type: nil %>
+<% end %>

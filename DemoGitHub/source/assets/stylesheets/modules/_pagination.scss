@@ -1,0 +1,26 @@
+$_item-padding: 5px;
+
+.Pagination {
+  text-align: center;
+}
+
+.Pagination-list {
+  @include reset-list;
+  display: inline-block;
+}
+
+.Pagination-item {
+  display: inline-block;
+}
+
+.Pagination-link {
+  .Pagination-item--is-current & {
+    text-decoration: underline;
+  }
+}
+
+.Pagination-link,
+.Pagination-prev,
+.Pagination-next {
+  padding: $_item-padding;
+}

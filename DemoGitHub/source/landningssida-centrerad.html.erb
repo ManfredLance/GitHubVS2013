@@ -1,0 +1,55 @@
+---
+title: Landningssida centrerad
+template: Landningssida centrerad
+---
+<div class="u-wrapper">
+
+  <div class="FeaturedContent FeaturedBlock--center">
+    <div class="FeaturedBlock-inner">
+      <div class="Article FeaturedBlock-text">
+        <h1>Produkter för en hållbar framtid</h1>
+        <div class="lead">
+          <p>Vår verksamhet drivs på ett sätt som ska bevara miljön för framtida generationer. Vi strävar ständigt efter förbättringar för att minimera miljöpåverkan från våra produkter och vår produktion, ofta i samarbete med våra kunder.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="PromotionBlocks u-alignRows" data-controller='[{"alignRows":{"rows": [{"className": "PromotionBlocks-block--small", "elementsPerRow": 3}, {"className": "PromotionBlocks-block--medium", "elementsPerRow": 2}], "aboveBreakpoint": "small"}}]'>
+    <div class="PromotionBlocks-block PromotionBlocks-block--small">
+      <div class="ContentBlock ContentBlock--green">
+        <%= partial 'partials/components/featured_block', locals: { headline: 'Anslut kort &amp; spara pengar' } %>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks-block PromotionBlocks-block--small">
+      <div class="ContentBlock ContentBlock--orange">
+        <%= partial 'partials/components/featured_block', locals: { headline: 'Hyr släp – boka online' } %>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks-block PromotionBlocks-block--small">
+      <div class="ContentBlock ContentBlock--green">
+        <%= partial 'partials/components/featured_block', locals: { headline: 'Dela en grön idé – vinn 5000 kr!' } %>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+      <div class="ContentBlock ContentBlock--orange">
+        <%= partial 'partials/components/featured_block', locals: { headline: 'Dela en grön idé – vinn 5000 kr!' } %>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+      <div class="ContentBlock ContentBlock--green">
+        <%= partial 'partials/components/featured_block', locals: { headline: 'Dela en grön idé – vinn 5000 kr!' } %>
+      </div>
+    </div>
+
+</div>
+
+
+<% content_for :footer_script do %>
+  <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{google_maps_api_key}&sensor=false&libraries=places", type: nil %>
+<% end %>

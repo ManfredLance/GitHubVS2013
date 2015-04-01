@@ -1,0 +1,248 @@
+.Slideshow {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  &.Full{
+    padding: 0;
+  }
+}
+
+.Slideshow-slider {
+  margin: 0 0 8px;
+  overflow: hidden;
+  -ms-touch-action: none;
+}
+
+.Slideshow-list {
+  @include reset-list;
+  position: relative;
+  overflow: hidden;
+}
+
+.Slideshow-item {
+  float: left;
+  .Slideshow-slider--is-loading & {
+    display: none;
+    &:first-child {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+.Slideshow-btn {
+  @include reset-button;
+  @include transition (
+  left 0.2s ease-in-out,
+  right 0.2s ease-in-out,
+  opacity 0.2s ease-in-out,
+  background-color 0.2s ease-in-out
+  );
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  font-size: 40px;
+  width: 1em;
+  height: 1em;
+  margin: -0.5em 0 0;
+  opacity: 0;
+  color: $green;
+  &:before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -0.5em;
+    font-size: 50px;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    line-height: 1em;
+    .Slideshow--hero &{
+      font-size: 30px;
+    }
+  }
+  &:hover {
+    color: #000;
+  }
+  .Slideshow--hero &{
+    font-size: 100px;
+    width: 0.5em;
+    height: 1em;
+    background-color: #999;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    &:hover{
+      background-color: #666;
+      background-color: rgba(0,0,0,0.7);
+    }
+  }
+  span {
+    display: none;
+  }
+  .touch & {
+    display: none;
+  }
+  .Slideshow:hover & {
+    opacity: 1;
+  }
+}
+
+.Slideshow-btn--prev {
+  left: -50px;
+  .Slideshow--onFirst & {
+    left: -50px !important;
+  }
+  .Slideshow:hover & {
+    left: 15px;
+  }
+  .Slideshow--hero &{
+    border-top-right-radius: 75px;
+    border-bottom-right-radius: 75px;
+    &:before {
+      margin-left: -25px;
+    }
+  }
+  .Slideshow--hero:hover & {
+    left: 0px;
+  }
+}
+
+.Slideshow-btn--next {
+  right: -50px;
+  .Slideshow--onLast & {
+    right: -50px !important;
+  }
+  .Slideshow:hover & {
+    right: 15px;
+  }
+  .Slideshow--hero &{
+    border-top-left-radius: 75px;
+    border-bottom-left-radius: 75px;
+    &:before {
+      margin-left: -5px;
+    }
+  }
+  .Slideshow--hero:hover & {
+    right: 0px;
+  }
+}
+
+.Slideshow-pagination {
+  @include reset-list;
+  text-align: center;
+  height: 26px;
+  line-height: 1;
+  .Slideshow--hero &{
+    height: 30px;
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+}
+.Slideshow-paginationList {
+  display: inline-block;
+  margin: 0;
+  padding: 0 15px;
+  .Slideshow--hero &{
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.3);
+    line-height: 30px;
+    border-radius: 15px;
+  }
+}
+
+.Slideshow-paginationItem {
+  display: inline-block;
+  margin: 0 1px;
+  line-height: 1;
+  .Slideshow--hero &{
+    margin: 0 2px;
+  }
+}
+
+.Slideshow-paginationItemButton {
+  @include reset-button;
+  width: 1em;
+  height: 1em;
+  font-size: 8px;
+  border-radius: 0.5em;
+  overflow: hidden;
+  background: $grey-medium;
+  text-indent: 100px;
+  line-height: 1;
+  vertical-align: middle;
+  .Slideshow--hero &{
+    background: none;
+    border: 1px solid $grey-lightest;
+    font-size: 10px;
+    margin-top: -2px;
+  }
+  .Slideshow-paginationItem--is-current & {
+    font-size: 10px;
+    border: 1px solid $grey-medium;
+    background: $grey-lightest;
+    .Slideshow--hero &{
+      border-color: #fff;
+    }
+    &:hover {
+      background: #fff;
+    }
+  }
+  &:hover {
+    background: $grey-dark;
+  }
+}
+.Slideshow-slider--fading {
+  .Slideshow-item{
+    opacity: 0.5;
+    -webkit-transition : opacity 0.5s linear;
+    -moz-transition : opacity 0.5s linear;
+    -ms-transition : opacity 0.5s linear;
+    -o-transition : opacity 0.5s linear;
+    transition: opacity 0.5s linear;
+    &--is-next,
+    &--is-current{
+      opacity: 1;
+    }
+    &--is-prev{
+      opacity: 0.5;
+    }
+  }
+}
+.Slideshow-slider--fading-only {
+  .Slideshow-list{
+    -webkit-transform : none !important;
+    -moz-transform : none !important;
+    -ms-transform : none !important;
+    -o-transform : none !important;
+    transform: none !important;
+    margin-left: 0 !important;
+    left: 0 !important;
+    z-index: 0;
+  }
+  .Slideshow-item{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    -webkit-transition : opacity 1s linear;
+    -moz-transition : opacity 1s linear;
+    -ms-transition : opacity 1s linear;
+    -o-transition : opacity 1s linear;
+    transition: opacity 1s linear;
+    &--is-next{
+      opacity: 1;
+      z-index: 2;
+    }
+    &--is-current{
+      z-index: 1;
+      position: relative;
+      opacity: 2;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+<div class="StationFinder<%= current_page.data.standalone ? ' StationFinder--standalone' : '' %>" data-controller='[{"stationFinder": {"apiUrl": "http://62.20.57.36/api/Stations/AllStations", "servicesApiUrl": "http://62.20.57.36/api/StationServices/Services/", "fuelTypesApiUrl": "http://62.20.57.36/api/FuelTypes/FuelTypes"}}]'>
+  <div class="StationFinder-inner">
+    <div class="StationFinder-innerGrid">
+      <div class="StationFinder-controlsContainer">
+        <div class="StationFinder-controls js-StationFinder-controls">
+          <div class="StationFinder-search StationFinder-search--is-active js-StationFinder-search">
+            <div>
+              <label for="station-search" class="StationFinder-searchLabel">Sök adress, ort, postnummer</label>
+              <div class="u-searchInputWrapper u-icon-search" data-controller="clearInput">
+                <form class="js-StationFinder-searchForm">
+                  <input type="text" id="station-search" class="StationFinder-searchInput js-StationFinder-searchInput u-searchInput" name="station-search" placeholder="Sök adress, ort, postnummer">
+                </form>
+                <button class="ButtonClear u-icon-close js-clearInputBtn" title="Rensa fältet">
+                  <span>Rensa</span>
+                </button>
+              </div>
+            </div>
+
+            <p class="StationFinder-lastVisitedStations">
+              Senast besökta stationssidor: <a href="/station.html" class="js-trackLink" data-tracking-category="Click latest visit">Stockholm Norrmalm</a>, <a href="/station.html" class="js-trackLink" data-tracking-category="Click latest visit">Stockholm Bredäng</a>
+            </p>
+          </div>
+
+          <button class="StationFinder-showSearchBtn active" data-controller='[{"toggler": {"selector": ".StationFinder-search", "className": "StationFinder-search--is-active", "group": "sf-main-controls"}}]'><span>Sök station</span></button>
+
+          <button class="StationFinder-showFilterBtn" data-controller='[{"toggler": {"selector": ".js-StationFinder-filter", "className": "Overlay--is-active", "group": "sf-main-controls"}}]'><span>Sökalternativ</span></button>
+
+          <button class="StationFinder-showRouteBtn" data-controller='[{"toggler": {"selector": ".js-StationFinder-route", "className": "Overlay--is-active", "group": "sf-main-controls"}}]'><span>Rutt</span></button>
+
+          <button class="StationFinder-showListBtn" data-controller='[{"toggler": {"selector": ".List", "className": "List--is-active", "toggleText": "<span>Göm lista</span>"}}]'><span>Visa lista</span></button>
+        </div>
+      </div>
+
+      <div class="Route Overlay js-StationFinder-route">
+        <button class="CloseBtn CloseBtn--right Overlay-closeBtn js-StationFinder-route-closeBtn">Stäng</button>
+
+        <h3 class="Overlay-headline">Hitta Preem längs vägen</h3>
+
+        <div class="Route-inputWrapper" data-controller="clearInput">
+          <label for="route-search-start">Startpunkt</label>
+
+          <input type="text" id="route-search-start" class="Route-start js-StationFinder-routeStart u-searchInput" name="route-search-start" placeholder="Från">
+
+          <button class="Route-myPositionBtn js-Route-myPositionBtn u-icon-position" title="Min position"></button>
+
+          <button class="ButtonClear u-icon-close js-clearInputBtn" title="Rensa fältet">
+            <span>Rensa</span>
+          </button>
+        </div>
+
+        <div class="Route-inputWrapper" data-controller="clearInput">
+          <label for="route-search-end">Slutpunkt</label>
+
+          <input type="text" id="route-search-end" class="Route-end js-StationFinder-routeEnd u-searchInput" name="route-search-end" placeholder="Till">
+
+          <button class="Route-myPositionBtn js-Route-myPositionBtn u-icon-position" title="Min position"></button>
+
+          <button class="ButtonClear u-icon-close js-clearInputBtn" title="Rensa fältet">
+            <span>Rensa</span>
+          </button>
+        </div>
+
+        <button class="ButtonLight Route-flip js-StationFinder-routeFlip">Vänd rutt</button>
+
+        <button class="ButtonLight Route-clear js-StationFinder-routeClear">Rensa rutt</button>
+
+        <button class="Route-submitBtn js-StationFinder-route-submitBtn">Sök</button>
+      </div>
+
+      <div class="Filter Overlay Overlay--filter js-StationFinder-filter">
+        <div class="Filter-inner">
+          <button class="CloseBtn CloseBtn--right Overlay-closeBtn js-StationFinder-filter-closeBtn">Stäng</button>
+
+          <div>
+            <h3 class="Overlay-headline">Vilka stationer vill du se?</h3>
+
+            <div class="Filter-stationTypes js-StationFinder-filter-types">
+              <input type="checkbox" id="station-type-manned" name="StationType" value="StationType+eq+%27Bemannad%27">
+              <label for="station-type-manned">Bemannade</label>
+
+              <input type="checkbox" id="station-type-unmanned" name="StationType" value="(StationType+eq+%27Automat%27+and+StationSort+ne+%27S%C3%A5ifa%27)">
+              <label for="station-type-unmanned">Automat</label>
+
+              <input type="checkbox" id="station-sort-saifa" name="StationType" value="StationSort+eq+%27S%C3%A5ifa%27">
+              <label for="station-sort-saifa">Såifa</label>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="Overlay-headline">Som har:</h3>
+
+            <div class="Filter-services js-StationFinder-filter-services"></div>
+
+            <div class="Filter-fuelTypes js-StationFinder-filter-fuelTypes"></div>
+          </div>
+        </div>
+
+        <div class="Filter-submit">
+          <button type="submit" class="Filter-submit-btn js-StationFinder-filter-submit-btn">Filtrera</button>
+        </div>
+      </div>
+
+      <div class="js-StationItem--map StationItem StationItem--map"></div>
+    </div>
+
+    <div class="StationFinder-favoritesInfo js-StationFinder-favoritesInfo">
+      <div class="StationFinder-favoritesInfoInner">
+        <span class="StationFinder-favoritesInfoMsg js-StationFinder-favoritesInfoMsg"></span>
+      </div>
+    </div>
+
+    <div class="StationFinder-filterInfo js-StationFinder-filterInfo">
+      <div class="StationFinder-filterInfoInner">
+        <span class="StationFinder-filterInfoMsg js-StationFinder-filterInfoMsg"></span>
+      </div>
+    </div>
+
+    <button class="StationFinder-showListSecondaryBtn" data-controller='[{"toggler": {"selector": ".List", "className": "List--is-active", "toggleText": "<span>Göm lista</span>"}}]'><span>Visa lista</span></button>
+
+    <button class="StationFinder-showFavoritesBtn js-StationFinder-showFavoritesBtn" title="Visa favoriter"><span>Visa favoriter</span></button>
+
+    <button class="StationFinder-findMyPositionBtn js-StationFinder-findMyPositionBtn" title="Hitta min position"><span>Hitta min position</span></button>
+
+    <div class="Map Map--is-active">
+      <div class="Map-canvas js-Map-canvas"></div>
+    </div>
+
+    <div class="List js-StationFinder-list"></div>
+  </div>
+
+  <div class="StationFinder-loader js-StationFinder-loader">
+    <div class="StationFinder-loaderInner">
+      <span class="StationFinder-loaderMsg js-StationFinder-loaderMsg"></span>
+    </div>
+  </div>
+</div>
+
+<% content_for :footer_script do %>
+  <%= mustache_template('station_mini') %>
+  <%= mustache_template('list') %>
+  <%= mustache_template('station_item_expanded') %>
+  <%= mustache_template('filters') %>
+
+  <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{google_maps_api_key}&sensor=false&libraries=places", type: nil %>
+<% end %>

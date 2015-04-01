@@ -1,0 +1,7 @@
+<div class="FuelTypes">
+  <ul class="FuelTypes-list">
+    <% data.fuel_types.each do |fuel_type| %>
+      <li class="FuelTypes-type" style="color: <%= fuel_type.color %>; background: <%= fuel_type.backgroundColor %>; border-color: <%= fuel_type.borderColor %>;"><%= fuel_type.name %></li>
+    <% end %>
+  </ul>
+</div>

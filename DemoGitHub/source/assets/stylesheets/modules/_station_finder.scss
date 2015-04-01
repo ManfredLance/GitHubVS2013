@@ -1,0 +1,561 @@
+$small: 600px;
+$to-small: $small - 1;
+
+
+
+.StationFinder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+
+  @include breakpoint(0 $to-small) {
+    padding-top: 56px;
+  }
+
+  @include breakpoint($small $to-medium) {
+    padding-top: 140px;
+  }
+
+  @include breakpoint($medium, $no-query: true) {
+    padding-top: 160px;
+  }
+}
+
+.StationFinder--standalone {
+  padding-top: 0;
+}
+
+.StationFinder-inner {
+  height: 100%;
+  position: relative;
+}
+
+.StationFinder-innerGrid {
+  @include breakpoint($small, $no-query: true) {
+    position: relative;
+    padding-left: $u-wrapper-small-to-medium-padding;
+    padding-right: $u-wrapper-small-to-medium-padding;
+    max-width: $u-wrapper-max-width;
+    margin: 0 auto;
+  }
+  @include breakpoint($medium) {
+    padding-left: $u-wrapper-medium-and-up-padding;
+    padding-right: $u-wrapper-medium-and-up-padding;
+  }
+}
+
+.StationFinder-controlsContainer {
+  @include wrapper;
+}
+
+.StationFinder-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  @include breakpoint(0 $to-small) {
+    top: $u-wrapper-zero-to-small-padding;
+    left: $u-wrapper-zero-to-small-padding;
+    right: $u-wrapper-zero-to-small-padding;
+
+    .StationFinder--has-listOpen & {
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: $u-wrapper-zero-to-small-padding $u-wrapper-zero-to-small-padding 0;
+      background: #fff;
+    }
+  }
+
+  @include breakpoint($small $to-medium) {
+    top: $u-wrapper-small-to-medium-padding;
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    width: 390px;
+    border-top: 4px solid $green;
+    background-color: #fff;
+  }
+
+  @include breakpoint($medium, $no-query: true) {
+    top: $u-wrapper-medium-and-up-padding;
+  }
+}
+
+.StationFinder-search {
+  z-index: 1;
+
+  @include breakpoint(0 $to-small) {
+    @include span(6);
+    position: relative;
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    display: none;
+    position: absolute;
+    top: 42px;
+    width: span(6 of 6);
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid $grey-light;
+    border-top: 0;
+  }
+}
+
+.StationFinder-search--has-focus {
+  @include breakpoint(0 $to-small) {
+    position: absolute;
+    width: 100%;
+    margin-right: 0;
+    .StationFinder--has-listOpen & {
+      width: auto;
+      left: $u-wrapper-zero-to-small-padding;
+      right: $u-wrapper-zero-to-small-padding;
+    }
+  }
+}
+
+.StationFinder-search--is-active {
+  display: block;
+}
+
+.StationFinder-searchInput {
+  &::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+.StationFinder-searchLabel {
+  @extend %visuallyhidden;
+}
+
+.StationFinder-showSearchBtn,
+.StationFinder-showFilterBtn,
+.StationFinder-showRouteBtn,
+.StationFinder-showListBtn,
+.StationFinder-showListSecondaryBtn,
+.StationFinder-findMyPositionBtn,
+.StationFinder-showFavoritesBtn {
+  height: 42px;
+  background-color: #fff;
+  border: 1px solid $grey-light;
+  color: $green;
+
+  &:before {
+    font-size: 1.5em;
+
+    @include breakpoint(0 $to-small) {
+      position: relative;
+      top: 3px;
+    }
+
+    @include breakpoint($small, $no-query: true) {
+      margin-right: 0.28em;
+      vertical-align: middle;
+    }
+  }
+}
+
+.StationFinder-findMyPositionBtn,
+.StationFinder-showFavoritesBtn {
+  width: 42px;
+  padding: 0;
+}
+
+.StationFinder-showSearchBtn,
+.StationFinder-showFilterBtn,
+.StationFinder-showRouteBtn,
+.StationFinder-showListBtn {
+  padding: 0;
+  font-size: 15px;
+
+  @include breakpoint(0 $to-small) {
+    @include span(2);
+    span {
+      display: none;
+    }
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    @include span(33.33% of 12);
+    margin-right: 0;
+    outline: none;
+    border-top: 0;
+
+    &.active {
+      border-bottom: 0;
+      padding-bottom: 1px;
+    }
+  }
+}
+
+.StationFinder-showSearchBtn {
+  @include icon(location);
+
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+}
+
+.StationFinder-showSearchBtn--is-active {
+  @include icon(location-filled);
+}
+
+.StationFinder-showFilterBtn {
+  @include icon(more);
+
+  @include breakpoint($small, $no-query: true) {
+    border-left: 0;
+    border-right: 0;
+
+    &:before {
+      position: relative;
+      top: -1px;
+    }
+  }
+}
+
+.StationFinder-showFilterBtn--is-active {
+  @include icon(more-filled);
+}
+
+.StationFinder-showRouteBtn {
+  @include icon(directions);
+
+  @include breakpoint($small, $no-query: true) {
+    @include last;
+  }
+}
+
+.StationFinder-showRouteBtn--is-active {
+  @include icon(directions-filled);
+}
+
+.StationFinder-showListBtn {
+  @include icon(list);
+  @include last;
+
+  &.active {
+    @include icon(map);
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    display: none;
+  }
+}
+
+.StationFinder-showListSecondaryBtn {
+  @include icon(list);
+  padding: 0 6px;
+
+  // this needs to be first to be overridden in a later mq
+  @include breakpoint($u-wrapper-max-width) {
+    left: calc(50% + 452px); // px: (($u-wrapper-max-width - padding) / 2) - button-width
+  }
+
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    display: block;
+    position: absolute;
+    right: $u-wrapper-small-to-medium-padding;
+    top: $u-wrapper-small-to-medium-padding;
+    z-index: 1;
+
+    &.active {
+      right: 340px;
+      left: auto; // override calc
+    }
+  }
+
+  @include breakpoint($medium, $no-query: true) {
+    right: $u-wrapper-medium-and-up-padding;
+    top: $u-wrapper-medium-and-up-padding;
+  }
+
+  @include breakpoint($small 920px) {
+    &.active {
+      top: auto;
+      bottom: 80px;
+      padding: 0;
+      width: 42px;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  @include breakpoint($u-wrapper-max-width) {
+    right: auto;
+  }
+
+  // for android galaxy tabs not supporting calc()
+  @include breakpoint(1280px 1280px) {
+    right: 90px;
+  }
+}
+
+.StationFinder-findMyPositionBtn {
+  @include icon(position);
+  position: absolute;
+  z-index: 1;
+  display: none;
+
+  &:before {
+    margin-right: 0;
+  }
+
+  span {
+    display: none;
+  }
+
+  @include breakpoint(0 $to-small) {
+    bottom: $u-wrapper-zero-to-small-padding;
+    right: $u-wrapper-zero-to-small-padding;
+  }
+  @include breakpoint($small $to-medium) {
+    bottom: $u-wrapper-small-to-medium-padding;
+    right: $u-wrapper-small-to-medium-padding;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    bottom: $u-wrapper-medium-and-up-padding;
+    right: $u-wrapper-medium-and-up-padding;
+  }
+  @include breakpoint($u-wrapper-max-width) {
+    right: auto;
+    left: calc(50% + 508px); // (($u-wrapper-max-width - padding) / 2) - button-width = (1160 / 2) - 42 = 538
+  }
+
+  // for android galaxy tabs not supporting calc()
+  @include breakpoint(1280px 1280px) {
+    right: 90px;
+  }
+}
+
+.StationFinder-findMyPositionBtn--has-position {
+  display: inline-block;
+}
+
+.StationFinder-showListSecondaryBtn.active ~ .StationFinder-findMyPositionBtn {
+  @include breakpoint($small, $no-query: true) {
+    right: 340px;
+    left: auto;
+  }
+}
+
+.StationFinder-filterInfo--is-active ~ .StationFinder-findMyPositionBtn,
+.StationFinder-favoritesInfo--is-active ~ .StationFinder-findMyPositionBtn {
+  @include breakpoint(0 $to-small) {
+    bottom: 50px;
+  }
+}
+
+.StationFinder-showFavoritesBtn {
+  @include icon(heart);
+  position: absolute;
+  z-index: 1;
+
+  &:before {
+    margin-right: 0;
+  }
+
+  span {
+    display: none;
+  }
+
+  @include breakpoint(0 $to-small) {
+    bottom: $u-wrapper-zero-to-small-padding;
+    right: $u-wrapper-zero-to-small-padding;
+  }
+
+  @include breakpoint($small, $no-query: true) {
+    top: $u-wrapper-small-to-medium-padding;
+    right: 135px;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    top: $u-wrapper-medium-and-up-padding;
+  }
+
+  @include breakpoint($u-wrapper-max-width) {
+    right: auto;
+    left: calc(50% + 401px); // (($u-wrapper-max-width - padding) / 2) - button-width - showListSecondaryBtn-width - margin = (1160 / 2) - 42 - 97 - 10 = 432
+  }
+
+  // for android galaxy tabs not supporting calc()
+  @include breakpoint(1280px 1280px) {
+    right: 197px;
+  }
+}
+
+.StationFinder-showFavoritesBtn--has-position {
+  @include breakpoint(0 $to-small) {
+    right: 66px;
+  }
+}
+
+.StationFinder-showFavoritesBtn--is-active {
+  @include icon(heart-filled);
+}
+
+.StationFinder-showListSecondaryBtn.active ~ .StationFinder-showFavoritesBtn {
+  @include breakpoint($small, $no-query: true) {
+    right: 450px;
+  }
+  @include breakpoint($small 920px) {
+    top: auto;
+    bottom: $u-wrapper-small-to-medium-padding;
+    right: 340px;
+  }
+  @include breakpoint($u-wrapper-max-width) {
+    left: auto; // override the calc-rule
+  }
+}
+
+.StationFinder-showListSecondaryBtn.active ~ .StationFinder-showFavoritesBtn--has-position {
+  @include breakpoint($small 920px) {
+    bottom: 133px;
+  }
+}
+
+.StationFinder-filterInfo--is-active ~ .StationFinder-showFavoritesBtn,
+.StationFinder-favoritesInfo--is-active ~ .StationFinder-showFavoritesBtn {
+  @include breakpoint(0 $to-small) {
+    bottom: 50px;
+  }
+}
+
+.StationFinder-filterInfo,
+.StationFinder-favoritesInfo {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  pointer-events: none;
+
+  @include breakpoint(0 $to-small) {
+    left: 0;
+    bottom: 0;
+  }
+
+  @include breakpoint($small $to-medium) {
+    bottom: $u-wrapper-small-to-medium-padding;
+  }
+
+  @include breakpoint($medium, $no-query: true) {
+    bottom: $u-wrapper-medium-and-up-padding;
+  }
+}
+
+.StationFinder-filterInfo--is-active,
+.StationFinder-favoritesInfo--is-active {
+  @include breakpoint(0 $to-small) {
+    display: block;
+  }
+  @include breakpoint($small, $no-query: true) {
+    display: table;
+  }
+}
+
+// hide filterinfo if favoritesinfo is active
+.StationFinder-favoritesInfo--is-active ~ .StationFinder-filterInfo {
+  display: none;
+}
+
+// place the info boxes to the left of the list when its open
+.StationFinder-showListSecondaryBtn.active ~ .StationFinder-filterInfo {
+  left: 25%;
+}
+
+.StationFinder-filterInfoInner,
+.StationFinder-favoritesInfoInner {
+  text-align: center;
+  @include breakpoint($small, $no-query: true) {
+    display: table-cell;
+  }
+}
+
+.StationFinder-filterInfoMsg,
+.StationFinder-favoritesInfoMsg {
+  background-color: $green;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @include breakpoint(0 $to-small) {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  @include breakpoint($small, $no-query: true) {
+    padding: 8px 13px;
+  }
+}
+
+.StationFinder-lastVisitedStations {
+  font-size: 14px;
+  padding-top: 1em;
+  line-height: 1.35;
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+}
+
+.StationFinder-secondaryControls {
+  max-width: $u-wrapper-max-width;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.List--is-active ~ .StationFinder-secondaryControls {
+  position: static;
+}
+
+.StationFinder-loader {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.StationFinder-loader--is-active {
+  display: table;
+}
+
+.StationFinder-loaderInner {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.StationFinder-loaderMsg {
+  padding: 10px 15px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border-radius: 2px;
+  line-height: 1.1;
+}
+
+
+
+
+$small: 569px;
+$to-small: $small - 1;

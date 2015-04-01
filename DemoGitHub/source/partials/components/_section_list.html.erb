@@ -1,0 +1,51 @@
+<%
+  if !defined?(sections)
+    sections = [
+      {
+        "documents" => [
+          "Crem nemo beatae quidem",
+          "Bolore ea harum est"
+        ]
+      },
+      {
+        "head" => "En sektion med rubrik",
+        "documents" => [
+          "Crem nemo beatae quidem",
+          "Bolore ea harum est"
+        ]
+      },
+      {
+        "id" => "section-A",
+        "totop" => true,
+        "head" => "A",
+        "documents" => [
+          "Aaut ut totam autem",
+          "Anesciunt odit illo quidem"
+        ]
+      }
+    ]
+  end
+%>
+<% sections.each do |section| %>
+<div class="SectionList" <% if section.has_key?('id') %>id="<%= section['id'] %>"<% end %>>
+  <% if section.has_key?('head') %>
+  <h2 class="SectionList-sectionHead"><%= section['head'] %></h2>
+  <% end %>
+  <ol class="SectionList-list">
+    <% section['documents'].each do |name| %>
+    <li class="SectionList-item">
+      <%= name %>
+      <ul class="SectionList-itemList">
+        <li><a href="/file/Produktblad_<%= name.gsub(/\s/, "_") %>.pdf">Produktblad</a></li>
+        <li><a href="/file/Sakerhetsplad_<%= name.gsub(/\s/, "_") %>.pdf">Säkerhetsdatablad</a></li>
+      </ul>
+    </li>
+    <% end %>
+  </ol>
+  <% if section.has_key?('totop') %>
+  <a href="#indexNav1" class="SectionList-totop">
+    <span class="u-isHiddenVisually">Till toppen</span>
+  </a>
+  <% end %>
+</div>
+<% end %>

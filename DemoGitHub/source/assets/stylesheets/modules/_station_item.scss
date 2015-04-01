@@ -1,0 +1,213 @@
+.StationItem--list {
+  @include icon(arrowdown-light);
+  position: relative;
+  padding: 12px 15px 15px;
+  border-bottom: 1px solid $grey-light;
+  cursor: pointer;
+
+  &:nth-child(even) {
+    background-color: $grey-lightest;
+  }
+
+  // arrowdown-light icon
+  &:before {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    font-size: 14px;
+    color: $grey-medium;
+    margin-left: -7px;
+  }
+
+  &:hover {
+    &:before {
+      color: #000;
+    }
+  }
+}
+
+.StationItem--map {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.23);
+  @include breakpoint(0 $to-small) {
+    @include transition (top 0.2s ease-in-out);
+    top: 60%;
+    left: 0;
+    right: 0;
+  }
+  @include breakpoint($small, $to-medium) {
+    top: 25px;
+    left: 25px;
+  }
+  @include breakpoint($small, $no-query: true) {
+    width: 390px;
+  }
+  @include breakpoint($medium) {
+    top: 30px;
+    left: 30px;
+  }
+}
+
+.StationItem-inner {
+  background: #fff;
+  padding-top: 15px;
+  height: 100%;
+  max-height: inherit;
+  @include breakpoint(0 $to-small) {
+    overflow: hidden;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 13px;
+    .StationItem--map--is-expanded & {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  @include breakpoint($small, $no-query: true) {
+    overflow: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.Overlay--is-active ~ .StationItem--map {
+  @include breakpoint(0 $to-small) {
+    display: none;
+  }
+}
+
+.StationItem--map--is-expanded {
+  @include breakpoint(0 $to-small) {
+    top: 20px;
+    height: 100%;
+  }
+}
+
+.StationItem--is-active {
+  display: block;
+}
+
+.StationItem--is-expanded {
+  padding-bottom: 25px;
+  cursor: auto;
+  &:before {
+    @include transform(rotate(180deg));
+  }
+}
+
+.StationItem-header {
+  margin: 0 0 6px;
+}
+
+.StationItem-headerNameCity {
+  color: $green;
+}
+
+.StationItem-headerNameLocation {
+  color: $green-tone-3;
+}
+
+.StationItem-header--small {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.2;
+
+
+  .StationItem--is-favorite & {
+    @include icon(heart-filled);
+
+    &:before {
+      color: $green;
+      font-size: 0.8em;
+      margin-right: 0.33em;
+    }
+  }
+}
+
+.StationItem-header--big {
+  @include gotham-condensed-bold;
+  font-size: 33px;
+  text-align: center;
+  line-height: 1;
+}
+
+.StationItem-short {
+  font-size: 14px;
+  line-height: 1.25;
+  color: $grey-dark;
+  margin: 0;
+}
+
+.StationItem-address {
+  display: block;
+}
+
+.StationItem-expanded {
+  display: none;
+  padding: 10px 0 0 0;
+  .StationItem--is-expanded & {
+    display: block;
+  }
+}
+
+.StationItem-distance {
+  @include sansserif-bold;
+  font-size: 16px;
+  color: $green;
+  position: absolute;
+  right: 15px;
+  top: 35px;
+}
+
+.StationItem-group {
+  margin: 0 0 12px;
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.StationItem-contact {
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.25;
+  margin-bottom: 1.125em;
+}
+
+.StationItem-distanceContainer {
+  display: none;
+}
+
+.StationItem-distanceContainer--has-distance {
+  display: inline-block;
+}
+
+.StationItem-closeBtn {
+  @include reset-button;
+  position: absolute;
+  z-index: 2;
+  top: -18px;
+  padding: 3px;
+  border-radius: 30px;
+  background: #fff;
+  color: $green;
+  font-size: 33px;
+  line-height: 1;
+  &:before {
+    vertical-align: top;
+  }
+  &:hover {
+    color: #000;
+  }
+  span {
+    display: none;
+  }
+  @include breakpoint(0 $to-small) {
+    right: 5px;
+  }
+  @include breakpoint($small, $no-query: true) {
+    right: -18px;
+  }
+}

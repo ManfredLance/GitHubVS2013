@@ -1,0 +1,42 @@
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+  outline-color: $green;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #fff;
+  @include breakpoint(0 $to-small) {
+    overflow-x: hidden;
+  }
+}
+
+.Main {
+  position: relative;
+  @extend %clearfix;
+  @include breakpoint(0 $to-small) {
+    padding: $u-group-margin-mini 0;
+    background: #fff;
+  }
+  @include breakpoint($small, $no-query: true) {
+    padding: $u-group-margin 0;
+  }
+}
+
+.Main--bleed {
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  width: 100%;
+  page-break-inside: avoid;
+}

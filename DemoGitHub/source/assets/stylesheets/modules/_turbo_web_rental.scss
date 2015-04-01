@@ -1,0 +1,19 @@
+.ThuleWebRental {
+  iframe {
+    display: none;
+    width: 900px !important;
+    margin: 0 auto;
+    @include breakpoint($small, $no-query: true) {
+      display: block;
+    }
+  }
+}
+
+.ThuleWebRental-extern {
+  @include breakpoint(0 $to-small) {
+    text-align: center;
+  }
+  @include breakpoint($small, $no-query: true) {
+    display: none;
+  }
+}

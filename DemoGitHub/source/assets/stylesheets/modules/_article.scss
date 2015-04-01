@@ -1,0 +1,97 @@
+.Article {
+  h1, h2, h3, h4, h5, h6 {
+    @include sansserif-bold;
+  }
+
+  h1 {
+    @include gotham-condensed-bold();
+    text-transform: uppercase;
+    color: $green;
+
+    font-size: 40px;
+    line-height: 1;
+    margin: 0 0 13px;
+
+    @include breakpoint($small, $no-query: true) {
+      font-size: 50px;
+    }
+  }
+
+  h2 {
+    font-size: 21px;
+    line-height: 1.15;
+    margin: 0 0 3px;
+  }
+
+  h3 {
+    font-size: 19px;
+    line-height: 1.2;
+    margin: 0 0 4px;
+  }
+
+  h4 {
+    font-size: 17px;
+    line-height: 1.2;
+    margin: 0 0 4px;
+  }
+
+  h5,
+  h6 {
+    font-size: 15px;
+    line-height: 1.2;
+    margin: 0 0 3px;
+  }
+
+  p,
+  ul,
+  ol,
+  table {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  li {
+    margin-bottom: 7px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .lead {
+    p {
+      font-size: 18px;
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+  }
+
+  table {
+    margin: 0 0 gutter();
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  th {
+    text-align: left;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid $grey-light;
+  }
+
+  b,
+  strong {
+    @include sansserif-bold;
+  }
+
+  figure {
+    margin-top: -2px;
+  }
+}
+
+.Article--narrow {
+  max-width: 660px;
+}

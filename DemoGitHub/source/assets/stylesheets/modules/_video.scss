@@ -1,0 +1,14 @@
+.Video {
+  position: relative;
+  height: 0;
+  padding-bottom: percentage(9/16); // 16/9 video ratio
+}
+
+.Video-item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

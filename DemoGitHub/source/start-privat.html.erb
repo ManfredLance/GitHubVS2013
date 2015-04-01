@@ -1,0 +1,119 @@
+---
+title: Preem
+template: Startsida privat
+---
+
+<%= partial 'partials/components/heroslides', locals: { transition: "swipe", duration: 8000 } %>
+<div class="u-wrapper">
+  <div class="FeaturedContent">
+    <aside class="FeaturedContent-sidebar" data-controller='[{"moreInBox": {"openClass": "FeaturedContent-sidebar--is-open", "overflowClass": "FeaturedContent-sidebar--has-overflow", "overflowSelector": ".js-moreInBox-content"}}]'>
+      <div class="FeaturedContent-sidebarContent ContentBlock ContentBlock--green Article">
+        <div class="FeaturedContent-sidebarContentInner">
+          <div class="js-moreInBox-content">
+            <header class="ContentBlock-header ContentBlock-header--icon u-icon-location">
+              <h3 class="ContentBlock-headline">Hitta station</h3>
+            </header>
+
+            <div class="ContentBlock-content">
+              <%= partial 'partials/components/station_finder_mini', locals: { show_favorites: true, has_favorites: false, has_last_visited: true } %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="FeaturedContent-sidebarMore u-icon-more-filled js-moreInBox-btn">
+        <span>Mer</span>
+      </button>
+    </aside>
+
+    <div class="FeaturedContent-main">
+      <div class="ContentBlock ContentBlock--orange Article">
+        <header class="ContentBlock-header ContentBlock-header--icon u-icon-heart">
+          <h3 class="ContentBlock-headline">Just nu på <a href="#">Preem Stockholm, Norrmälarstrand</a></h3>
+        </header>
+
+        <div class="ContentBlock-content ContentBlock-content--full">
+          <a href="#"><img src="<%= lorem.image('1632x680', text: 'Kampanjbild', background_color: 'fff9da', color: 'f4983b') %>" alt="Kampanjbild"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="PromotionBlocks u-alignRows" data-controller='[{"alignRows":{"rows": [{"className": "PromotionBlocks-block--small", "elementsPerRow": 3}, {"className": "PromotionBlocks-block--medium", "elementsPerRow": 2}], "aboveBreakpoint": "small"}}]'>
+    <div class="PromotionBlocks-block PromotionBlocks-block--small">
+      <div class="ContentBlock ContentBlock--green">
+        <%= partial 'partials/components/featured_block', locals: { headline: 'Anslut kort &amp; spara pengar' } %>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks-block PromotionBlocks-block--small">
+      <div class="ContentBlock ContentBlock--green">
+        <%= partial 'partials/components/featured_block', locals: { headline: 'Hyr släp – boka online' } %>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks-block PromotionBlocks-block--small">
+      <div class="ContentBlock ContentBlock--green">
+        <%= partial 'partials/components/featured_block', locals: { headline: 'Dela en grön idé – vinn 5000 kr!' } %>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+      <div class="ContentBlock ContentBlock--orange Article">
+        <header class="ContentBlock-header ContentBlock-header--icon u-icon-coffee">
+          <h3 class="ContentBlock-headline">Tre världssuccéer hos Preem!</h3>
+        </header>
+        <div class="ContentBlock-content">
+          <img src="<%= lorem.image('510x235') %>" alt="Bildbeskrivning">
+        </div>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+      <div class="ContentBlock ContentBlock--orange">
+        <header class="ContentBlock-header ContentBlock-header--icon u-icon-coffee">
+          <h3 class="ContentBlock-headline">Take away hos Preem</h3>
+        </header>
+        <div class="ContentBlock-content ContentBlock-content--full">
+          <div class="ContentBlock-slideshow">
+            <%= partial 'partials/components/slideshow' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+      <div class="ContentBlock ContentBlock--green Article">
+        <header class="ContentBlock-header ContentBlock-header--icon u-icon-idea">
+          <h3 class="ContentBlock-headline">Genvägar</h3>
+        </header>
+        <div class="ContentBlock-content ContentBlock-content--full">
+          <%= partial 'partials/components/block_list' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+      <div class="ContentBlock ContentBlock--green Article">
+        <header class="ContentBlock-header ContentBlock-header--icon u-icon-idea">
+          <h3 class="ContentBlock-headline">Vasaloppet</h3>
+        </header>
+        <div class="ContentBlock-content">
+          <img src="<%= lorem.image('510x235') %>" alt="Bildbeskrivning" class="ContentBlock-contentImage">
+          <p>
+            Vi på Preem är stolta huvudsponsorer till Vasaloppet. En tävling med
+            tradition tillbaka till 1700-talet. Vi delar Vasaloppets värderingar
+            om...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="u-sectionHeadline">Senast från Preem</h2>
+  <%= partial 'partials/components/article_list', locals: { split: true, item_count: 4, has_image: true } %>
+</div>
+
+<% content_for :footer_script do %>
+  <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{google_maps_api_key}&sensor=false&libraries=places", type: nil %>
+<% end %>

@@ -1,0 +1,56 @@
+<nav class="MainNav-menu">
+  <ul class="MainNav-list">
+    <% main_navigation_items.each_with_index do |item, i| %>
+      <li class="MainNav-listItem<%= i == 0 ? ' MainNav-listItem--is-current' : '' %><%= false ? ' MainNav-listItem--is-ancestor' : '' %>"><%# set MainNav-listItem--is-ancestor when menu item is ancestor of the current page %>
+        <a href="<%= item.path %>" class="MainNav-link">
+          <%= item.name %>
+
+          <% if item.sub_items.present? %>
+            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+          <% end %>
+        </a>
+
+        <% if item.sub_items.present? %>
+          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+            <% item.sub_items.each do |sub_item| %>
+              <li class="MainNav-listItem">
+                <a href="<%= sub_item.path %>" class="MainNav-link MainNav-link--sub">
+                  <%= sub_item.name %>
+
+                  <% if sub_item.sub_items.present? %>
+                    <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+                  <% end %>
+                </a>
+
+                <% if sub_item.sub_items.present? %>
+                  <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+                    <% sub_item.sub_items.each do |sub_sub_item| %>
+                      <li class="MainNav-listItem">
+                        <a href="<%= sub_sub_item.path %>" class="MainNav-link MainNav-link--sub MainNav-link--subSub">
+                          <%= sub_sub_item.name %>
+                          <% if sub_sub_item.sub_items.present? %>
+                            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+                          <% end %>
+                        </a>
+
+                        <% if sub_sub_item.sub_items.present? %>
+                          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+                            <% sub_sub_item.sub_items.each do |sub_sub_sub_item| %>
+                              <li class="MainNav-listItem">
+                                <a href="<%= sub_sub_sub_item.path %>" class="MainNav-link MainNav-link--sub MainNav-link--subSubSub"><%= sub_sub_sub_item.name %></a>
+                              </li>
+                            <% end %>
+                          </ul>
+                        <% end %>
+                      </li>
+                    <% end %>
+                  </ul>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

@@ -1,0 +1,23 @@
+<header class="Header<%= current_page.data.full_page ? ' Header--fullPage' : '' %><%= current_page.data.standalone ? ' Header--standalone' : '' %>">
+  <% unless current_page.data.standalone %>
+  <div class="Header-inner">
+      <div class="Header-bar u-pusher js-u-pusher">
+        <button class="Header-menuToggle js-menuToggler" data-controller='[{"toggler": {"selector": ".u-pusher", "className": "u-pusher--is-pushed"}}]'>
+          <span class="Header-menuToggleInner"></span>
+        </button>
+        <button class="Header-searchToggle js-searchToggler u-icon-search" data-controller='[{"toggler": {"selector": ".Search", "className": "Search--is-open"}}]'>
+          <span class="Header-searchToggleInner">Sök</span>
+        </button>
+      </div>
+      <div class="MainNav" data-controller="mainNav">
+        <%= partial 'partials/main_nav_tabs' %>
+        <%= partial 'partials/main_nav_primary' %>
+        <%= partial 'partials/main_nav_secondary' %>
+      </div>
+  </div>
+  <% else %>
+    <a class="Header-fullSiteLink Header-fullSiteLink--mini" href="http://preem.se">
+      <span class="Header-fullSiteLinkAddress">Preem.se</span>
+    </a>
+  <% end %>
+</header>

@@ -1,0 +1,42 @@
+.TextPage {
+  @include breakpoint($small, $no-query: true) {
+    margin-top: -17px;
+  }
+}
+
+.TextPage-primary {
+  @include breakpoint(0 $to-medium) {
+    @include clearfix;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    @include span(9);
+  }
+}
+
+.TextPage-main {
+  margin-bottom: 30px;
+  @include breakpoint($small, $no-query: true) {
+    margin-top: -8px;
+  }
+  @include breakpoint($small $to-medium) {
+    @include span(last 8);
+  }
+  @include breakpoint($medium, $no-query: true) {
+    @include span(last 6 of 9);
+  }
+}
+
+.TextPage-sidebarMenu {
+  @include breakpoint($small $to-medium) {
+    @include span(4);
+  }
+  @include breakpoint($medium, $no-query: true) {
+    @include span(3 of 9);
+  }
+}
+
+.TextPage-sidebarContent {
+  @include breakpoint($medium, $no-query: true) {
+    @include span(last 3);
+  }
+}

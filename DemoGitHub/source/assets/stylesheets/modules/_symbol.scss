@@ -1,0 +1,72 @@
+$_symbol-small: 4em;
+$_symbol-medium: 4em;
+$_symbol-large: 4em;
+$_symbol-colors: (
+  'beige': $beige,
+  'blue': $blue,
+  'green': $green,
+  'orange': $orange,
+  'orangeRed': $orange-red,
+  'red': $red,
+  'yellow': $yellow,
+  'green-1': $green-tone-1,
+  'green-2': $green-tone-2,
+  'green-3': $green-tone-3,
+  'green-4': $green-tone-4,
+  'green-5': $green-tone-5,
+  'green-6': $green-tone-6,
+  'green-7': $green-tone-7
+);
+
+
+.Symbol {
+  position: relative;
+
+  display: inline-block;
+  vertical-align: middle;
+  
+  margin: 0;
+  padding: 1em;
+
+  font-size: 1.5em;
+  line-height: 1;
+  color: #fff;
+
+  border-radius: 50%;
+
+  > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    line-height: 0;
+  }
+}
+
+
+/** Size themes **/
+.Symbol--s {
+  font-size: 2em;
+}
+
+.Symbol--m {
+  font-size: 5em
+}
+
+.Symbol--l {
+  font-size: 7em;
+}
+
+
+.Symbol--blackText {
+  color: #000;
+}
+
+
+/** Color themes **/
+@each $_color, $_color_value in $_symbol-colors {
+  .Symbol--#{$_color} {
+    background: $_color_value;
+  }
+}

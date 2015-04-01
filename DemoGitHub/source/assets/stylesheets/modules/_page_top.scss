@@ -1,0 +1,15 @@
+.PageTop {
+  min-height: 43px;
+  margin: 0 0 30px;
+  border-bottom: 1px solid $grey-lightest;
+  overflow: hidden;
+}
+
+.PageTop-breadcrumbs {
+  float: left;
+  margin: 4px 0 0;
+}
+
+.PageTop-share {
+  float: right;
+}

@@ -1,0 +1,94 @@
+$_colors: (
+  "orange": $orange,
+  "green": $green,
+  "blue": $blue,
+  "facebookBlue": $facebook-blue
+);
+
+@each $_color, $_color_value in $_colors {
+  .ActionBlock--#{$_color} {
+    &:before {
+      background: $_color_value;
+    }
+    .ActionBlock-headline {
+      color: $_color_value;
+    }
+  }
+}
+
+
+
+.ActionBlock {
+  position: relative;
+  border: 1px solid $grey-light;
+  padding: 19px;
+  text-align: left;
+  padding-bottom: 100px;
+  height: 100%;
+  &:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    height: 4px;
+  }
+  &:after {
+    content: "";
+    display: table;
+    height: 0;
+    clear: both;
+  }
+}
+.ActionBlock--center {
+  text-align: center;
+}
+.ActionBlock-imageWrapper {
+  display: block;
+  text-decoration: none;
+  margin: 0 0 19px;
+}
+
+.ActionBlock-imageWrapper--small,
+.ActionBlock-imageWrapper--medium {
+  border-bottom: 1px solid $grey-light;
+  text-align: center;
+  /* &:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  } */
+}
+
+.ActionBlock-imageWrapper--large {
+  margin: -1px -1px 0 -1px;
+}
+
+.ActionBlock-image {
+  margin: 0 auto;
+  max-height: 100%;
+
+  .ActionBlock-imageWrapper--small &,
+  .ActionBlock-imageWrapper--medium & {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.ActionBlock-headline {
+  @include gotham-condensed-bold($i: true);
+
+  font-size: 28px !important;
+  line-height: 1 !important;
+  text-transform: uppercase;
+}
+
+.ActionBlock-link{
+  position: absolute;
+  bottom: 20px;
+  left: 19px;
+  right: 19px;
+  width: auto;
+  margin: 20px 0 5px;
+}

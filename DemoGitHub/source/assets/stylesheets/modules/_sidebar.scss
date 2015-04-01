@@ -1,0 +1,80 @@
+$_item-padding: 11px 14px;
+
+.Sidebar {
+  @include sansserif-normal;
+  background: $green-tone-6;
+  padding: 0 0 62px;
+  @media print {
+    display: none;
+  }
+}
+
+.Sidebar-headline {
+  padding: $_item-padding;
+  border-bottom: 1px solid #fff;
+  
+  color: #000;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  a {
+    color: #000;
+  }
+}
+
+.Sidebar-nav {
+  font-size: 15px;
+}
+
+.Sidebar-navList {
+  @include reset-list;
+}
+
+.Sidebar-navListItem {
+  position: relative;
+}
+
+.Sidebar-navListItem--has-sub {
+  &:before {
+    position: absolute;
+    z-index: 1;
+    right: 14px;
+    top: 16px;
+    color: $green;
+  }
+}
+
+.Sidebar-navListItemLink {
+  display: block;
+  position: relative;
+  padding: $_item-padding;
+  border-bottom: 1px solid #fff;
+  .Sidebar-navList--sub & {
+    padding-left: 28px;
+    background: lighten($green-tone-6, 4);
+  }
+  .Sidebar-navList--subSub & {
+    padding-left: 42px;
+    background: #fff;
+    border-bottom-color: lighten($green-tone-6, 4);
+    &:hover {
+      background: #fff;
+      text-decoration: underline;
+    }
+  }
+  .Sidebar-navListItem--is-current > & {
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: $green;
+    }
+  }
+  &:hover {
+  }
+}

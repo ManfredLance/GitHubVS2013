@@ -1,0 +1,81 @@
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="Footer-sections">
+      <div class="Footer-menus">
+        <nav class="Footer-menu">
+          <h3 class="Footer-sectionHeadline"><a href="/start-privat.html" class="Footer-sectionHeadlineLink">Privat</a></h3>
+          <ul class="Footer-menuItems">
+            <% data.main_navigation.private.each do |item| %>
+              <li class="Footer-menuItem"><a href="<%= item.path %>" class="Footer-link"><%= item.name %></a></li>
+            <% end %>
+          </ul>
+        </nav>
+
+        <nav class="Footer-menu">
+          <h3 class="Footer-sectionHeadline"><a href="/start-foretag.html" class="Footer-sectionHeadlineLink">Företag</a></h3>
+          <ul class="Footer-menuItems">
+            <% data.main_navigation.company.each do |item| %>
+              <li class="Footer-menuItem"><a href="<%= item.path %>" class="Footer-link"><%= item.name %></a></li>
+            <% end %>
+          </ul>
+        </nav>
+
+        <nav class="Footer-menu Footer-menu--last">
+          <h3 class="Footer-sectionHeadline"><a href="/start-om-preem.html" class="Footer-sectionHeadlineLink">Om Preem</a></h3>
+          <ul class="Footer-menuItems">
+            <% data.main_navigation.about.each do |item| %>
+              <li class="Footer-menuItem"><a href="<%= item.path %>" class="Footer-link"><%= item.name %></a></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="Footer-contact">
+        <h3 class="Footer-sectionHeadline"><a href="/textsida.html" class="Footer-sectionHeadlineLink">Kundservice &amp; kontakt</a></h3>
+        <div class="Footer-contactSection">
+          <div class="Footer-contactGroup">
+            <h4 class="contactHeadline"><a href="/textsida.html" class="Footer-link">Preem Privatkort</a></h4>
+            Tel: 0476-58 71 40<br>
+            Mån-fre 08.00-17.00<br>
+            (Spärra kort dygnet runt)<br>
+            <a href="/textsida.html" class="Footer-link">Kontakta oss</a>
+          </div>
+
+          <div class="Footer-contactGroup">
+            <h4 class="contactHeadline"><a href="/textsida.html" class="Footer-link">Fördel Preem</a></h4>
+            Tel: 08-656 32 50
+          </div>
+        </div>
+
+        <div class="Footer-contactSection">
+          <div class="Footer-contactGroup">
+            <h4 class="contactHeadline"><a href="/textsida.html" class="Footer-link">Övriga kort &amp; frågor</a></h4>
+            Tel: 020-450 450<br>
+            Mån-fre 08.00-17.00<br>
+            (Spärra kort dygnet runt)<br>
+            <a href="/textsida.html" class="Footer-link">Kontakta oss</a>
+          </div>
+        </div>
+
+        <div class="Footer-contactSection Footer-contactSection--last">
+          <div class="Footer-contactGroup">
+            <h4 class="contactHeadline contactHeadline--secondary">Postadress:</h4>
+            Preem AB<br>
+            112 80 Stockholm<br>
+            Växel: 010-450 10 00<br>
+            (inkl Preemraff)
+          </div>
+
+          <div class="Footer-contactGroup">
+            <h4 class="contactHeadline contactHeadline--secondary">Besöksadress:</h4>
+            Warfvinges väg 45, Stockholm
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Footer-copyright">
+      Preem AB © <%= Time.now.year %>
+    </div>
+  </div>
+</footer>

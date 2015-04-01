@@ -1,0 +1,177 @@
+<div class="Station<%= current_page.data.standalone ? ' Station--standalone' : '' %>" data-controller='[{"station": {"id": 51621, "lat": 58.052307, "lng": 14.507701}}]'>
+  <img src="<%= lorem.image('1280x340') %>" class="Station-coverImage">
+
+  <div class="Station-inner u-wrapper">
+    <div class="Station-top">
+      <div class="Station-share">
+        <%= partial 'partials/components/share_actions', locals: { on_color: true } %>
+      </div>
+
+      <div class="Station-introActionsWrapper">
+        <div class="Station-intro">
+          <h1 class="Station-name">
+            <span class="Station-nameCity">Stockholm,</span>
+            <span class="Station-nameLocation">Bredäng</span>
+          </h1>
+
+          <div class="Station-addressTelephone">
+            Bemannad, Slättgårdsvägen 121, Hägersten, <span class="u-telephone">08-603 82 90</span>
+          </div>
+
+          <div class="Station-staff">
+            <img src="http://placehold.it/156x156" alt="Personalen" class="Station-staffImage">
+
+            <p class="Station-staffMessage" data-controller='[{"toggler": {"selector": ".Station-staffMessage", "className": "Station-staffMessage--is-open"}}]'>
+              Vi som jobbar här heter Emma, Carl-Oscar, Johannes och Susanne. Vi har ett stort utbud av lokala produkter och olja. Väkommen in önskar Janne med personal! På lördag den här veckan har vi besök av Clownen Manne för alla barn.
+            </p>
+          </div>
+        </div>
+
+        <%= partial 'partials/components/action_bar', locals: { items: 3 } %>
+      </div>
+
+      <div class="Station-mapBlock ContentBlock ContentBlock--green Article">
+        <header class="ContentBlock-header ContentBlock-header--more ContentBlock-header--icon u-icon-location">
+          <h3 class="ContentBlock-headline">Hitta hit</h3>
+          <div class="ContentBlock-headerMore">
+            <span class="Station-distanceContainer js-Station-distanceContainer">ca <span class="js-Station-distance"></span></span>
+            <a href="hitta-station.html#mapPos=58.052307%2C14.507701&amp;mapZoom=14" class="Station-stationFinderLink">visa stor karta</a>
+          </div>
+        </header>
+        <div class="ContentBlock-content ContentBlock-content--full">
+          <div class="Station-map" data-controller='[{"stationMap": {"lat": 58.052307, "lng": 14.507701, "findStationUrl": "/hitta-station.html#mapPos=58.052307%2C14.507701", "stationSort": "Såifa"}}]'>
+            <div class="Station-mapLoading u-meta">Laddar karta…</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="PromotionBlocks u-alignRows" data-controller='[{"alignRows":{"rows": [{"className": "PromotionBlocks-block--small", "elementsPerRow": 3}, {"className": "PromotionBlocks-block--medium", "elementsPerRow": 2}], "aboveBreakpoint": "small"}}]'>
+      <div class="PromotionBlocks-block PromotionBlocks-block--small">
+        <div id="oppettider" class="ContentBlock ContentBlock--green Article">
+          <header class="ContentBlock-header ContentBlock-header--more ContentBlock-header--icon u-icon-clock">
+            <h3 class="ContentBlock-headline">Butikens öppettider</h3>
+          </header>
+          <div class="ContentBlock-content">
+            <div class="OpeningHours">
+              <div>
+                Vardagar 06:00–22:00<br>
+                Lördagar: 06:00–22:00<br>
+                Söndagar och helgdagar 08:00-22:00
+              </div>
+            </div>
+            <span class="u-meta">Tanka dygnet runt (kort &amp; kontant)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="PromotionBlocks-block PromotionBlocks-block--small">
+        <div class="ContentBlock ContentBlock--green Article">
+          <header class="ContentBlock-header ContentBlock-header--icon u-icon-gasoline">
+            <h3 class="ContentBlock-headline">Drivmedel</h3>
+          </header>
+          <div class="ContentBlock-content">
+            <%= partial 'partials/components/fuel_types' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="PromotionBlocks-block PromotionBlocks-block--small">
+        <div class="ContentBlock ContentBlock--green Article">
+          <header class="ContentBlock-header ContentBlock-header--icon u-icon-heart">
+            <h3 class="ContentBlock-headline">Just nu</h3>
+          </header>
+          <div class="ContentBlock-content ContentBlock-content--full">
+            <a href="#"><img src="<%= lorem.image('584x280', text: 'Kampanjbild', background_color: 'fff9da', color: 'f4983b') %>" class="u-stretch"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+        <div class="ContentBlock ContentBlock--green Article">
+          <header class="ContentBlock-header ContentBlock-header--icon u-icon-coffee">
+            <h3 class="ContentBlock-headline">I butiken</h3>
+          </header>
+          <div class="ContentBlock-content ContentBlock-content--full">
+            <%= partial 'partials/components/item_list', locals: { price: false, square: false } %>
+          </div>
+        </div>
+      </div>
+
+      <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+        <div class="ContentBlock ContentBlock--green Article">
+          <header class="ContentBlock-header ContentBlock-header--icon u-icon-meter">
+            <h3 class="ContentBlock-headline">På stationen</h3>
+          </header>
+          <div class="ContentBlock-content">
+            <%= partial 'partials/components/checklist' %>
+          </div>
+        </div>
+      </div>
+
+      <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+        <div class="ContentBlock ContentBlock--orange Article">
+          <header class="ContentBlock-header ContentBlock-header--icon u-icon-coffee">
+            <h3 class="ContentBlock-headline">Tre världssuccéer hos Preem!</h3>
+          </header>
+          <div class="ContentBlock-content">
+            <img src="<%= lorem.image('510x235') %>" alt="Bildbeskrivning">
+          </div>
+        </div>
+      </div>
+
+      <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+        <div class="ContentBlock ContentBlock--orange">
+          <header class="ContentBlock-header ContentBlock-header--icon u-icon-coffee">
+            <h3 class="ContentBlock-headline">Take away hos Preem</h3>
+          </header>
+          <div class="ContentBlock-content ContentBlock-content--full">
+            <div class="ContentBlock-slideshow">
+              <%= partial 'partials/components/slideshow' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+        <div class="ContentBlock ContentBlock--facebookBlue Article">
+          <header class="ContentBlock-header ContentBlock-header--icon u-icon-facebook">
+            <h3 class="ContentBlock-headline">Följ oss på Facebook</h3>
+          </header>
+          <div class="ContentBlock-content">
+            <div class="fb-like-box u-fbLikeBox" data-href="https://www.facebook.com/preem" data-width="272" data-height="300" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="PromotionBlocks-block PromotionBlocks-block--medium">
+        <div class="ContentBlock ContentBlock--green Article">
+          <header class="ContentBlock-header ContentBlock-header--icon u-icon-idea">
+            <h3 class="ContentBlock-headline">Miljö på vår station</h3>
+          </header>
+          <div class="ContentBlock-content">
+            <img src="<%= lorem.image('510x235') %>" alt="Bildbeskrivning" class="ContentBlock-contentImage">
+            <p>
+              På den här stationen källsorterar vi allt vårt avfall och har
+              självklart Svanenmärkt biltvätt och kravmärkt kaffe och bananer!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :footer_script do %>
+  <div id="fb-root"></div>
+
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=<%= preem_fb_app_id %>&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <%= javascript_include_tag "//maps.googleapis.com/maps/api/js?key=#{google_maps_api_key}&sensor=false&libraries=places", type: nil %>
+<% end %>

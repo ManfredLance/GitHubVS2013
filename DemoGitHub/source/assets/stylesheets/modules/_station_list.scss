@@ -1,0 +1,71 @@
+$small: 600px;
+$to-small: $small - 1;
+
+$_item-padding: 8px;
+
+.StationList {
+  @include reset-list;
+}
+
+.StationList-item {
+  position: relative;
+}
+
+.StationList-link {
+  display: block;
+  position: relative;
+  height: 52px;
+  padding: $_item-padding 20px $_item-padding 46px;
+  border-top: 1px solid $grey-light;
+  font-size: 13px;
+  text-decoration: none !important;
+  .StationList-item:last-child & {
+    height: 44px;
+    padding-bottom: 0;
+  }
+}
+
+.StationList-image {
+  position: absolute;
+  left: 0;
+  top: $_item-padding;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+}
+
+.StationList-name {
+  color: $green;
+  .StationList-link:hover & {
+    text-decoration: underline;
+  }
+}
+
+.StationList-openingHours {
+  color: $grey-dark;
+}
+
+.StationList-name,
+.StationList-openingHours {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.StationList-remove {
+  @include reset-button;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  color: $grey-medium;
+  &:hover {
+    color: $red;
+  }
+  span {
+    display: none;
+  }
+}
+
+
+$small: 569px;
+$to-small: $small - 1;

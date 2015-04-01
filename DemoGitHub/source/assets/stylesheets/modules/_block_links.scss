@@ -1,0 +1,43 @@
+.BlockLinks {
+  @include reset-list;
+  @include clearfix;
+}
+
+.BlockLinks-item {
+  width: 50%;
+  float: left;
+  margin-bottom: 0 !important;
+}
+
+.BlockLinks-link {
+  @include sansserif-normal;
+  display: block;
+  border-top: 1px solid $grey-light;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include breakpoint(0 $to-small) {
+    padding: 10px;
+    font-size: 14px;
+  }
+  @include breakpoint($small, $no-query: true) {
+    padding: 17px;
+  }
+  @include breakpoint($small $to-medium) {
+    font-size: 18px;
+  }
+  @include breakpoint($medium, $no-query: true) {
+    font-size: 23px;
+  }
+  .BlockLinks-item:nth-child(even) & {
+    border-left: 1px solid $grey-light;
+  }
+  .BlockLinks-item:first-child &,
+  .BlockLinks-item:first-child + .BlockLinks-item & {
+    border-top: none;
+  }
+  &:hover {
+    background: $grey-lightest;
+    text-decoration: none;
+  }
+}

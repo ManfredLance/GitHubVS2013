@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Aktuella erbjudanden",
+    "path": "/textsida.html"
+  },
+  {
+    "name": "Mat &amp; dryck",
+    "path": "/textsida.html",
+    "sub_items": [
+      {
+        "name": "Aktuella erbjudanden",
+        "path": "/textsida.html"
+      },
+      {
+        "name": "Läkemedel",
+        "path": "/textsida.html",
+        "sub_items": [
+          {
+            "name": "Aktuella erbjudanden",
+            "path": "/textsida.html"
+          },
+          {
+            "name": "Läkemedel",
+            "path": "/textsida.html"
+          }
+        ]
+      },
+      {
+        "name": "Service",
+        "path": "/textsida.html"
+      },
+      {
+        "name": "Sortiment",
+        "path": "/textsida.html"
+      }
+    ]
+  },
+  {
+    "name": "Läkemedel",
+    "path": "/textsida.html"
+  },
+  {
+    "name": "Service",
+    "path": "/textsida.html"
+  },
+  {
+    "name": "Sortiment",
+    "path": "/textsida.html"
+  }
+]
