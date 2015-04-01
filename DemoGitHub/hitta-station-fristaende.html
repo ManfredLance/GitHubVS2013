@@ -1,0 +1,457 @@
+<!doctype html>
+<html class="no-js u-fullPage">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimal-ui">
+
+    <title>Hitta station</title>
+
+    <script src="assets/javascripts/vendor/libs/modernizr.js"></script>
+
+    <link href="//cloud.typography.com/7319472/760864/css/fonts.css" rel="stylesheet" />
+
+    <!--[if gte IE 9]><!-->
+      <link href="assets/stylesheets/application.css" rel="stylesheet" />
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+      <link href="assets/stylesheets/application_old_ie.css" rel="stylesheet" />
+    <![endif]-->
+
+    <meta name="description" content="Beskrivning här. Inte längre än 155 tecken.">
+
+    <meta property="og:title" content="Sidans titel">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content=" http://www.example.com">
+    <meta property="og:image" content=" http://example.com/image.jpg">
+    <meta property="og:description" content="Beskrivning här. Inte längre än 155 tecken.">
+  </head>
+
+  <body data-controller="tracking">
+
+    
+    <header class="Header Header--fullPage Header--standalone">
+    <a class="Header-fullSiteLink Header-fullSiteLink--mini" href="http://preem.se">
+      <span class="Header-fullSiteLinkAddress">Preem.se</span>
+    </a>
+</header>
+
+
+    <div class="u-pusher js-u-pusher u-fullPagePusher">
+      <main class="Main Main--bleed" role="main">
+        <div class="StationFinder StationFinder--standalone" data-controller='[{"stationFinder": {"apiUrl": "http://62.20.57.36/api/Stations/AllStations", "servicesApiUrl": "http://62.20.57.36/api/StationServices/Services/", "fuelTypesApiUrl": "http://62.20.57.36/api/FuelTypes/FuelTypes"}}]'>
+  <div class="StationFinder-inner">
+    <div class="StationFinder-innerGrid">
+      <div class="StationFinder-controlsContainer">
+        <div class="StationFinder-controls js-StationFinder-controls">
+          <div class="StationFinder-search StationFinder-search--is-active js-StationFinder-search">
+            <div>
+              <label for="station-search" class="StationFinder-searchLabel">Sök adress, ort, postnummer</label>
+              <div class="u-searchInputWrapper u-icon-search" data-controller="clearInput">
+                <form class="js-StationFinder-searchForm">
+                  <input type="text" id="station-search" class="StationFinder-searchInput js-StationFinder-searchInput u-searchInput" name="station-search" placeholder="Sök adress, ort, postnummer">
+                </form>
+                <button class="ButtonClear u-icon-close js-clearInputBtn" title="Rensa fältet">
+                  <span>Rensa</span>
+                </button>
+              </div>
+            </div>
+
+            <p class="StationFinder-lastVisitedStations">
+              Senast besökta stationssidor: <a href="/station.html" class="js-trackLink" data-tracking-category="Click latest visit">Stockholm Norrmalm</a>, <a href="/station.html" class="js-trackLink" data-tracking-category="Click latest visit">Stockholm Bredäng</a>
+            </p>
+          </div>
+
+          <button class="StationFinder-showSearchBtn active" data-controller='[{"toggler": {"selector": ".StationFinder-search", "className": "StationFinder-search--is-active", "group": "sf-main-controls"}}]'><span>Sök station</span></button>
+
+          <button class="StationFinder-showFilterBtn" data-controller='[{"toggler": {"selector": ".js-StationFinder-filter", "className": "Overlay--is-active", "group": "sf-main-controls"}}]'><span>Sökalternativ</span></button>
+
+          <button class="StationFinder-showRouteBtn" data-controller='[{"toggler": {"selector": ".js-StationFinder-route", "className": "Overlay--is-active", "group": "sf-main-controls"}}]'><span>Rutt</span></button>
+
+          <button class="StationFinder-showListBtn" data-controller='[{"toggler": {"selector": ".List", "className": "List--is-active", "toggleText": "<span>Göm lista</span>"}}]'><span>Visa lista</span></button>
+        </div>
+      </div>
+
+      <div class="Route Overlay js-StationFinder-route">
+        <button class="CloseBtn CloseBtn--right Overlay-closeBtn js-StationFinder-route-closeBtn">Stäng</button>
+
+        <h3 class="Overlay-headline">Hitta Preem längs vägen</h3>
+
+        <div class="Route-inputWrapper" data-controller="clearInput">
+          <label for="route-search-start">Startpunkt</label>
+
+          <input type="text" id="route-search-start" class="Route-start js-StationFinder-routeStart u-searchInput" name="route-search-start" placeholder="Från">
+
+          <button class="Route-myPositionBtn js-Route-myPositionBtn u-icon-position" title="Min position"></button>
+
+          <button class="ButtonClear u-icon-close js-clearInputBtn" title="Rensa fältet">
+            <span>Rensa</span>
+          </button>
+        </div>
+
+        <div class="Route-inputWrapper" data-controller="clearInput">
+          <label for="route-search-end">Slutpunkt</label>
+
+          <input type="text" id="route-search-end" class="Route-end js-StationFinder-routeEnd u-searchInput" name="route-search-end" placeholder="Till">
+
+          <button class="Route-myPositionBtn js-Route-myPositionBtn u-icon-position" title="Min position"></button>
+
+          <button class="ButtonClear u-icon-close js-clearInputBtn" title="Rensa fältet">
+            <span>Rensa</span>
+          </button>
+        </div>
+
+        <button class="ButtonLight Route-flip js-StationFinder-routeFlip">Vänd rutt</button>
+
+        <button class="ButtonLight Route-clear js-StationFinder-routeClear">Rensa rutt</button>
+
+        <button class="Route-submitBtn js-StationFinder-route-submitBtn">Sök</button>
+      </div>
+
+      <div class="Filter Overlay Overlay--filter js-StationFinder-filter">
+        <div class="Filter-inner">
+          <button class="CloseBtn CloseBtn--right Overlay-closeBtn js-StationFinder-filter-closeBtn">Stäng</button>
+
+          <div>
+            <h3 class="Overlay-headline">Vilka stationer vill du se?</h3>
+
+            <div class="Filter-stationTypes js-StationFinder-filter-types">
+              <input type="checkbox" id="station-type-manned" name="StationType" value="StationType+eq+%27Bemannad%27">
+              <label for="station-type-manned">Bemannade</label>
+
+              <input type="checkbox" id="station-type-unmanned" name="StationType" value="(StationType+eq+%27Automat%27+and+StationSort+ne+%27S%C3%A5ifa%27)">
+              <label for="station-type-unmanned">Automat</label>
+
+              <input type="checkbox" id="station-sort-saifa" name="StationType" value="StationSort+eq+%27S%C3%A5ifa%27">
+              <label for="station-sort-saifa">Såifa</label>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="Overlay-headline">Som har:</h3>
+
+            <div class="Filter-services js-StationFinder-filter-services"></div>
+
+            <div class="Filter-fuelTypes js-StationFinder-filter-fuelTypes"></div>
+          </div>
+        </div>
+
+        <div class="Filter-submit">
+          <button type="submit" class="Filter-submit-btn js-StationFinder-filter-submit-btn">Filtrera</button>
+        </div>
+      </div>
+
+      <div class="js-StationItem--map StationItem StationItem--map"></div>
+    </div>
+
+    <div class="StationFinder-favoritesInfo js-StationFinder-favoritesInfo">
+      <div class="StationFinder-favoritesInfoInner">
+        <span class="StationFinder-favoritesInfoMsg js-StationFinder-favoritesInfoMsg"></span>
+      </div>
+    </div>
+
+    <div class="StationFinder-filterInfo js-StationFinder-filterInfo">
+      <div class="StationFinder-filterInfoInner">
+        <span class="StationFinder-filterInfoMsg js-StationFinder-filterInfoMsg"></span>
+      </div>
+    </div>
+
+    <button class="StationFinder-showListSecondaryBtn" data-controller='[{"toggler": {"selector": ".List", "className": "List--is-active", "toggleText": "<span>Göm lista</span>"}}]'><span>Visa lista</span></button>
+
+    <button class="StationFinder-showFavoritesBtn js-StationFinder-showFavoritesBtn" title="Visa favoriter"><span>Visa favoriter</span></button>
+
+    <button class="StationFinder-findMyPositionBtn js-StationFinder-findMyPositionBtn" title="Hitta min position"><span>Hitta min position</span></button>
+
+    <div class="Map Map--is-active">
+      <div class="Map-canvas js-Map-canvas"></div>
+    </div>
+
+    <div class="List js-StationFinder-list"></div>
+  </div>
+
+  <div class="StationFinder-loader js-StationFinder-loader">
+    <div class="StationFinder-loaderInner">
+      <span class="StationFinder-loaderMsg js-StationFinder-loaderMsg"></span>
+    </div>
+  </div>
+</div>
+
+
+
+      </main>
+
+    </div>
+
+    <div class="AcceptCookies" data-controller="acceptCookies">
+  <p class="AcceptCookies-text">
+    Denna sida använder <a href="#">cookies</a>.
+  </p>
+  <button class="Button Button--minor Button--accept AcceptCookies-acceptBtn js-AcceptCookies-acceptBtn">OK</button>
+</div>
+
+
+
+      <script id="mustache-station_mini" type="x-tmpl-mustache"><button class="StationItem-closeBtn js-StationItem-closeBtn u-icon-close-filled"><span>Stäng</span></button>
+
+<div class="StationItem-inner">
+  <h2 class="StationItem-header StationItem-header--big">
+    <span class="StationItem-headerNameCity">{{nameCity}}{{#nameLocation}},{{/nameLocation}}</span>
+    {{#nameLocation}}
+      <span class="StationItem-headerNameLocation">{{nameLocation}}</span>
+    {{/nameLocation}}
+  </h2>
+
+  <p class="StationItem-contact">
+    {{StationType}}, {{Address}}, {{City}}, {{PhoneNumber}}
+  </p>
+
+  <div class="StationItem-group">
+    <ul class="ActionBar ActionBar--2">
+    <!-- TODO: Remove trailer rental temporarily -->
+    <!--<ul class="ActionBar {{#trailer}}ActionBar++3{{/trailer}}{{^trailer}}ActionBar+++2{{/trailer}}">-->
+      <li class="ActionBar-item">
+        <button class="ActionBar-action {{#favorite}}ActionBar-action--favorite--is-favorite{{/favorite}} u-icon-heart js-StationItem-favorite" data-favorite-add-text="Spara favorit" data-favorite-remove-text="Ta bort favorit">
+          <span class="ActionBar-actionText js-StationItem-favoriteText">
+            {{#favorite}}Ta bort favorit{{/favorite}}
+            {{^favorite}}Spara favorit{{/favorite}}
+          </span>
+        </button>
+      </li>
+
+      {{#trailer}}
+        <!-- TODO: Remove trailer rental temporarily -->
+        <!--<li class="ActionBar-item">
+          <a href="{{TrailerRentalUrl}}" class="ActionBar-action u-icon-trailer js-StationItem-trailer" target="_blank"><span class="ActionBar-actionText">Hyra släp</span></a>
+        </li>-->
+      {{/trailer}}
+
+      <li class="ActionBar-item">
+        <a href="{{FriendlyUrl}}" class="ActionBar-action u-icon-info"><span class="ActionBar-actionText js-StationItem-moreInfo">Mer info</span></a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="StationItem-group">
+    <a href="https://maps.google.com?daddr={{Address}},{{PostalCode}} {{City}}" target="_blank" class="ContentBlock ContentBlock--headerLink ContentBlock--green Article js-StationItem-directions">
+      <header class="ContentBlock-header ContentBlock-header--more ContentBlock-header--icon u-icon-location">
+        <h3 class="ContentBlock-headline">Vägbeskrivning</h3>
+        <div class="ContentBlock-headerMore">
+          <span class="StationItem-distanceContainer js-StationItem-distanceContainer">ca
+            <span class="js-StationItem-distance"></span>
+          </span>
+        </div>
+      </header>
+    </a>
+  </div>
+
+  <div class="StationItem-group">
+    <div class="ContentBlock ContentBlock--green Article">
+      <header class="ContentBlock-header ContentBlock-header--icon u-icon-clock">
+        <h3 class="ContentBlock-headline">Öppettider</h3>
+      </header>
+      <div class="ContentBlock-content">
+        <div class="OpeningHours">
+          {{{openingHourText}}}
+        </div>
+        {{#isBemannad}}
+        <span class="u-meta">Tanka dygnet runt, vi tar de flesta kort</span>
+        {{/isBemannad}}
+      </div>
+    </div>
+  </div>
+
+  <div class="StationItem-group">
+    <div class="ContentBlock ContentBlock--green Article">
+      <header class="ContentBlock-header ContentBlock-header--icon u-icon-gasoline">
+        <h3 class="ContentBlock-headline">Drivmedel</h3>
+      </header>
+      <div class="ContentBlock-content">
+        <div class="FuelTypes">
+          <ul class="FuelTypes-list">
+          {{#FuelTypes}}
+            <li class="FuelTypes-type" style="{{#TextColor}}color: {{TextColor}};{{/TextColor}}{{#BackgroundColor}}background: {{BackgroundColor}};{{/BackgroundColor}}{{#BorderColor}}border-color: {{BorderColor}};{{/BorderColor}}">{{Name}}</li>
+          {{/FuelTypes}}
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{#Services.length}}
+    <div class="StationItem-group">
+      <div class="ContentBlock ContentBlock--green Article">
+        <header class="ContentBlock-header ContentBlock-header--icon u-icon-meter">
+          <h3 class="ContentBlock-headline">På stationen</h3>
+        </header>
+        <div class="ContentBlock-content">
+          <ul class="Checklist">
+          {{#Services}}
+            <li class="Checklist-item u-icon-check">{{Name}}</li>
+          {{/Services}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {{/Services.length}}
+
+  {{#CampaignImage}}
+    <div class="StationItem-group">
+      <div class="ContentBlock ContentBlock--orange Article">
+        <header class="ContentBlock-header ContentBlock-header--icon u-icon-heart">
+          <h3 class="ContentBlock-headline">Just nu!</h3>
+        </header>
+        <div class="ContentBlock-content">
+          <img src="{{CampaignImage}}" alt="">
+        </div>
+      </div>
+    </div>
+  {{/CampaignImage}}
+
+</div>
+</script>
+  <script id="mustache-list" type="x-tmpl-mustache">{{#stations.length}}
+  <h2 class="List-header">{{header}}</h2>
+
+  <div class="List-result">
+    <ul>
+      {{#stations}}
+        <li class="StationItem StationItem--list {{#favorite}}StationItem--is-favorite{{/favorite}}" data-id="{{Id}}">
+          <h3 class="StationItem-header StationItem-header--small">{{Name}}</h3>
+          <p class="StationItem-short">
+            <span class="StationItem-address">{{Address}}</span>
+            <span>{{StationType}}</span>
+            <span class="StationItem-distance">{{distance}}</span>
+          </p>
+          <div class="StationItem-expanded"></div>
+        </li>
+      {{/stations}}
+    </ul>
+  </div>
+{{/stations.length}}
+
+{{^stations.length}}
+  <p class="List-empty">Din filtrering gav inga resultat</p>
+{{/stations.length}}
+</script>
+  <script id="mustache-station_item_expanded" type="x-tmpl-mustache"><div class="StationItem-group">
+  <ul class="ActionBar ActionBar--2">
+  <!-- TODO: Enable trailer rental later -->
+  <!--<ul class="ActionBar {{#trailer}}ActionBar++3{{/trailer}}{{^trailer}}ActionBar++2{{/trailer}}">-->
+    <li class="ActionBar-item">
+      <button class="ActionBar-action {{#favorite}}ActionBar-action--favorite--is-favorite{{/favorite}} u-icon-heart js-StationItem-favorite" data-favorite-add-text="Spara favorit" data-favorite-remove-text="Ta bort favorit">
+        <span class="ActionBar-actionText js-StationItem-favoriteText">
+          {{#favorite}}Ta bort favorit{{/favorite}}
+          {{^favorite}}Spara favorit{{/favorite}}
+        </span>
+      </button>
+    </li>
+
+    {{#trailer}}
+    <!-- TODO: Enable trailer rental later -->
+    <!--<li class="ActionBar-item">
+      <a href="{{TrailerRentalUrl}}" class="ActionBar-action u-icon-trailer js-StationItem-trailer" target="_blank"><span class="ActionBar-actionText">Hyra släp</span></a>
+    </li>-->
+    {{/trailer}}
+
+    <li class="ActionBar-item">
+      <a href="{{FriendlyUrl}}" class="ActionBar-action u-icon-info"><span class="ActionBar-actionText js-StationItem-moreInfo">Mer info</span></a>
+    </li>
+  </ul>
+</div>
+
+<div class="StationItem-group">
+  <a href="#" class="js-StationItem-showOnMap ContentBlock ContentBlock--headerLink ContentBlock--green Article">
+    <header class="ContentBlock-header ContentBlock-header--more ContentBlock-header--icon u-icon-location">
+      <h3 class="ContentBlock-headline">Visa på karta</h3>
+    </header>
+  </a>
+</div>
+
+<div class="StationItem-group">
+  <a href="https://maps.google.com?daddr={{Address}},{{PostalCode}} {{City}}" target="_blank" class="ContentBlock ContentBlock--headerLink ContentBlock--green Article js-StationItem-directions">
+    <header class="ContentBlock-header ContentBlock-header--more ContentBlock-header--icon u-icon-location">
+      <h3 class="ContentBlock-headline">Vägbeskrivning</h3>
+      <div class="ContentBlock-headerMore">
+        <span class="StationItem-distanceContainer js-StationItem-distanceContainer">ca
+          <span class="js-StationItem-distance"></span>
+        </span>
+      </div>
+    </header>
+  </a>
+</div>
+
+<div class="StationItem-group">
+  <div class="ContentBlock ContentBlock--green Article">
+    <header class="ContentBlock-header ContentBlock-header--icon u-icon-clock">
+      <h3 class="ContentBlock-headline">Öppettider</h3>
+    </header>
+    <div class="ContentBlock-content">
+      <div class="OpeningHours">
+        {{{openingHourText}}}
+      </div>
+      {{#isBemannad}}
+      <span class="u-meta">Tanka dygnet runt (kort &amp; kontant)</span>
+      {{/isBemannad}}
+    </div>
+  </div>
+</div>
+
+<div class="StationItem-group">
+  <div class="ContentBlock ContentBlock--green Article">
+    <header class="ContentBlock-header ContentBlock-header--icon u-icon-gasoline">
+      <h3 class="ContentBlock-headline">Drivmedel</h3>
+    </header>
+    <div class="ContentBlock-content">
+
+      <div class="FuelTypes">
+        <ul class="FuelTypes-list">
+          {{#FuelTypes}}
+            <li class="FuelTypes-type" style="color: {{TextColor}}; background: {{BackgroundColor}}; border-color: {{BorderColor}};">{{Name}}</li>
+          {{/FuelTypes}}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{{#Services.length}}
+<div class="StationItem-group">
+  <div class="ContentBlock ContentBlock--green Article">
+    <header class="ContentBlock-header ContentBlock-header--icon u-icon-meter">
+      <h3 class="ContentBlock-headline">På stationen</h3>
+    </header>
+    <div class="ContentBlock-content">
+      <ul class="Checklist">
+      {{#Services}}
+        <li class="Checklist-item u-icon-check">{{Name}}</li>
+      {{/Services}}
+      </ul>
+    </div>
+  </div>
+</div>
+{{/Services.length}}
+</script>
+  <script id="mustache-filters" type="x-tmpl-mustache">{{#filters}}
+  <input type="checkbox" id="{{id}}" name="{{name}}" value="{{value}}" data-odatafilterexpression="{{odatafilterexpression}}">
+  <label for="{{id}}">{{value}}</label>
+{{/filters}}
+</script>
+
+  <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAPfSIvCyod-DD8op7KhyeJr3Lk9QeFzIc&amp;sensor=false&amp;libraries=places"></script>
+
+
+
+    <!--[if lt IE 9]>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <!--<![endif]-->
+
+
+    <script src="assets/javascripts/application.js"></script>
+
+    
+  </body>
+</html>

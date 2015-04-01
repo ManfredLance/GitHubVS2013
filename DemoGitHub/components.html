@@ -1,0 +1,1826 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    <title>Komponenter</title>
+
+    <script src="assets/javascripts/vendor/libs/modernizr.js"></script>
+
+    <link href="//cloud.typography.com/7319472/760864/css/fonts.css" rel="stylesheet" />
+    <link href="//fast.fonts.net/cssapi/ed89d67b-cc4e-4c93-bdd1-5da290ce606d.css" rel="stylesheet" />
+
+    <!--[if gte IE 9]><!-->
+      <link href="assets/stylesheets/application.css" rel="stylesheet" />
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+      <link href="assets/stylesheets/application_old_ie.css" rel="stylesheet" />
+    <![endif]-->
+
+    <style>
+      body {
+        background: #fff9da;
+        padding: 5% 0;
+      }
+
+      header a,
+      header h1 {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      header img {
+        max-width: 120px;
+        margin-right: 2em;
+      }
+
+      .Component {
+        background: #fff;
+        padding: 3em;
+        margin-top: 10%;
+        box-shadow: rgba(0,0,0,.1) 0 1px 1px;
+      }
+      .Component:last-child {
+        margin-bottom: 0;
+      }
+      .Component-head {
+        margin-bottom: 1em;
+      }
+      
+      .Component--icons > div {
+        columns: 4;
+        -webkit-columns: 4;
+        -moz-columns: 4;
+        display: block;
+      }
+      .Component--icons > div span {
+        display: block;
+        margin-bottom: 1em;
+      }
+      .Component--icons > div span:before {
+        margin-right: 1em;
+      }
+      .Component--symbols figure {
+        margin: 0 20px 20px 0;
+      }
+    </style>
+
+  </head>
+
+  <body class="components">
+
+    <div class="u-wrapper">
+  <header>
+    <a href="/"><img alt="Preem" src="/assets/images/general/logotype.png"></a><h1>Komponenter</h1>
+  </header>
+
+  <div id="icons" class="Component Component--icons">
+    <h2 class="Component-head">Icons</h2>
+    <div>
+      <span class="u-icon-youtube">youtube</span>
+      <span class="u-icon-wifi">wifi</span>
+      <span class="u-icon-water">water</span>
+      <span class="u-icon-warning">warning</span>
+      <span class="u-icon-vimeo">vimeo</span>
+      <span class="u-icon-user">user</span>
+      <span class="u-icon-twitter">twitter</span>
+      <span class="u-icon-truck">truck</span>
+      <span class="u-icon-trashcan">trashcan</span>
+      <span class="u-icon-trailer">trailer</span>
+      <span class="u-icon-thermometer">thermometer</span>
+      <span class="u-icon-sun">sun</span>
+      <span class="u-icon-star">star</span>
+      <span class="u-icon-search">search</span>
+      <span class="u-icon-rss">rss</span>
+      <span class="u-icon-ribbon">ribbon</span>
+      <span class="u-icon-print">print</span>
+      <span class="u-icon-power">power</span>
+      <span class="u-icon-position">position</span>
+      <span class="u-icon-plus">plus</span>
+      <span class="u-icon-pinterest">pinterest</span>
+      <span class="u-icon-piechart">piechart</span>
+      <span class="u-icon-piechart-piece">piechart-piece</span>
+      <span class="u-icon-phone">phone</span>
+      <span class="u-icon-note">note</span>
+      <span class="u-icon-more">more</span>
+      <span class="u-icon-more-filled">more-filled</span>
+      <span class="u-icon-moon">moon</span>
+      <span class="u-icon-minus">minus</span>
+      <span class="u-icon-meter">meter</span>
+      <span class="u-icon-menu">menu</span>
+      <span class="u-icon-medical">medical</span>
+      <span class="u-icon-map">map</span>
+      <span class="u-icon-mail">mail</span>
+      <span class="u-icon-location">location</span>
+      <span class="u-icon-list">list</span>
+      <span class="u-icon-linkedin">linkedin</span>
+      <span class="u-icon-light">light</span>
+      <span class="u-icon-knifeandfork">knifeandfork</span>
+      <span class="u-icon-keypad">keypad</span>
+      <span class="u-icon-instagram">instagram</span>
+      <span class="u-icon-info">info</span>
+      <span class="u-icon-idea">idea</span>
+      <span class="u-icon-icecream">icecream</span>
+      <span class="u-icon-hotdog">hotdog</span>
+      <span class="u-icon-help">help</span>
+      <span class="u-icon-heartinring">heartinring</span>
+      <span class="u-icon-heart">heart</span>
+      <span class="u-icon-heart-plus">heart-plus</span>
+      <span class="u-icon-heart-filled">heart-filled</span>
+      <span class="u-icon-googleplus">googleplus</span>
+      <span class="u-icon-globe">globe</span>
+      <span class="u-icon-glass">glass</span>
+      <span class="u-icon-gasoline">gasoline</span>
+      <span class="u-icon-flag">flag</span>
+      <span class="u-icon-filter">filter</span>
+      <span class="u-icon-file">file</span>
+      <span class="u-icon-facebook">facebook</span>
+      <span class="u-icon-extendedsearch">extendedsearch</span>
+      <span class="u-icon-exclamation">exclamation</span>
+      <span class="u-icon-e85">e85</span>
+      <span class="u-icon-e85-filled">e85-filled</span>
+      <span class="u-icon-drink">drink</span>
+      <span class="u-icon-download">download</span>
+      <span class="u-icon-disability">disability</span>
+      <span class="u-icon-directions">directions</span>
+      <span class="u-icon-d">d</span>
+      <span class="u-icon-d-filled">d-filled</span>
+      <span class="u-icon-creditcard">creditcard</span>
+      <span class="u-icon-config">config</span>
+      <span class="u-icon-coffee">coffee</span>
+      <span class="u-icon-close">close</span>
+      <span class="u-icon-close-filled">close-filled</span>
+      <span class="u-icon-clock">clock</span>
+      <span class="u-icon-checkinring">checkinring</span>
+      <span class="u-icon-checkinbox">checkinbox</span>
+      <span class="u-icon-check">check</span>
+      <span class="u-icon-chat">chat</span>
+      <span class="u-icon-change-direction">change-direction</span>
+      <span class="u-icon-cash">cash</span>
+      <span class="u-icon-car">car</span>
+      <span class="u-icon-calendar">calendar</span>
+      <span class="u-icon-bubbles">bubbles</span>
+      <span class="u-icon-bubble">bubble</span>
+      <span class="u-icon-bicycle">bicycle</span>
+      <span class="u-icon-battery">battery</span>
+      <span class="u-icon-at">at</span>
+      <span class="u-icon-arrowright">arrowright</span>
+      <span class="u-icon-arrowright-light">arrowright-light</span>
+      <span class="u-icon-arrowleft">arrowleft</span>
+      <span class="u-icon-arrowdown">arrowdown</span>
+      <span class="u-icon-arrowup">arrowup</span>
+      <span class="u-icon-arrowdown-light">arrowdown-light</span>
+      <span class="u-icon-apple">apple</span>
+      <span class="u-icon-98">98</span>
+      <span class="u-icon-98-filled">98-filled</span>
+      <span class="u-icon-96">96</span>
+      <span class="u-icon-96-filled">96-filled</span>
+      <span class="u-icon-95">95</span>
+      <span class="u-icon-95-filled">95-filled</span>
+    </div>
+  </div>
+
+  <div id="symbol" class="Component Component--symbols">
+    <h2 class="Component-head">Symbol</h2>
+    <div>
+      <figure class="Symbol Symbol--beige Symbol--blackText">
+        <span class="u-icon-bubbles"></span>
+      </figure>
+      <figure class="Symbol Symbol--l Symbol--blue">
+        <span class="u-icon-creditcard"></span>
+      </figure>
+      <figure class="Symbol Symbol--s Symbol--green">
+        <span class="u-icon-bicycle"></span>
+      </figure>
+      <figure class="Symbol Symbol--m Symbol--green-1">
+        <span class="u-icon-bicycle"></span>
+      </figure>
+      <figure class="Symbol Symbol--m Symbol--green-2">
+        <span class="u-icon-bicycle"></span>
+      </figure>
+      <figure class="Symbol Symbol--m Symbol--green-3">
+        <span class="u-icon-bicycle"></span>
+      </figure>
+      <figure class="Symbol Symbol--m Symbol--green-4">
+        <span class="u-icon-bicycle"></span>
+      </figure>
+      <figure class="Symbol Symbol--m Symbol--green-5">
+        <span class="u-icon-bicycle"></span>
+      </figure>
+      <figure class="Symbol Symbol--m Symbol--green-6">
+        <span class="u-icon-bicycle"></span>
+      </figure>
+      <figure class="Symbol Symbol--m Symbol--green-7">
+        <span class="u-icon-bicycle"></span>
+      </figure>
+      <figure class="Symbol Symbol--m Symbol--orange">
+        <span class="u-icon-clock"></span>
+      </figure>
+      <figure class="Symbol Symbol--l Symbol--orangeRed">
+        <span class="u-icon-apple"></span>
+      </figure>
+      <figure class="Symbol Symbol--s Symbol--red">
+        <span class="u-icon-filter"></span>
+      </figure>
+      <figure class="Symbol Symbol--m Symbol--yellow">
+        <span class="u-icon-keypad"></span>
+      </figure>
+    </div>
+  </div>
+
+  <div id="mainnav" class="Component">
+    <h2 class="Component-head">MainNav</h2>
+    <div class="MainNav" data-controller="mainNav" style="padding: 0; width: 100%; float: none;">
+      <nav class="MainNav-menu">
+  <ul class="MainNav-list">
+      <li class="MainNav-listItem MainNav-listItem--is-current">
+        <a href="/hitta-station.html" class="MainNav-link">
+          Hitta station
+
+        </a>
+
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          I butiken
+
+            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+        </a>
+
+          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Aktuella erbjudanden
+
+                    <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+                </a>
+
+                  <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+                      <li class="MainNav-listItem">
+                        <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSub">
+                          Ett erbjudande
+                            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+                        </a>
+
+                          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+                              <li class="MainNav-listItem">
+                                <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSubSub">Ett erbjudande</a>
+                              </li>
+                              <li class="MainNav-listItem">
+                                <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSubSub">Ett annat erbjudande</a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="MainNav-listItem">
+                        <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSub">
+                          Ett annat erbjudande
+                        </a>
+
+                      </li>
+                  </ul>
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Mat &amp; dryck
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Läkemedel
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Service
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Sortiment
+
+                </a>
+
+              </li>
+          </ul>
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/hyra-slap-och-bil.html" class="MainNav-link">
+          Hyra släp
+
+        </a>
+
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          Kort &amp; Förmåner
+
+            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+        </a>
+
+          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Företagskort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Såifakort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Privatkort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Bankkort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Bonuskort
+
+                </a>
+
+              </li>
+          </ul>
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          För bilen
+
+            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+        </a>
+
+          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Biltvätt
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Våra drivmedel
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Välj olja
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Drivmedelspriser
+
+                </a>
+
+              </li>
+          </ul>
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          Drivmedel
+
+        </a>
+
+      </li>
+  </ul>
+</nav>
+
+    </div>
+  </div>
+  <div id="mainnav--stretch" class="Component">
+    <h2 class="Component-head">MainNav--stretch</h2>
+    <div class="MainNav MainNav--stretch" data-controller="mainNav" style="padding: 0; width: 100%; float: none;">
+      <nav class="MainNav-menu">
+  <ul class="MainNav-list">
+      <li class="MainNav-listItem MainNav-listItem--is-current">
+        <a href="/hitta-station.html" class="MainNav-link">
+          Hitta station
+
+        </a>
+
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          I butiken
+
+            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+        </a>
+
+          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Aktuella erbjudanden
+
+                    <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+                </a>
+
+                  <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+                      <li class="MainNav-listItem">
+                        <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSub">
+                          Ett erbjudande
+                            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+                        </a>
+
+                          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+                              <li class="MainNav-listItem">
+                                <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSubSub">Ett erbjudande</a>
+                              </li>
+                              <li class="MainNav-listItem">
+                                <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSubSub">Ett annat erbjudande</a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="MainNav-listItem">
+                        <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSub">
+                          Ett annat erbjudande
+                        </a>
+
+                      </li>
+                  </ul>
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Mat &amp; dryck
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Läkemedel
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Service
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Sortiment
+
+                </a>
+
+              </li>
+          </ul>
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/hyra-slap-och-bil.html" class="MainNav-link">
+          Hyra släp
+
+        </a>
+
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          Kort &amp; Förmåner
+
+            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+        </a>
+
+          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Företagskort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Såifakort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Privatkort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Bankkort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Bonuskort
+
+                </a>
+
+              </li>
+          </ul>
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          För bilen
+
+            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+        </a>
+
+          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Biltvätt
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Våra drivmedel
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Välj olja
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Drivmedelspriser
+
+                </a>
+
+              </li>
+          </ul>
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          Drivmedel
+
+        </a>
+
+      </li>
+  </ul>
+</nav>
+
+    </div>
+  </div>
+
+  <div id="sidebar" class="Component">
+    <h2 class="Component-head">Sidebar</h2>
+    <aside class="Sidebar">
+  <h2 class="Sidebar-headline"><a href="#">I butiken</a></h2>
+
+  <nav class="Sidebar-nav">
+    <ul class="Sidebar-navList">
+        <li class="Sidebar-navListItem">
+          <a href="/textsida.html" class="Sidebar-navListItemLink">Aktuella erbjudanden</a>
+
+        </li>
+        <li class="Sidebar-navListItem Sidebar-navListItem--has-sub u-icon-arrowdown">
+          <a href="/textsida.html" class="Sidebar-navListItemLink">Mat &amp; dryck</a>
+
+            <ul class="Sidebar-navList Sidebar-navList--sub">
+                <li class="Sidebar-navListItem">
+                  <a href="/textsida.html" class="Sidebar-navListItemLink">Aktuella erbjudanden</a>
+
+                </li>
+                <li class="Sidebar-navListItem Sidebar-navListItem--is-current Sidebar-navListItem--has-sub u-icon-arrowdown">
+                  <a href="/textsida.html" class="Sidebar-navListItemLink">Läkemedel</a>
+
+                    <ul class="Sidebar-navList Sidebar-navList--subSub">
+                        <li class="Sidebar-navListItem">
+                          <a href="/textsida.html" class="Sidebar-navListItemLink">Aktuella erbjudanden</a>
+                        </li>
+                        <li class="Sidebar-navListItem">
+                          <a href="/textsida.html" class="Sidebar-navListItemLink">Läkemedel</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="Sidebar-navListItem">
+                  <a href="/textsida.html" class="Sidebar-navListItemLink">Service</a>
+
+                </li>
+                <li class="Sidebar-navListItem">
+                  <a href="/textsida.html" class="Sidebar-navListItemLink">Sortiment</a>
+
+                </li>
+            </ul>
+        </li>
+        <li class="Sidebar-navListItem">
+          <a href="/textsida.html" class="Sidebar-navListItemLink">Läkemedel</a>
+
+        </li>
+        <li class="Sidebar-navListItem">
+          <a href="/textsida.html" class="Sidebar-navListItemLink">Service</a>
+
+        </li>
+        <li class="Sidebar-navListItem">
+          <a href="/textsida.html" class="Sidebar-navListItemLink">Sortiment</a>
+
+        </li>
+    </ul>
+  </nav>
+</aside>
+
+  </div>
+
+  <div id="content-block" class="Component">
+    <h2 class="Component-head">Content block</h2>
+    <div class="ContentBlock ContentBlock--blue Article">
+  <header class="ContentBlock-header ContentBlock-header--icon u-icon-bubbles">
+    <h3 class="ContentBlock-headline">En lång rubrik som brytas på flera rader</h3>
+  </header>
+  <div class="ContentBlock-content">
+    <p>
+      Voluptates molestias aut ut natus molestias ex sequi voluptas ipsum culpa
+      laborum voluptates nihil exercitationem
+    </p>
+  </div>
+</div>
+
+    <div class="ContentBlock ContentBlock--green Article">
+  <header class="ContentBlock-header ContentBlock-header--icon u-icon-hotdog">
+    <h3 class="ContentBlock-headline">En lång rubrik som brytas på flera rader</h3>
+  </header>
+  <div class="ContentBlock-content">
+    <p>
+      Voluptates molestias aut ut natus molestias ex sequi voluptas ipsum culpa
+      laborum voluptates nihil exercitationem
+    </p>
+  </div>
+</div>
+
+    <div class="ContentBlock ContentBlock--orange Article">
+  <header class="ContentBlock-header">
+    <h3 class="ContentBlock-headline">En lång rubrik som brytas på flera rader</h3>
+  </header>
+  <div class="ContentBlock-content">
+    <p>
+      Voluptates molestias aut ut natus molestias ex sequi voluptas ipsum culpa
+      laborum voluptates nihil exercitationem
+    </p>
+  </div>
+</div>
+
+  </div>
+
+  <div id="action-block" class="Component">
+    <h2 class="Component-head">Action block</h2>
+    <div class="ActionBlock ActionBlock--orange">
+  <a href="#" class="ActionBlock-imageWrapper ActionBlock-imageWrapper--full">
+      <img src="http://placehold.it/700x350" class="ActionBlock-image" alt="Bildbeskrivning">
+  </a>
+  <div class="ActionBlock-content">
+    <div class="ActionBlock-text Article">
+      <h3 class="ActionBlock-headline">Nu är våren här och många väljer då att göra bilen</h3>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, beatae.</p>
+      </div>
+    </div>
+    <a href="#" class="Button Button--full  Button--orange ActionBlock-link">Ansök nu!</a>
+  </div>
+</div>
+
+    <br>
+    <div class="ActionBlock ActionBlock--green">
+  <a href="#" class="ActionBlock-imageWrapper ActionBlock-imageWrapper--medium">
+      <img src="http://placehold.it/400x230/eee/969696" class="ActionBlock-image" alt="Bildbeskrivning">
+  </a>
+  <div class="ActionBlock-content">
+    <div class="ActionBlock-text Article">
+      <h3 class="ActionBlock-headline">Nu är våren här och många väljer då att göra bilen</h3>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, beatae.</p>
+      </div>
+    </div>
+    <a href="#" class="Button Button--full  Button--green ActionBlock-link">Ansök nu!</a>
+  </div>
+</div>
+
+  </div>
+
+  <div id="article-list" class="Component">
+    <h2 class="Component-head">Article list</h2>
+    <div class="ArticleList">
+  <ul class="ArticleList-list">
+      <li class="ArticleList-item ArticleList-item--has-image">
+          <a href="#" class="ArticleList-imageWrapper">
+              <img src="http://placehold.it/660x416" class="ArticleList-image" alt="Bildtext">
+          </a>
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+      <li class="ArticleList-item ArticleList-item--has-image">
+          <a href="#" class="ArticleList-imageWrapper">
+              <img src="http://placehold.it/660x416" class="ArticleList-image" alt="Bildtext">
+          </a>
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+  </ul>
+
+  <div class="u-moreActionWrapper">
+    <a href="#" class="u-moreAction u-icon-arrowright-light">Fler nyheter</a>
+  </div>
+</div>
+
+    <div class="ArticleList ArticleList--split">
+  <ul class="ArticleList-list">
+      <li class="ArticleList-item ArticleList-item--has-image">
+          <a href="#" class="ArticleList-imageWrapper">
+              <img src="http://placehold.it/320x200" class="ArticleList-image" alt="Bildtext">
+          </a>
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+      <li class="ArticleList-item ArticleList-item--last ArticleList-item--has-image">
+          <a href="#" class="ArticleList-imageWrapper">
+              <img src="http://placehold.it/320x200" class="ArticleList-image" alt="Bildtext">
+          </a>
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+      <li class="ArticleList-item ArticleList-item--has-image">
+          <a href="#" class="ArticleList-imageWrapper">
+              <img src="http://placehold.it/320x200" class="ArticleList-image" alt="Bildtext">
+          </a>
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+      <li class="ArticleList-item ArticleList-item--last ArticleList-item--has-image">
+          <a href="#" class="ArticleList-imageWrapper">
+              <img src="http://placehold.it/320x200" class="ArticleList-image" alt="Bildtext">
+          </a>
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+  </ul>
+
+  <div class="u-moreActionWrapper">
+    <a href="#" class="u-moreAction u-icon-arrowright-light">Fler nyheter</a>
+  </div>
+</div>
+
+    <div class="ArticleList">
+  <ul class="ArticleList-list">
+      <li class="ArticleList-item">
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+      <li class="ArticleList-item">
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+      <li class="ArticleList-item">
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+      <li class="ArticleList-item">
+
+        <div class="ArticleList-itemText Article">
+          <h3 class="ArticleList-headline"><a href="#">Nu är våren här och många väljer då att göra bilen</a></h3>
+
+          <p class="u-meta ArticleList-meta">9 maj 2014</p>
+
+          <p>
+            Nu är våren här och många väljer då att göra bilen vårfin
+            genom tvätt. Men även om…
+          </p>
+        </div>
+      </li>
+  </ul>
+
+  <div class="u-moreActionWrapper">
+    <a href="#" class="u-moreAction u-icon-arrowright-light">Fler nyheter</a>
+  </div>
+</div>
+
+  </div>
+
+  <div id="action-bar" class="Component">
+    <h2 class="Component-head">Action bar</h2>
+    <ul class="ActionBar ActionBar--3 u-group">
+  <li class="ActionBar-item">
+    <button class="ActionBar-action u-icon-heart js-Station--favorite" data-favorite-add-text="Spara favorit" data-favorite-remove-text="Ta bort favorit"><span class="ActionBar-actionText js-Station--favoriteText">Spara favorit</span></button>
+  </li>
+    <li class="ActionBar-item">
+      <a href="#hyra-slap" class="ActionBar-action u-icon-trailer js-trackLink" data-tracking-category="Rental" data-tracking-label="Stockholm, Bredäng"><span class="ActionBar-actionText">Hyra släp</span></a>
+    </li>
+    <li class="ActionBar-item">
+      <a href="#oppettider" class="ActionBar-action u-icon-clock"><span class="ActionBar-actionText">Öppettider</span></a>
+    </li>
+</ul>
+
+    <ul class="ActionBar ActionBar--2 u-group">
+  <li class="ActionBar-item">
+    <button class="ActionBar-action u-icon-heart js-Station--favorite" data-favorite-add-text="Spara favorit" data-favorite-remove-text="Ta bort favorit"><span class="ActionBar-actionText js-Station--favoriteText">Spara favorit</span></button>
+  </li>
+    <li class="ActionBar-item">
+      <a href="#hyra-slap" class="ActionBar-action u-icon-trailer js-trackLink" data-tracking-category="Rental" data-tracking-label="Stockholm, Bredäng"><span class="ActionBar-actionText">Hyra släp</span></a>
+    </li>
+</ul>
+
+    <ul class="ActionBar ActionBar--1 u-group">
+  <li class="ActionBar-item">
+    <button class="ActionBar-action u-icon-heart js-Station--favorite" data-favorite-add-text="Spara favorit" data-favorite-remove-text="Ta bort favorit"><span class="ActionBar-actionText js-Station--favoriteText">Spara favorit</span></button>
+  </li>
+</ul>
+
+  </div>
+
+  <div id="fuel-types" class="Component">
+    <h2 class="Component-head">Fuel types</h2>
+    <div class="FuelTypes">
+  <ul class="FuelTypes-list">
+      <li class="FuelTypes-type" style="color: #fff; background: #00753b; border-color: #00753b;">Bensin 95</li>
+      <li class="FuelTypes-type" style="color: #fff; background: #00753b; border-color: #00753b;">Bensin 96</li>
+      <li class="FuelTypes-type" style="color: #fff; background: #00753b; border-color: #00753b;">Bensin 98</li>
+      <li class="FuelTypes-type" style="color: #fff; background: #0070c0; border-color: #0070c0;">Etanol E85</li>
+      <li class="FuelTypes-type" style="color: #000; background: #ffea00; border-color: #ffea00;">Biodiesel 100</li>
+      <li class="FuelTypes-type" style="color: #fff; background: #000; border-color: #000;">ACP Diesel</li>
+      <li class="FuelTypes-type" style="color: #fff; background: #000; border-color: #000;">ACP Evolution Diesel</li>
+      <li class="FuelTypes-type" style="color: #fff; background: #00b0f0; border-color: #00b0f0;">Fordonsgas</li>
+      <li class="FuelTypes-type" style="color: #0070c0; background: #fff; border-color: #d3d3d3;">Adblue</li>
+      <li class="FuelTypes-type" style="color: #fff; background: #f4983b; border-color: #f4983b;">El-laddning</li>
+      <li class="FuelTypes-type" style="color: #fff; background: #f4983b; border-color: #f4983b;">El-snabbladdning</li>
+  </ul>
+</div>
+
+  </div>
+
+  <div id="buttons" class="Component">
+    <h2 class="Component-head">Buttons</h2>
+    <button class="Button Button--full">Hej hej</button>
+    <br><br>
+    <button class="Button Button--green Button--full">Hej hej</button>
+  </div>
+
+  <div id="checklist" class="Component">
+    <h2 class="Component-head">Checklist</h2>
+    <ul class="Checklist">
+  <li class="Checklist-item u-icon-check">Släputhyrning</li>
+  <li class="Checklist-item u-icon-check">Biluthyrning</li>
+  <li class="Checklist-item u-icon-check">Anpassad för 24 meters-fordon</li>
+  <li class="Checklist-item u-icon-check">Biltvätt</li>
+  <li class="Checklist-item u-icon-check">Tvätta själv-hall</li>
+</ul>
+
+  </div>
+
+  <div id="video" class="Component">
+    <h2 class="Component-head">Video</h2>
+    <div class="Video">
+  <iframe class="Video-item" width="560" height="315" src="//www.youtube.com/embed/fnaaDgDPKOk" frameborder="0" allowfullscreen></iframe>
+</div>
+
+  </div>
+
+  <div id="share-actions" class="Component">
+    <h2 class="Component-head">Share actions</h2>
+    <div class="ShareActions">
+  <ul class="ShareActions-list">
+    <li class="ShareActions-item ShareActions-item--facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fexample.com%2F" class="u-icon-facebook js-trackLink" target="_blank" data-tracking-category="Share" data-tracking-action="Facebook" data-tracking-label="http://example.com">
+        <span class="ShareActions-name">Facebook</span>
+      </a>
+    </li>
+    <li class="ShareActions-item ShareActions-item--twitter">
+      <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fexample.com%2F" class="u-icon-twitter js-trackLink" target="_blank" data-tracking-category="Share" data-tracking-action="Twitter" data-tracking-label="http://example.com">
+        <span class="ShareActions-name">Twitter</span>
+      </a>
+    </li>
+    <li class="ShareActions-item ShareActions-item--googleplus">
+      <a href="http://plus.google.com/share?url=http%3A%2F%2Fexample.com%2F" class="u-icon-googleplus js-trackLink" target="_blank" data-tracking-category="Share" data-tracking-action="Google+" data-tracking-label="http://example.com">
+        <span class="ShareActions-name">Google+</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+    <div class="ShareActions ShareActions--onColor">
+  <ul class="ShareActions-list">
+    <li class="ShareActions-item ShareActions-item--facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fexample.com%2F" class="u-icon-facebook js-trackLink" target="_blank" data-tracking-category="Share" data-tracking-action="Facebook" data-tracking-label="http://example.com">
+        <span class="ShareActions-name">Facebook</span>
+      </a>
+    </li>
+    <li class="ShareActions-item ShareActions-item--twitter">
+      <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fexample.com%2F" class="u-icon-twitter js-trackLink" target="_blank" data-tracking-category="Share" data-tracking-action="Twitter" data-tracking-label="http://example.com">
+        <span class="ShareActions-name">Twitter</span>
+      </a>
+    </li>
+    <li class="ShareActions-item ShareActions-item--googleplus">
+      <a href="http://plus.google.com/share?url=http%3A%2F%2Fexample.com%2F" class="u-icon-googleplus js-trackLink" target="_blank" data-tracking-category="Share" data-tracking-action="Google+" data-tracking-label="http://example.com">
+        <span class="ShareActions-name">Google+</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+  </div>
+
+  <div id="featured-block" class="Component">
+    <h2 class="Component-head">Featured block</h2>
+
+    <div class="ContentBlock ContentBlock--orange Article">
+      <header class="ContentBlock-header">
+        <h2 class="ContentBlock-headline">Featured block</h2>
+      </header>
+      <div class="FeaturedBlock">
+  <a href="#"><img src="http://placehold.it/510x260" class="FeaturedBlock-image" alt="Bildbeskrivning"></a>
+
+  <h3 class="FeaturedBlock-headline"><a href="#">Anslut kort &amp; spara pengar</a></h3>
+
+  <div class="Article FeaturedBlock-text">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+  </div>
+</div>
+
+    </div>
+    <br><br>
+    <div class="ContentBlock ContentBlock--green Article">
+      <header class="ContentBlock-header">
+        <h2 class="ContentBlock-headline">Featured block</h2>
+      </header>
+      <div class="FeaturedBlock">
+  <a href="#"><img src="http://placehold.it/510x260" class="FeaturedBlock-image" alt="Bildbeskrivning"></a>
+
+  <h3 class="FeaturedBlock-headline"><a href="#">Anslut kort &amp; spara pengar</a></h3>
+
+  <div class="Article FeaturedBlock-text">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+  </div>
+</div>
+
+    </div>
+    <br><br>
+    <div class="ContentBlock ContentBlock--blue Article">
+      <header class="ContentBlock-header">
+        <h2 class="ContentBlock-headline">Featured block</h2>
+      </header>
+      <div class="FeaturedBlock">
+  <a href="#"><img src="http://placehold.it/510x260" class="FeaturedBlock-image" alt="Bildbeskrivning"></a>
+
+  <h3 class="FeaturedBlock-headline"><a href="#">Anslut kort &amp; spara pengar</a></h3>
+
+  <div class="Article FeaturedBlock-text">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+  </div>
+</div>
+
+    </div>
+    <br><br>
+    <div class="ContentBlock ContentBlock--facebookBlue Article">
+      <header class="ContentBlock-header">
+        <h2 class="ContentBlock-headline">Featured block</h2>
+      </header>
+      <div class="FeaturedBlock">
+  <a href="#"><img src="http://placehold.it/510x260" class="FeaturedBlock-image" alt="Bildbeskrivning"></a>
+
+  <h3 class="FeaturedBlock-headline"><a href="#">Anslut kort &amp; spara pengar</a></h3>
+
+  <div class="Article FeaturedBlock-text">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <div id="station-finder-mini" class="Component">
+    <h2 class="Component-head">Station finder mini</h2>
+    <div class="StationFinderMini" data-controller='[{"stationFinderMini": {"stationFinderUrl": "/hitta-station.html"}}]'>
+  <a href="/hitta-station.html" class="StationFinderMini-stationFinderLink ButtonLight u-icon-map js-trackLink" data-tracking-category="Station finder widget" data-tracking-action="Stations close to me">Stationer nära mig</a>
+
+  <div class="u-searchInputWrapper u-icon-search" data-controller="clearInput">
+    <form class="StationFinderMini-searchForm js-StationFinderMini-searchForm">
+      <input type="search" class="StationFinderMini-searchInput js-StationFinderMini-searchInput u-searchInput" placeholder="Sök adress, ort, postnummer">
+    </form>
+    <button class="ButtonClear u-icon-close js-clearInputBtn" title="Rensa fältet">
+      <span>Rensa</span>
+    </button>
+  </div>
+
+  <p class="StationFinderMini-lastVisited js-trackLink" data-tracking-category="Station finder widget" data-tracking-action="Click latest visit">
+      Senast besökta
+      <a href="/station.html" title="Stockholm Norrmalm">Stockholm Norrmalm</a>,
+      <a href="/station.html" title="Stockholm Bredäng">Stockholm Bredäng</a>
+  </p>
+
+</div>
+
+    <div class="StationFinderMini" data-controller='[{"stationFinderMini": {"stationFinderUrl": "/hitta-station.html"}}]'>
+  <a href="/hitta-station.html" class="StationFinderMini-stationFinderLink ButtonLight u-icon-map js-trackLink" data-tracking-category="Station finder widget" data-tracking-action="Stations close to me">Stationer nära mig</a>
+
+  <div class="u-searchInputWrapper u-icon-search" data-controller="clearInput">
+    <form class="StationFinderMini-searchForm js-StationFinderMini-searchForm">
+      <input type="search" class="StationFinderMini-searchInput js-StationFinderMini-searchInput u-searchInput" placeholder="Sök adress, ort, postnummer">
+    </form>
+    <button class="ButtonClear u-icon-close js-clearInputBtn" title="Rensa fältet">
+      <span>Rensa</span>
+    </button>
+  </div>
+
+  <p class="StationFinderMini-lastVisited js-trackLink" data-tracking-category="Station finder widget" data-tracking-action="Click latest visit">
+      Senast besökta
+      <a href="/station.html" title="Stockholm Norrmalm">Stockholm Norrmalm</a>,
+      <a href="/station.html" title="Stockholm Bredäng">Stockholm Bredäng</a>
+  </p>
+
+    <div class="StationFinderMini-favorites">
+      <h4>Favoritstationer</h4>
+
+        <div class="js-trackLink" data-tracking-category="Station finder widget" data-tracking-action="Click favorite">
+          <ul class="StationList" data-controller="stationList">
+    <li class="StationList-item js-StationList-item" data-station-id="51621">
+      <a href="#" class="StationList-link" title="Stockholm, Norrmälarstrand">
+        <img src="http://placehold.it/72x72" alt="Personalen" class="StationList-image">
+        <div class="StationList-name">Stockholm, Norrmälarstrand</div>
+        <div class="StationList-openingHours">Vardagar 08:00-22:00</div>
+      </a>
+      <button class="StationList-remove u-icon-close js-StationList-remove" title="Ta bort favorit">
+        <span>Ta bort</span>
+      </button>
+    </li>
+    <li class="StationList-item js-StationList-item" data-station-id="51621">
+      <a href="#" class="StationList-link" title="Stockholm, Norrmälarstrand">
+        <img src="http://placehold.it/72x72" alt="Personalen" class="StationList-image">
+        <div class="StationList-name">Stockholm, Norrmälarstrand</div>
+        <div class="StationList-openingHours">Vardagar 08:00-22:00</div>
+      </a>
+      <button class="StationList-remove u-icon-close js-StationList-remove" title="Ta bort favorit">
+        <span>Ta bort</span>
+      </button>
+    </li>
+    <li class="StationList-item js-StationList-item" data-station-id="51621">
+      <a href="#" class="StationList-link" title="Stockholm, Norrmälarstrand">
+        <img src="http://placehold.it/72x72" alt="Personalen" class="StationList-image">
+        <div class="StationList-name">Stockholm, Norrmälarstrand</div>
+        <div class="StationList-openingHours">Vardagar 08:00-22:00</div>
+      </a>
+      <button class="StationList-remove u-icon-close js-StationList-remove" title="Ta bort favorit">
+        <span>Ta bort</span>
+      </button>
+    </li>
+    <li class="StationList-item js-StationList-item" data-station-id="51621">
+      <a href="#" class="StationList-link" title="Stockholm, Norrmälarstrand">
+        <img src="http://placehold.it/72x72" alt="Personalen" class="StationList-image">
+        <div class="StationList-name">Stockholm, Norrmälarstrand</div>
+        <div class="StationList-openingHours">Vardagar 08:00-22:00</div>
+      </a>
+      <button class="StationList-remove u-icon-close js-StationList-remove" title="Ta bort favorit">
+        <span>Ta bort</span>
+      </button>
+    </li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+    <div class="StationFinderMini" data-controller='[{"stationFinderMini": {"stationFinderUrl": "/hitta-station.html"}}]'>
+  <a href="/hitta-station.html" class="StationFinderMini-stationFinderLink ButtonLight u-icon-map js-trackLink" data-tracking-category="Station finder widget" data-tracking-action="Stations close to me">Stationer nära mig</a>
+
+  <div class="u-searchInputWrapper u-icon-search" data-controller="clearInput">
+    <form class="StationFinderMini-searchForm js-StationFinderMini-searchForm">
+      <input type="search" class="StationFinderMini-searchInput js-StationFinderMini-searchInput u-searchInput" placeholder="Sök adress, ort, postnummer">
+    </form>
+    <button class="ButtonClear u-icon-close js-clearInputBtn" title="Rensa fältet">
+      <span>Rensa</span>
+    </button>
+  </div>
+
+  <p class="StationFinderMini-lastVisited js-trackLink" data-tracking-category="Station finder widget" data-tracking-action="Click latest visit">
+      Du har inte besökt några stationer
+  </p>
+
+    <div class="StationFinderMini-favorites StationFinderMini-favorites--has-none">
+      <h4>Favoritstationer</h4>
+
+        <p class="StationFinderMini-noFavorites u-meta u-icon-heart">
+          Favoritmarkera en station genom att klicka på hjärtat på en stationssida.
+          Då får du snabb åtkomst till öppettider, specialerbjudanden och mycket mer.
+        </p>
+    </div>
+</div>
+
+  </div>
+
+  <div id="station-list" class="Component">
+    <h2 class="Component-head">Station list</h2>
+    <ul class="StationList" data-controller="stationList">
+    <li class="StationList-item js-StationList-item" data-station-id="51621">
+      <a href="#" class="StationList-link" title="Stockholm, Norrmälarstrand">
+        <img src="http://placehold.it/72x72" alt="Personalen" class="StationList-image">
+        <div class="StationList-name">Stockholm, Norrmälarstrand</div>
+        <div class="StationList-openingHours">Vardagar 08:00-22:00</div>
+      </a>
+      <button class="StationList-remove u-icon-close js-StationList-remove" title="Ta bort favorit">
+        <span>Ta bort</span>
+      </button>
+    </li>
+    <li class="StationList-item js-StationList-item" data-station-id="51621">
+      <a href="#" class="StationList-link" title="Stockholm, Norrmälarstrand">
+        <img src="http://placehold.it/72x72" alt="Personalen" class="StationList-image">
+        <div class="StationList-name">Stockholm, Norrmälarstrand</div>
+        <div class="StationList-openingHours">Vardagar 08:00-22:00</div>
+      </a>
+      <button class="StationList-remove u-icon-close js-StationList-remove" title="Ta bort favorit">
+        <span>Ta bort</span>
+      </button>
+    </li>
+    <li class="StationList-item js-StationList-item" data-station-id="51621">
+      <a href="#" class="StationList-link" title="Stockholm, Norrmälarstrand">
+        <img src="http://placehold.it/72x72" alt="Personalen" class="StationList-image">
+        <div class="StationList-name">Stockholm, Norrmälarstrand</div>
+        <div class="StationList-openingHours">Vardagar 08:00-22:00</div>
+      </a>
+      <button class="StationList-remove u-icon-close js-StationList-remove" title="Ta bort favorit">
+        <span>Ta bort</span>
+      </button>
+    </li>
+    <li class="StationList-item js-StationList-item" data-station-id="51621">
+      <a href="#" class="StationList-link" title="Stockholm, Norrmälarstrand">
+        <img src="http://placehold.it/72x72" alt="Personalen" class="StationList-image">
+        <div class="StationList-name">Stockholm, Norrmälarstrand</div>
+        <div class="StationList-openingHours">Vardagar 08:00-22:00</div>
+      </a>
+      <button class="StationList-remove u-icon-close js-StationList-remove" title="Ta bort favorit">
+        <span>Ta bort</span>
+      </button>
+    </li>
+</ul>
+
+  </div>
+
+  <div id="block-list" class="Component">
+    <h2 class="Component-head">Block list</h2>
+    <ul class="BlockLinks">
+  <li class="BlockLinks-item"><a href="#" class="BlockLinks-link">Aktuella kampanjer</a></li>
+  <li class="BlockLinks-item"><a href="#" class="BlockLinks-link">Oljeguiden</a></li>
+  <li class="BlockLinks-item"><a href="#" class="BlockLinks-link">Mat &amp; dryck</a></li>
+  <li class="BlockLinks-item"><a href="#" class="BlockLinks-link">Biltvätt</a></li>
+  <li class="BlockLinks-item"><a href="#" class="BlockLinks-link">Sortiment i butiken</a></li>
+  <li class="BlockLinks-item"><a href="#" class="BlockLinks-link">Bilvård</a></li>
+  <li class="BlockLinks-item"><a href="#" class="BlockLinks-link">Service i butiken</a></li>
+  <li class="BlockLinks-item"><a href="#" class="BlockLinks-link">Anslut kort</a></li>
+  <li class="BlockLinks-item"><a href="#" class="BlockLinks-link">Produkter &amp; tjänster</a></li>
+  <li class="BlockLinks-item"><a href="#" class="BlockLinks-link">Drivmedelspriser</a></li>
+</ul>
+
+  </div>
+
+  <div id="breadcrumbs" class="Component">
+    <h2 class="Component-head">Breadcrumbs</h2>
+    <ul class="Breadcrumbs">
+    <li class="Breadcrumbs-item u-icon-arrowright"><a href="#" class="Breadcrumbs-link">Hyra släp &amp; bil</a>
+  <li class="Breadcrumbs-item">Villkor</li>
+</ul>
+
+  </div>
+
+  <div id="slideshow" class="Component">
+    <h2 class="Component-head">Slideshow</h2>
+    <div class="Slideshow Slideshow--onFirst" data-controller="slideshow">
+  <div class="Slideshow-slider Slideshow-slider--is-loading js-Slideshow-slider">
+    <ul class="Slideshow-list">
+        <li class="Slideshow-item"><ul class="ProductList">
+    <li class="ProductList-item">
+      <div class="ProductList-itemInner">
+        <img src="http://placehold.it/250x250" alt="Produkt" class="ProductList-image">
+
+        <h3 class="ProductList-title">Pulled Pork</h3>
+
+        <div class="ProductList-price">39 kr</div>
+      </div>
+    </li>
+    <li class="ProductList-item">
+      <div class="ProductList-itemInner">
+        <img src="http://placehold.it/250x250" alt="Produkt" class="ProductList-image">
+
+        <h3 class="ProductList-title">Pulled Pork</h3>
+
+        <div class="ProductList-price">39 kr</div>
+      </div>
+    </li>
+    <li class="ProductList-item">
+      <div class="ProductList-itemInner">
+        <img src="http://placehold.it/250x250" alt="Produkt" class="ProductList-image">
+
+        <h3 class="ProductList-title">Pulled Pork</h3>
+
+        <div class="ProductList-price">39 kr</div>
+      </div>
+    </li>
+</ul>
+</li>
+        <li class="Slideshow-item"><ul class="ProductList">
+    <li class="ProductList-item">
+      <div class="ProductList-itemInner">
+        <img src="http://placehold.it/250x250" alt="Produkt" class="ProductList-image">
+
+        <h3 class="ProductList-title">Pulled Pork</h3>
+
+        <div class="ProductList-price">39 kr</div>
+      </div>
+    </li>
+    <li class="ProductList-item">
+      <div class="ProductList-itemInner">
+        <img src="http://placehold.it/250x250" alt="Produkt" class="ProductList-image">
+
+        <h3 class="ProductList-title">Pulled Pork</h3>
+
+        <div class="ProductList-price">39 kr</div>
+      </div>
+    </li>
+    <li class="ProductList-item">
+      <div class="ProductList-itemInner">
+        <img src="http://placehold.it/250x250" alt="Produkt" class="ProductList-image">
+
+        <h3 class="ProductList-title">Pulled Pork</h3>
+
+        <div class="ProductList-price">39 kr</div>
+      </div>
+    </li>
+</ul>
+</li>
+        <li class="Slideshow-item"><ul class="ProductList">
+    <li class="ProductList-item">
+      <div class="ProductList-itemInner">
+        <img src="http://placehold.it/250x250" alt="Produkt" class="ProductList-image">
+
+        <h3 class="ProductList-title">Pulled Pork</h3>
+
+        <div class="ProductList-price">39 kr</div>
+      </div>
+    </li>
+    <li class="ProductList-item">
+      <div class="ProductList-itemInner">
+        <img src="http://placehold.it/250x250" alt="Produkt" class="ProductList-image">
+
+        <h3 class="ProductList-title">Pulled Pork</h3>
+
+        <div class="ProductList-price">39 kr</div>
+      </div>
+    </li>
+    <li class="ProductList-item">
+      <div class="ProductList-itemInner">
+        <img src="http://placehold.it/250x250" alt="Produkt" class="ProductList-image">
+
+        <h3 class="ProductList-title">Pulled Pork</h3>
+
+        <div class="ProductList-price">39 kr</div>
+      </div>
+    </li>
+</ul>
+</li>
+    </ul>
+  </div>
+</div>
+
+  </div>
+
+  <div id="notices" class="Component">
+    <h2 class="Component-head">Notices</h2>
+    <div class="Notice u-icon-info" data-controller='[{"notice": {"id": 123}}]'>
+  <button class="CloseBtn CloseBtn--no-text Notice-close js-Notice-close"><span>Stäng</span></button>
+
+  <p>Vid besvärande rök eller lukt bör man <a href="#">skydda sig</a> genom att gå inomhus, stänga dörrar och fönster samt om möjligt stoppa ventilationen.</p>
+</div>
+
+    <div class="Notice Notice--alert u-icon-info" data-controller='[{"notice": {"id": 123}}]'>
+  <button class="CloseBtn CloseBtn--no-text Notice-close js-Notice-close"><span>Stäng</span></button>
+
+  <p>Vid besvärande rök eller lukt bör man <a href="#">skydda sig</a> genom att gå inomhus, stänga dörrar och fönster samt om möjligt stoppa ventilationen.</p>
+</div>
+
+  </div>
+
+  <div id="item-list" class="Component">
+    <h2 class="Component-head">Item list</h2>
+    <ul class="ItemList">
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Salladsbar</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Varma rätter</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Kalla rätter</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Wok</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Kravmärkt kaffe</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Läkemedel</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Biltillbehör</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Tidningar</div>
+      </div>
+    </li>
+</ul>
+
+    <ul class="ItemList">
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Salladsbar</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Varma rätter</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Kalla rätter</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Wok</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Kravmärkt kaffe</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Läkemedel</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Biltillbehör</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Tidningar</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+</ul>
+
+    <ul class="ItemList ItemList--square">
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Salladsbar</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Varma rätter</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Kalla rätter</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Wok</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Kravmärkt kaffe</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Läkemedel</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Biltillbehör</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+    <li class="ItemList-item">
+      <div class="ItemList-itemInner">
+        <img src="http://placehold.it/150x150" class="ItemList-image">
+        <div class="ItemList-title">Tidningar</div>
+          <div class="ItemList-price">20 kr</div>
+      </div>
+    </li>
+</ul>
+
+  </div>
+
+  <div id="index-navigation" class="Component">
+    <h2 class="Component-head">Index navigation</h2>
+    <div class="IndexNav">
+  <ul class="IndexNav-list" id="indexNav1">
+      <li class="IndexNav-item">
+        <a href="#section-A" class="IndexNav-link">A</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-B" class="IndexNav-link">B</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-C" class="IndexNav-link">C</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-D" class="IndexNav-link">D</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-E" class="IndexNav-link">E</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-F" class="IndexNav-link">F</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-G" class="IndexNav-link">G</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-H" class="IndexNav-link">H</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-I" class="IndexNav-link">I</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-J" class="IndexNav-link">J</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-K" class="IndexNav-link">K</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-L" class="IndexNav-link">L</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-M" class="IndexNav-link">M</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-N" class="IndexNav-link">N</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-O" class="IndexNav-link">O</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-P" class="IndexNav-link">P</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-Q" class="IndexNav-link">Q</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-R" class="IndexNav-link">R</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-S" class="IndexNav-link">S</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-T" class="IndexNav-link">T</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-U" class="IndexNav-link">U</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-V" class="IndexNav-link">V</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-W" class="IndexNav-link">W</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-X" class="IndexNav-link">X</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-Y" class="IndexNav-link">Y</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-Z" class="IndexNav-link">Z</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-Å" class="IndexNav-link">Å</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-Ä" class="IndexNav-link">Ä</a>
+      </li>
+      <li class="IndexNav-item">
+        <a href="#section-Ö" class="IndexNav-link">Ö</a>
+      </li>
+  </ul>
+</div>
+
+  </div>
+
+  <div id="section-list" class="Component">
+    <h2 class="Component-head">Section list</h2>
+    <div class="SectionList" >
+  <ol class="SectionList-list">
+    <li class="SectionList-item">
+      Crem nemo beatae quidem
+      <ul class="SectionList-itemList">
+        <li><a href="/file/Produktblad_Crem_nemo_beatae_quidem.pdf">Produktblad</a></li>
+        <li><a href="/file/Sakerhetsplad_Crem_nemo_beatae_quidem.pdf">Säkerhetsdatablad</a></li>
+      </ul>
+    </li>
+    <li class="SectionList-item">
+      Bolore ea harum est
+      <ul class="SectionList-itemList">
+        <li><a href="/file/Produktblad_Bolore_ea_harum_est.pdf">Produktblad</a></li>
+        <li><a href="/file/Sakerhetsplad_Bolore_ea_harum_est.pdf">Säkerhetsdatablad</a></li>
+      </ul>
+    </li>
+  </ol>
+</div>
+<div class="SectionList" >
+  <h2 class="SectionList-sectionHead">En sektion med rubrik</h2>
+  <ol class="SectionList-list">
+    <li class="SectionList-item">
+      Crem nemo beatae quidem
+      <ul class="SectionList-itemList">
+        <li><a href="/file/Produktblad_Crem_nemo_beatae_quidem.pdf">Produktblad</a></li>
+        <li><a href="/file/Sakerhetsplad_Crem_nemo_beatae_quidem.pdf">Säkerhetsdatablad</a></li>
+      </ul>
+    </li>
+    <li class="SectionList-item">
+      Bolore ea harum est
+      <ul class="SectionList-itemList">
+        <li><a href="/file/Produktblad_Bolore_ea_harum_est.pdf">Produktblad</a></li>
+        <li><a href="/file/Sakerhetsplad_Bolore_ea_harum_est.pdf">Säkerhetsdatablad</a></li>
+      </ul>
+    </li>
+  </ol>
+</div>
+<div class="SectionList" id="section-A">
+  <h2 class="SectionList-sectionHead">A</h2>
+  <ol class="SectionList-list">
+    <li class="SectionList-item">
+      Aaut ut totam autem
+      <ul class="SectionList-itemList">
+        <li><a href="/file/Produktblad_Aaut_ut_totam_autem.pdf">Produktblad</a></li>
+        <li><a href="/file/Sakerhetsplad_Aaut_ut_totam_autem.pdf">Säkerhetsdatablad</a></li>
+      </ul>
+    </li>
+    <li class="SectionList-item">
+      Anesciunt odit illo quidem
+      <ul class="SectionList-itemList">
+        <li><a href="/file/Produktblad_Anesciunt_odit_illo_quidem.pdf">Produktblad</a></li>
+        <li><a href="/file/Sakerhetsplad_Anesciunt_odit_illo_quidem.pdf">Säkerhetsdatablad</a></li>
+      </ul>
+    </li>
+  </ol>
+  <a href="#indexNav1" class="SectionList-totop">
+    <span class="u-isHiddenVisually">Till toppen</span>
+  </a>
+</div>
+
+  </div>
+
+  <div id="section-list" class="Component">
+    <h2 class="Component-head">Table</h2>
+    <div class="Table">
+  <table>
+    <thead class="Table-head">
+      <tr>
+        <th>Kontakt</th>
+        <th>Öppettider</th>
+        <th>Telefon</th>
+      </tr>
+    </thead>
+    <tbody class="Table-body">
+      <tr>
+        <td>Preem Privatekort</td>
+        <td>Mån-fre  08.00-17.00<br>Övrig tid</td>
+        <td>0476-58 71 40<br>010-450 18 00</td>
+      </tr>
+      <tr>
+        <td>Övriga kort</td>
+        <td>Mån-fre 08.00-17.00<br>Övrig tid</td>
+        <td>0476-58 71 40<br>010-450 18 00</td>
+      </tr>
+      <tr>
+        <td>Preem Fördel</td>
+        <td>Mån-fre  08.00-17.00<br>Övrig tid</td>
+        <td>0476-58 71 40<br>010-450 18 00</td>
+      </tr>
+      <tr>
+        <td>Spärra Preem Privatkort</td>
+        <td>Mån-fre  08.00-17.00<br>Övrig tid</td>
+        <td>0476-58 71 40<br>010-450 18 00</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  </div>
+
+  <div id="full" class="Component">
+    <h2 class="Component-head">Full</h2>
+    <a href="#" class="Full Full--alignCenter Full--bg-image" style="background-image: url(http://placehold.it/1600x425/172028/000000);">
+  <div class="Full-inner">
+    <div class="Full-innerInner">
+      <div class="Full-textWrapper">
+        <h1 class="Full-headline">Framtidens bensin kommer från oss på Preem</h1>
+        <div class="Article Full-text">
+          <p>Lorem ipsum dolor sit amet consectetur<br>adipisicing elit, sed do eiusmod</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+
+    <a href="#" class="Full Full--alignLeft Full--bg-image" style="background-image: url(http://placehold.it/1600x425/172028/000000);">
+  <div class="Full-inner">
+    <div class="Full-innerInner">
+      <div class="Full-textWrapper">
+        <h1 class="Full-headline">Framtidens bensin kommer från oss på Preem</h1>
+        <div class="Article Full-text">
+          <p>Lorem ipsum dolor sit amet consectetur<br>adipisicing elit, sed do eiusmod</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+
+  </div>
+
+</div>
+
+
+
+      <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAPfSIvCyod-DD8op7KhyeJr3Lk9QeFzIc&amp;sensor=false&amp;libraries=places"></script>
+
+
+    <!--[if lt IE 9]>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <!--<![endif]-->
+
+    <script src="assets/javascripts/application.js"></script>
+  </body>
+</html>

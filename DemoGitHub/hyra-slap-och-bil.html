@@ -1,0 +1,432 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    <title>Hyra släp och bil</title>
+
+    <script src="assets/javascripts/vendor/libs/modernizr.js"></script>
+
+    <link href="//cloud.typography.com/7319472/760864/css/fonts.css" rel="stylesheet" />
+
+    <!--[if gte IE 9]><!-->
+      <link href="assets/stylesheets/application.css" rel="stylesheet" />
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+      <link href="assets/stylesheets/application_old_ie.css" rel="stylesheet" />
+    <![endif]-->
+
+    <meta name="description" content="Beskrivning här. Inte längre än 155 tecken.">
+
+    <meta property="og:title" content="Sidans titel">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content=" http://www.example.com">
+    <meta property="og:image" content=" http://example.com/image.jpg">
+    <meta property="og:description" content="Beskrivning här. Inte längre än 155 tecken.">
+  </head>
+
+  <body data-controller="tracking">
+
+    <form class="Search u-pusher js-u-pusher" action="/sokresultat.html" method="get" data-controller="search">
+  <div class="Search-inner">
+    <label class="Search-label" for="header-search">Sök</label>
+    <input class="Search-field js-Search-field" id="header-search" type="search" placeholder="Skriv in ett sökord">
+    <button class="Search-submit u-icon-search" type="submit">
+      <span class="Search-submitInner">Sök</span>
+    </button>
+  </div>
+</form>
+
+    <header class="Header">
+  <div class="Header-inner">
+      <div class="Header-bar u-pusher js-u-pusher">
+        <button class="Header-menuToggle js-menuToggler" data-controller='[{"toggler": {"selector": ".u-pusher", "className": "u-pusher--is-pushed"}}]'>
+          <span class="Header-menuToggleInner"></span>
+        </button>
+        <button class="Header-searchToggle js-searchToggler u-icon-search" data-controller='[{"toggler": {"selector": ".Search", "className": "Search--is-open"}}]'>
+          <span class="Header-searchToggleInner">Sök</span>
+        </button>
+      </div>
+      <div class="MainNav" data-controller="mainNav">
+        <ul class="MainNav-tabs">
+  <li class="MainNav-tab MainNav-tab--is-current">
+    <a href="/start-privat.html" class="MainNav-tabLink">Privat</a>
+  </li>
+  <li class="MainNav-tab">
+    <a href="/start-foretag.html" class="MainNav-tabLink">Företag</a>
+  </li>
+  <li class="MainNav-tab">
+    <a href="/start-om-preem.html" class="MainNav-tabLink">Om Preem</a>
+  </li>
+</ul>
+
+        <nav class="MainNav-menu">
+  <ul class="MainNav-list">
+      <li class="MainNav-listItem MainNav-listItem--is-current">
+        <a href="/hitta-station.html" class="MainNav-link">
+          Hitta station
+
+        </a>
+
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          I butiken
+
+            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+        </a>
+
+          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Aktuella erbjudanden
+
+                    <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+                </a>
+
+                  <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+                      <li class="MainNav-listItem">
+                        <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSub">
+                          Ett erbjudande
+                            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+                        </a>
+
+                          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+                              <li class="MainNav-listItem">
+                                <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSubSub">Ett erbjudande</a>
+                              </li>
+                              <li class="MainNav-listItem">
+                                <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSubSub">Ett annat erbjudande</a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="MainNav-listItem">
+                        <a href="/textsida.html" class="MainNav-link MainNav-link--sub MainNav-link--subSub">
+                          Ett annat erbjudande
+                        </a>
+
+                      </li>
+                  </ul>
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Mat &amp; dryck
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Läkemedel
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Service
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Sortiment
+
+                </a>
+
+              </li>
+          </ul>
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/hyra-slap-och-bil.html" class="MainNav-link">
+          Hyra släp
+
+        </a>
+
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          Kort &amp; Förmåner
+
+            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+        </a>
+
+          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Företagskort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Såifakort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Privatkort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Bankkort
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Bonuskort
+
+                </a>
+
+              </li>
+          </ul>
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          För bilen
+
+            <button class="MainNav-linkOpener js-MainNav-linkOpener"><span>Undermeny</span></button>
+        </a>
+
+          <ul class="MainNav-list MainNav-list--sub MainNav-list--sub-is-closed">
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Biltvätt
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Våra drivmedel
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Välj olja
+
+                </a>
+
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/textsida.html" class="MainNav-link MainNav-link--sub">
+                  Drivmedelspriser
+
+                </a>
+
+              </li>
+          </ul>
+      </li>
+      <li class="MainNav-listItem">
+        <a href="/textsida.html" class="MainNav-link">
+          Drivmedel
+
+        </a>
+
+      </li>
+  </ul>
+</nav>
+
+        <nav class="MainNav-secondary">
+  <ul class="MainNav-secondaryNavList">
+      <li class="MainNav-secondaryNavListItem MainNav-secondaryNavListItem--sustainability MainNav-secondaryNavListItem--is-current">
+        <a href="/textsida.html" class="MainNav-secondaryNavLink MainNav-secondaryNavLink--sustainability">Hållbarhet</a>
+
+      </li>
+      <li class="MainNav-secondaryNavListItem MainNav-secondaryNavListItem--contact">
+        <a href="/textsida.html" class="MainNav-secondaryNavLink MainNav-secondaryNavLink--contact">Kontakt</a>
+
+      </li>
+      <li class="MainNav-secondaryNavListItem MainNav-secondaryNavListItem--language">
+        <a href="/textsida.html" class="MainNav-secondaryNavLink MainNav-secondaryNavLink--language">Language</a>
+
+      </li>
+      <li class="MainNav-secondaryNavListItem MainNav-secondaryNavListItem--login">
+        <a href="/login.html" class="MainNav-secondaryNavLink MainNav-secondaryNavLink--login js-MainNav-link--opener MainNav-link--opener MainNav-secondaryNavLink--opener MainNav-secondaryNavLink--opener-is-closed">Logga in</a>
+
+          <ul class="MainNav-list MainNav-list--secondary MainNav-list--sub MainNav-list--sub-is-closed">
+              <li class="MainNav-listItem">
+                <a href="/login.html" class="MainNav-link MainNav-link--sub MainNav-link--sub">
+                  <span class="MainNav-linkName">En tjänst</span>
+                  <span class="MainNav-linkDescription">En beskrivning av en tjänst</span>
+                </a>
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/login.html" class="MainNav-link MainNav-link--sub MainNav-link--sub">
+                  <span class="MainNav-linkName">En annan tjänst</span>
+                  <span class="MainNav-linkDescription">En beskrivning av en annan tjänst</span>
+                </a>
+              </li>
+              <li class="MainNav-listItem">
+                <a href="/login.html" class="MainNav-link MainNav-link--sub MainNav-link--sub">
+                  <span class="MainNav-linkName">En tredje tjänst</span>
+                  <span class="MainNav-linkDescription">En beskrivning av en tredje tjänst</span>
+                </a>
+              </li>
+          </ul>
+      </li>
+      <li class="MainNav-secondaryNavListItem MainNav-secondaryNavListItem--search">
+        <a href="/sokresultat.html" class="MainNav-secondaryNavLink MainNav-secondaryNavLink--search js-searchToggler" data-controller='[{"toggler": {"selector": ".Search", "className": "Search--is-open"}}]'>Sök</a>
+
+      </li>
+  </ul>
+</nav>
+
+      </div>
+  </div>
+</header>
+
+
+    <div class="u-pusher js-u-pusher">
+      <main class="Main" role="main">
+        <div class="u-wrapper">
+  <div class="ThuleWebRental">
+    <div class="ThuleWebRental-extern">
+      <div class="u-group">
+        <a href="http://turbo3.thulerental.com/WebRental/index?xid=2454D30A-05FD-4A9D-8E75-7B73DEA72797&amp;cssurl=http://turbo3.thulerental.com/content/css/webrental.css" class="Button Button--full" target="_blank">Hyr släp &amp; bil här</a>
+      </div>
+
+      <p class="u-meta">Sidan öppnas i ett nytt fönster</p>
+    </div>
+
+    <div class="ThuleWebRental-iframeWrapper"></div>
+  </div>
+
+</div>
+
+      </main>
+
+        <footer class="Footer">
+  <div class="u-wrapper">
+    <div class="Footer-sections">
+      <div class="Footer-menus">
+        <nav class="Footer-menu">
+          <h3 class="Footer-sectionHeadline"><a href="/start-privat.html" class="Footer-sectionHeadlineLink">Privat</a></h3>
+          <ul class="Footer-menuItems">
+              <li class="Footer-menuItem"><a href="/hitta-station.html" class="Footer-link">Hitta station</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">I butiken</a></li>
+              <li class="Footer-menuItem"><a href="/hyra-slap-och-bil.html" class="Footer-link">Hyra släp</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Kort &amp; Förmåner</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">För bilen</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Drivmedel</a></li>
+          </ul>
+        </nav>
+
+        <nav class="Footer-menu">
+          <h3 class="Footer-sectionHeadline"><a href="/start-foretag.html" class="Footer-sectionHeadlineLink">Företag</a></h3>
+          <ul class="Footer-menuItems">
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Produkter &amp; tjänster</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Klimat &amp; miljö</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Kort &amp; förmåner</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Återförsäljare</a></li>
+          </ul>
+        </nav>
+
+        <nav class="Footer-menu Footer-menu--last">
+          <h3 class="Footer-sectionHeadline"><a href="/start-om-preem.html" class="Footer-sectionHeadlineLink">Om Preem</a></h3>
+          <ul class="Footer-menuItems">
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Om Preem</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Hållbarhet</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Press</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Karriär</a></li>
+              <li class="Footer-menuItem"><a href="/textsida.html" class="Footer-link">Finansiell information</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="Footer-contact">
+        <h3 class="Footer-sectionHeadline"><a href="/textsida.html" class="Footer-sectionHeadlineLink">Kundservice &amp; kontakt</a></h3>
+        <div class="Footer-contactSection">
+          <div class="Footer-contactGroup">
+            <h4 class="contactHeadline"><a href="/textsida.html" class="Footer-link">Preem Privatkort</a></h4>
+            Tel: 0476-58 71 40<br>
+            Mån-fre 08.00-17.00<br>
+            (Spärra kort dygnet runt)<br>
+            <a href="/textsida.html" class="Footer-link">Kontakta oss</a>
+          </div>
+
+          <div class="Footer-contactGroup">
+            <h4 class="contactHeadline"><a href="/textsida.html" class="Footer-link">Fördel Preem</a></h4>
+            Tel: 08-656 32 50
+          </div>
+        </div>
+
+        <div class="Footer-contactSection">
+          <div class="Footer-contactGroup">
+            <h4 class="contactHeadline"><a href="/textsida.html" class="Footer-link">Övriga kort &amp; frågor</a></h4>
+            Tel: 020-450 450<br>
+            Mån-fre 08.00-17.00<br>
+            (Spärra kort dygnet runt)<br>
+            <a href="/textsida.html" class="Footer-link">Kontakta oss</a>
+          </div>
+        </div>
+
+        <div class="Footer-contactSection Footer-contactSection--last">
+          <div class="Footer-contactGroup">
+            <h4 class="contactHeadline contactHeadline--secondary">Postadress:</h4>
+            Preem AB<br>
+            112 80 Stockholm<br>
+            Växel: 010-450 10 00<br>
+            (inkl Preemraff)
+          </div>
+
+          <div class="Footer-contactGroup">
+            <h4 class="contactHeadline contactHeadline--secondary">Besöksadress:</h4>
+            Warfvinges väg 45, Stockholm
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Footer-copyright">
+      Preem AB © 2015
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+    <div class="AcceptCookies" data-controller="acceptCookies">
+  <p class="AcceptCookies-text">
+    Denna sida använder <a href="#">cookies</a>.
+  </p>
+  <button class="Button Button--minor Button--accept AcceptCookies-acceptBtn js-AcceptCookies-acceptBtn">OK</button>
+</div>
+
+
+
+    
+
+
+    <!--[if lt IE 9]>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <!--<![endif]-->
+
+
+    <script src="assets/javascripts/application.js"></script>
+
+        <script src="http://turbo3.thulerental.com/Scripts/WebRental.js"></script>
+    <script type="text/javascript">
+      $(function() {
+          $('.ThuleWebRental-iframeWrapper').ShowWebRental('2454D30A-05FD-4A9D-8E75-7B73DEA72797', 'http://turbo3.thulerental.com/content/css/webrental.css', 1170);
+      });
+    </script>
+
+  </body>
+</html>

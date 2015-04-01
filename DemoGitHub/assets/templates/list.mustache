@@ -1,0 +1,23 @@
+{{#stations.length}}
+  <h2 class="List-header">{{header}}</h2>
+
+  <div class="List-result">
+    <ul>
+      {{#stations}}
+        <li class="StationItem StationItem--list {{#favorite}}StationItem--is-favorite{{/favorite}}" data-id="{{Id}}">
+          <h3 class="StationItem-header StationItem-header--small">{{Name}}</h3>
+          <p class="StationItem-short">
+            <span class="StationItem-address">{{Address}}</span>
+            <span>{{StationType}}</span>
+            <span class="StationItem-distance">{{distance}}</span>
+          </p>
+          <div class="StationItem-expanded"></div>
+        </li>
+      {{/stations}}
+    </ul>
+  </div>
+{{/stations.length}}
+
+{{^stations.length}}
+  <p class="List-empty">Din filtrering gav inga resultat</p>
+{{/stations.length}}
